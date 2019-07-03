@@ -1,0 +1,3054 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<FDT xmlns="x-schema:DTMParameterSchema.xml" xmlns:fdt="x-schema:FDTDataTypesSchema.xml" fdt:storageState="persistent" fdt:dataSetState="allDataLoaded">
+  <fdt:DtmDeviceType manufacturerId="26" deviceTypeId="11" classificationId="temperature" dtmDevTypeID="0A6D1499-347B-15D5-82E1-00E039727039" dtmDevTypeIDVersion="0" readAccess="1" writeAccess="0" xmlns:fdt="x-schema:FDTDataTypesSchema.xml">
+    <fdt:VersionInformation name="ABB TTX300 HART" vendor="ABB" descriptor="ABB TTX300 HART" version="-" xmlns:fdt="x-schema:FDTDataTypesSchema.xml" />
+    <fdt:SupportedLanguages>
+      <fdt:LanguageId languageId="1031" />
+      <fdt:LanguageId languageId="1033" />
+    </fdt:SupportedLanguages>
+    <fdt:BusCategories xmlns:fdt="x-schema:FDTDataTypesSchema.xml">
+      <fdt:BusCategory busCategory="036D1498-387B-11D4-86E1-00E0987270B9">
+        <fdt:CommunicationTypeEntry communicationType="required" />
+      </fdt:BusCategory>
+    </fdt:BusCategories>
+    <fdt:DeviceIcon path="C:\Program Files (x86)\ABB Industrial IT\Engineer IT\DTM\ABB DTM500\Resources\DTM.ICO" />
+    <fdt:DeviceIcon deviceGraphicState="device" path="C:\Program Files (x86)\ABB Industrial IT\Engineer IT\DTM\ABB DTM500\Resources\dev.ico" />
+    <fdt:DeviceIcon deviceGraphicState="diagnosis" path="C:\Program Files (x86)\ABB Industrial IT\Engineer IT\DTM\ABB DTM500\Resources\devdiag.ico" />
+    <fdt:DataSetFormats xmlns:fdt="x-schema:FDTDataTypesSchema.xml">
+      <fdt:Current dataSetID="036D1497-387B-11D4-86E1-00E0987270B9" description="DTM500 Dataset" />
+      <fdt:Supported dataSetID="036D1497-387B-11D4-86E1-00E0987270B9" levelOfSupport="full" description="The data set is fully supported" />
+    </fdt:DataSetFormats>
+  </fdt:DtmDeviceType>
+  <DtmDevice fdt:tag="ABB TTX3">
+    <fdt:ChannelReferences>
+      <fdt:ChannelReference idref="C_Channel_PRIMARY_UNITS">
+        <fdt:ChannelInformation>
+          <fdt:BusCategories>
+            <fdt:BusCategory busCategory="036D1498-387B-11D4-86E1-00E0987270B9" />
+          </fdt:BusCategories>
+          <fdt:ChannelModes>
+            <fdt:ChannelMode channelMode="processValue" />
+          </fdt:ChannelModes>
+        </fdt:ChannelInformation>
+      </fdt:ChannelReference>
+      <fdt:ChannelReference idref="C_Channel_PRIMARY_VALUE">
+        <fdt:ChannelInformation>
+          <fdt:BusCategories>
+            <fdt:BusCategory busCategory="036D1498-387B-11D4-86E1-00E0987270B9" />
+          </fdt:BusCategories>
+          <fdt:ChannelModes>
+            <fdt:ChannelMode channelMode="processValue" />
+          </fdt:ChannelModes>
+        </fdt:ChannelInformation>
+      </fdt:ChannelReference>
+    </fdt:ChannelReferences>
+    <BusInformation>
+      <SlaveAddress slaveAddress="0" />
+    </BusInformation>
+    <ExportedVariables>
+      <fdt:DtmVariables name="Parameters">
+        <fdt:DtmVariable name="&amp;&amp;private_Wrapper&amp;&amp;SVDfile">
+          <fdt:Value>
+            <fdt:Display string="C:\Program Files (x86)\ABB Industrial IT\Engineer IT\DTM\ABB DTM500\XML\SVD-XML\ABB DTM TTX300-HART.xml" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;private_Wrapper&amp;&amp;GSDfile">
+          <fdt:Value>
+            <fdt:Display string="C:\Program Files (x86)\ABB Industrial IT\Engineer IT\DTM\ABB DTM500\DRIVERS\HART\ABB DTM TTX300-HART\NUL" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;private_Wrapper&amp;&amp;DeviceIdentfile">
+          <fdt:Value>
+            <fdt:Display string="C:\Program Files (x86)\ABB Industrial IT\Engineer IT\DTM\ABB DTM500\XML\FDT\ABB DTM TTX300-HART-DeviceIdentification.xml" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;private_Wrapper&amp;&amp;SingleInstanceDataAccessfile">
+          <fdt:Value>
+            <fdt:Display string="C:\Program Files (x86)\ABB Industrial IT\Engineer IT\DTM\ABB DTM500\XML\FDT\ABB DTM TTX300-Hart-SingleInstanceDataAccess.xml" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;private_Wrapper&amp;&amp;SingleDeviceDataAccessfile">
+          <fdt:Value>
+            <fdt:Display string="C:\Program Files (x86)\ABB Industrial IT\Engineer IT\DTM\ABB DTM500\XML\FDT\ABB DTM TTX300-Hart-SingleDeviceDataAccess.xml" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="TREND_FILTER">
+          <fdt:Value>
+            <fdt:Display string="1;5;12;18;20;\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="ObserveData">
+          <fdt:Value>
+            <fdt:Display string="\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="TrendData">
+          <fdt:Value>
+            <fdt:Display string="\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="TIMESTAMP_UPLOAD">
+          <fdt:Value>
+            <fdt:Display string="2019-04-05 13:37:17\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="HART_READ_ONLY_MODE">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="TIMESTAMP_DOWNLOAD">
+          <fdt:Value>
+            <fdt:Display string="-/-                \0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="LOCAL_FDT_FUNCTION">
+          <fdt:Value>
+            <fdt:Display string="\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="LOCAL_FDT_INVOKEID">
+          <fdt:Value>
+            <fdt:Display string="\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="LOCAL_ACTIVEX_VIEWNAME">
+          <fdt:Value>
+            <fdt:Display string="\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="DABA_NOTES">
+          <fdt:Value>
+            <fdt:Display string="\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="MFR_ID">
+          <fdt:Value>
+            <fdt:Display string="26" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="SIMULATION_MODE">
+          <fdt:Value>
+            <fdt:Display string="26" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="MFR_DEVICE_TYPE">
+          <fdt:Value>
+            <fdt:Display string="11" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="NO_PREAMBLES">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="CMD_REV">
+          <fdt:Value>
+            <fdt:Display string="5" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="TRANS_SPEC_REV">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="_SOFTW_REV">
+          <fdt:Value>
+            <fdt:Display string="5" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="SOFTW_VER_MAJOR">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="SOFTW_VER_MINOR">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="SOFTW_VER_REV">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="SOFTWARE_REVISION">
+          <fdt:Value>
+            <fdt:Display string="00.00.00\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="HARDWARE_REVISION">
+          <fdt:Value>
+            <fdt:Display string="00.00\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="_HARDW_REV">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="HARDW_REV_MAJOR">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="HARDW_REV_MINOR">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="SENSOR_APP_VER_MAJOR">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="SENSOR_APP_VER_MINOR">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="SENSOR_APP_VER_REV">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="BOOT_SHARE_VER_MAJOR">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="BOOT_SHARE_VER_MINOR">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="BOOT_SHARE_VER_REV">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="SENSOR_ADC_IDENT">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="SENSOR_APP_TYPE">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="HMI_REV_NUMBER">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="PHY_SIGNALING">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="STATUS_FLAGS">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="DEVICE_ID">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="DEVICE_ID_DISPLAY">
+          <fdt:Value>
+            <fdt:Display string="0x0b\0000\0000\0000\0000" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="confChangeCounterValue">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="CFG_PV_SELECT">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="CFG_SV_SELECT">
+          <fdt:Value>
+            <fdt:Display string="8" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="CFG_TV_SELECT">
+          <fdt:Value>
+            <fdt:Display string="5" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="CFG_QV_SELECT">
+          <fdt:Value>
+            <fdt:Display string="5" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="PRIMARY_UNITS">
+          <fdt:SemanticInformation semanticId="CMD03B4B0L8" applicationDomain="FDT_HART" />
+          <fdt:Value>
+            <fdt:Display string="32" />
+          </fdt:Value>
+          <fdt:Ranges>
+            <fdt:Range>
+              <fdt:LowerRange>
+                <fdt:StringData string="DUMMY" />
+              </fdt:LowerRange>
+              <fdt:UpperRange>
+                <fdt:StringData string="DUMMY" />
+              </fdt:UpperRange>
+            </fdt:Range>
+          </fdt:Ranges>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="PRIMARY_CURR_UNIT">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="PrimaryValueStatus">
+          <fdt:Value>
+            <fdt:Display string="255" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="SecondaryValueStatus">
+          <fdt:Value>
+            <fdt:Display string="255" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="TeritiaryValueStatus">
+          <fdt:Value>
+            <fdt:Display string="255" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="QuaternaryValueStatus">
+          <fdt:Value>
+            <fdt:Display string="255" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="PrimaryValueStatus_Read">
+          <fdt:Value>
+            <fdt:Display string="255" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="SecondaryValueStatus_Read">
+          <fdt:Value>
+            <fdt:Display string="255" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="TeritiaryValueStatus_Read">
+          <fdt:Value>
+            <fdt:Display string="255" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="QuaternaryValueStatus_Read">
+          <fdt:Value>
+            <fdt:Display string="255" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="MESSAGE">
+          <fdt:Value>
+            <fdt:Display string="                                " />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="TAG">
+          <fdt:Value>
+            <fdt:Display string="        " />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="Longtag">
+          <fdt:Value>
+            <fdt:Display string="-/-                             " />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="DESCRIPTOR">
+          <fdt:Value>
+            <fdt:Display string="TEMP TTX HART   " />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="DATE_ALL">
+          <fdt:Value>
+            <fdt:Display string="1900 Jan 1" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="PRIMARY_SENSOR_SERIAL_NUM">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="PRIMARY_SENSOR_UNITS">
+          <fdt:Value>
+            <fdt:Display string="32" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="PRIMARY_SENSOR_HIGH_LIMIT">
+          <fdt:Value>
+            <fdt:Display string="850" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="PRIMARY_SENSOR_LOW_LIMIT">
+          <fdt:Value>
+            <fdt:Display string="-200" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="PRIMARY_SENSOR_MIN_SPAN">
+          <fdt:Value>
+            <fdt:Display string="10" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="SECONDARY_SENSOR_SERIAL_NUM">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="SV_RANGE_DEFAULT_LOW">
+          <fdt:Value>
+            <fdt:Display string="-100" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="SV_RANGE_DEFAULT_HIGH">
+          <fdt:Value>
+            <fdt:Display string="100" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="TV_RANGE_DEFAULT_LOW">
+          <fdt:Value>
+            <fdt:Display string="-100" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="TV_RANGE_DEFAULT_HIGH">
+          <fdt:Value>
+            <fdt:Display string="100" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="QV_RANGE_DEFAULT_LOW">
+          <fdt:Value>
+            <fdt:Display string="-100" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="QV_RANGE_DEFAULT_HIGH">
+          <fdt:Value>
+            <fdt:Display string="100" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="QV_VALUE_LOW_OHM">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="QV_VALUE_HIGH_OHM">
+          <fdt:Value>
+            <fdt:Display string="3800" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="QV_VALUE_LOW_MV">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="QV_VALUE_HIGH_MV">
+          <fdt:Value>
+            <fdt:Display string="1200" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="SECONDARY_SENSOR_UNITS">
+          <fdt:Value>
+            <fdt:Display string="32" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="SECONDARY_SENSOR_HIGH_LIMIT">
+          <fdt:Value>
+            <fdt:Display string="850" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="SECONDARY_SENSOR_LOW_LIMIT">
+          <fdt:Value>
+            <fdt:Display string="-200" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="SECONDARY_SENSOR_MIN_SPAN">
+          <fdt:Value>
+            <fdt:Display string="10" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="PRIMARY_ALARM_SELECT">
+          <fdt:Value>
+            <fdt:Display string="1" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="PRIMARY_RANGE_UNITS">
+          <fdt:Value>
+            <fdt:Display string="32" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="PRIMARY_RANGE_HIGH">
+          <fdt:Value>
+            <fdt:Display string="100" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="PRIMARY_RANGE_LOW">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="PRIMARY_DAMP">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="DEVICEVARIABLE_DAMPINGVALUE">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="DEVICEVARIABLE_CLASSIFICATION">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="DEVICEVARIABLE_FAMILYCODES">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="DEVICEVARIABLE_ACQUISITIONPERIOD">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="DEVICEVARIABLE_PROPERTIES">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="PRIV_LABEL_DISTRIBUTOR">
+          <fdt:Value>
+            <fdt:Display string="26" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="PRIMARY_WARNING_LOW_LIMIT">
+          <fdt:Value>
+            <fdt:Display string="-10" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="PRIMARY_WARNING_HIGH_LIMIT">
+          <fdt:Value>
+            <fdt:Display string="110" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="PRIMARY_ALARM_LOW_LIMIT">
+          <fdt:Value>
+            <fdt:Display string="-20" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="PRIMARY_ALARM_HIGH_LIMIT">
+          <fdt:Value>
+            <fdt:Display string="120" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FINAL_ASSEMBLY_NUMBER">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="squawk">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="SENSORTYPE1">
+          <fdt:Value>
+            <fdt:Display string="12" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="SENSORTYPE2">
+          <fdt:Value>
+            <fdt:Display string="251" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="MEASTYPE_CJMODE1">
+          <fdt:Value>
+            <fdt:Display string="1" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="MEASTYPE_CJMODE2">
+          <fdt:Value>
+            <fdt:Display string="1" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="MEASTYPE_RUI1">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="MEASTYPE_RUI2">
+          <fdt:Value>
+            <fdt:Display string="5" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="WIRE_NUMBER1">
+          <fdt:Value>
+            <fdt:Display string="3" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="WIRE_NUMBER2">
+          <fdt:Value>
+            <fdt:Display string="3" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="CJCEXT_VALUE1">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="CJCEXT_VALUE2">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="AO_UNDERRANGE_VALUE">
+          <fdt:Value>
+            <fdt:Display string="3.6" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="AO_OVERRANGE_VALUE">
+          <fdt:Value>
+            <fdt:Display string="22" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="AO_REACTION">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="THRESHOLD1_VALUE">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="THRESHOLD2_VALUE">
+          <fdt:Value>
+            <fdt:Display string="100" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="SENSOR_NAME">
+          <fdt:Value>
+            <fdt:Display string="PT100 IEC           " />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="DiagnosisLevels_OffSpec_ElectronicsA">
+          <fdt:Value>
+            <fdt:Display string="2" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="DiagnosisLevels_OffSpec_ElectronicsB">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="DiagnosisLevels_OffSpec_CommunicationA">
+          <fdt:Value>
+            <fdt:Display string="3" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="DiagnosisLevels_OffSpec_CommunicationB">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="DiagnosisLevels_OffSpec_Sensor1A">
+          <fdt:Value>
+            <fdt:Display string="64" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="DiagnosisLevels_OffSpec_Sensor1B">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="DiagnosisLevels_OffSpec_Sensor2A">
+          <fdt:Value>
+            <fdt:Display string="64" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="DiagnosisLevels_OffSpec_Sensor2B">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="DiagnosisLevels_OffSpec_ApplicationA">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="DiagnosisLevels_OffSpec_ApplicationB">
+          <fdt:Value>
+            <fdt:Display string="249" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="DiagnosisLevels_CheckFunction_ElectronicsA">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="DiagnosisLevels_CheckFunction_ElectronicsB">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="DiagnosisLevels_CheckFunction_CommunicationA">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="DiagnosisLevels_CheckFunction_CommunicationB">
+          <fdt:Value>
+            <fdt:Display string="128" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="DiagnosisLevels_CheckFunction_Sensor1A">
+          <fdt:Value>
+            <fdt:Display string="128" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="DiagnosisLevels_CheckFunction_Sensor1B">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="DiagnosisLevels_CheckFunction_Sensor2A">
+          <fdt:Value>
+            <fdt:Display string="128" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="DiagnosisLevels_CheckFunction_Sensor2B">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="DiagnosisLevels_CheckFunction_ApplicationA">
+          <fdt:Value>
+            <fdt:Display string="64" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="DiagnosisLevels_CheckFunction_ApplicationB">
+          <fdt:Value>
+            <fdt:Display string="4" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="DiagnosisLevels_Failure_ElectronicsA">
+          <fdt:Value>
+            <fdt:Display string="53" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="DiagnosisLevels_Failure_ElectronicsB">
+          <fdt:Value>
+            <fdt:Display string="56" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="DiagnosisLevels_Failure_CommunicationA">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="DiagnosisLevels_Failure_CommunicationB">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="DiagnosisLevels_Failure_Sensor1A">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="DiagnosisLevels_Failure_Sensor1B">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="DiagnosisLevels_Failure_Sensor2A">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="DiagnosisLevels_Failure_Sensor2B">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="DiagnosisLevels_Failure_ApplicationA">
+          <fdt:Value>
+            <fdt:Display string="129" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="DiagnosisLevels_Failure_ApplicationB">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="DiagnosisLevels_Information_ElectronicsA">
+          <fdt:Value>
+            <fdt:Display string="192" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="DiagnosisLevels_Information_ElectronicsB">
+          <fdt:Value>
+            <fdt:Display string="1" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="DiagnosisLevels_Information_CommunicationA">
+          <fdt:Value>
+            <fdt:Display string="4" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="DiagnosisLevels_Information_CommunicationB">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="DiagnosisLevels_Information_Sensor1A">
+          <fdt:Value>
+            <fdt:Display string="1" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="DiagnosisLevels_Information_Sensor1B">
+          <fdt:Value>
+            <fdt:Display string="3" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="DiagnosisLevels_Information_Sensor2A">
+          <fdt:Value>
+            <fdt:Display string="1" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="DiagnosisLevels_Information_Sensor2B">
+          <fdt:Value>
+            <fdt:Display string="3" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="DiagnosisLevels_Information_ApplicationA">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="DiagnosisLevels_Information_ApplicationB">
+          <fdt:Value>
+            <fdt:Display string="2" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="DiagnosisLevels_Maintenance_ElectronicsA">
+          <fdt:Value>
+            <fdt:Display string="8" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="DiagnosisLevels_Maintenance_ElectronicsB">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="DiagnosisLevels_Maintenance_CommunicationA">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="DiagnosisLevels_Maintenance_CommunicationB">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="DiagnosisLevels_Maintenance_Sensor1A">
+          <fdt:Value>
+            <fdt:Display string="62" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="DiagnosisLevels_Maintenance_Sensor1B">
+          <fdt:Value>
+            <fdt:Display string="64" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="DiagnosisLevels_Maintenance_Sensor2A">
+          <fdt:Value>
+            <fdt:Display string="62" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="DiagnosisLevels_Maintenance_Sensor2B">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="DiagnosisLevels_Maintenance_ApplicationA">
+          <fdt:Value>
+            <fdt:Display string="14" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="DiagnosisLevels_Maintenance_ApplicationB">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="DIAG_OPERATION_MODE">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="DIAGSIM_APPL_A">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="DIAGSIM_APPL_B">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="TRIM_UNIT_SENSOR2">
+          <fdt:Value>
+            <fdt:Display string="32" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="CVD_A_S1">
+          <fdt:Value>
+            <fdt:Display string="0.00400000018998981" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="CVD_B_S1">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="CVD_C_S1">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="CVD_R0_S1">
+          <fdt:Value>
+            <fdt:Display string="100" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="CVD_A_S2">
+          <fdt:Value>
+            <fdt:Display string="0.00400000018998981" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="CVD_B_S2">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="CVD_C_S2">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="CVD_R0_S2">
+          <fdt:Value>
+            <fdt:Display string="100" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="CVD_A_S3">
+          <fdt:Value>
+            <fdt:Display string="0.00400000018998981" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="CVD_B_S3">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="CVD_C_S3">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="CVD_R0_S3">
+          <fdt:Value>
+            <fdt:Display string="100" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="CVD_A_S4">
+          <fdt:Value>
+            <fdt:Display string="0.00400000018998981" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="CVD_B_S4">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="CVD_C_S4">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="CVD_R0_S4">
+          <fdt:Value>
+            <fdt:Display string="100" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="CVD_A_S5">
+          <fdt:Value>
+            <fdt:Display string="0.00400000018998981" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="CVD_B_S5">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="CVD_C_S5">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="CVD_R0_S5">
+          <fdt:Value>
+            <fdt:Display string="100" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE0_VALUE0_x">
+          <fdt:Value>
+            <fdt:Display string="1" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE0_VALUE0_y">
+          <fdt:Value>
+            <fdt:Display string="1" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE0_VALUE1_x">
+          <fdt:Value>
+            <fdt:Display string="2" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE0_VALUE1_y">
+          <fdt:Value>
+            <fdt:Display string="2" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE0_VALUE2_x">
+          <fdt:Value>
+            <fdt:Display string="3" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE0_VALUE2_y">
+          <fdt:Value>
+            <fdt:Display string="3" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE0_VALUE3_x">
+          <fdt:Value>
+            <fdt:Display string="4" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE0_VALUE3_y">
+          <fdt:Value>
+            <fdt:Display string="4" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE0_VALUE4_x">
+          <fdt:Value>
+            <fdt:Display string="5" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE0_VALUE4_y">
+          <fdt:Value>
+            <fdt:Display string="5" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE0_VALUE5_x">
+          <fdt:Value>
+            <fdt:Display string="6" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE0_VALUE5_y">
+          <fdt:Value>
+            <fdt:Display string="6" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE0_VALUE6_x">
+          <fdt:Value>
+            <fdt:Display string="7" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE0_VALUE6_y">
+          <fdt:Value>
+            <fdt:Display string="7" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE0_VALUE7_x">
+          <fdt:Value>
+            <fdt:Display string="8" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE0_VALUE7_y">
+          <fdt:Value>
+            <fdt:Display string="8" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE0_VALUE8_x">
+          <fdt:Value>
+            <fdt:Display string="9" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE0_VALUE8_y">
+          <fdt:Value>
+            <fdt:Display string="9" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE0_VALUE9_x">
+          <fdt:Value>
+            <fdt:Display string="10" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE0_VALUE9_y">
+          <fdt:Value>
+            <fdt:Display string="10" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE0_VALUE10_x">
+          <fdt:Value>
+            <fdt:Display string="11" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE0_VALUE10_y">
+          <fdt:Value>
+            <fdt:Display string="11" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE0_VALUE11_x">
+          <fdt:Value>
+            <fdt:Display string="12" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE0_VALUE11_y">
+          <fdt:Value>
+            <fdt:Display string="12" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE0_VALUE12_x">
+          <fdt:Value>
+            <fdt:Display string="13" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE0_VALUE12_y">
+          <fdt:Value>
+            <fdt:Display string="13" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE0_VALUE13_x">
+          <fdt:Value>
+            <fdt:Display string="14" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE0_VALUE13_y">
+          <fdt:Value>
+            <fdt:Display string="14" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE0_VALUE14_x">
+          <fdt:Value>
+            <fdt:Display string="15" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE0_VALUE14_y">
+          <fdt:Value>
+            <fdt:Display string="15" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE0_VALUE15_x">
+          <fdt:Value>
+            <fdt:Display string="16" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE0_VALUE15_y">
+          <fdt:Value>
+            <fdt:Display string="16" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE0_VALUE16_x">
+          <fdt:Value>
+            <fdt:Display string="17" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE0_VALUE16_y">
+          <fdt:Value>
+            <fdt:Display string="17" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE0_VALUE17_x">
+          <fdt:Value>
+            <fdt:Display string="18" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE0_VALUE17_y">
+          <fdt:Value>
+            <fdt:Display string="18" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE0_VALUE18_x">
+          <fdt:Value>
+            <fdt:Display string="19" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE0_VALUE18_y">
+          <fdt:Value>
+            <fdt:Display string="19" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE0_VALUE19_x">
+          <fdt:Value>
+            <fdt:Display string="20" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE0_VALUE19_y">
+          <fdt:Value>
+            <fdt:Display string="20" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE0_VALUE20_x">
+          <fdt:Value>
+            <fdt:Display string="21" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE0_VALUE20_y">
+          <fdt:Value>
+            <fdt:Display string="21" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE0_VALUE21_x">
+          <fdt:Value>
+            <fdt:Display string="22" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE0_VALUE21_y">
+          <fdt:Value>
+            <fdt:Display string="22" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE0_VALUE22_x">
+          <fdt:Value>
+            <fdt:Display string="23" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE0_VALUE22_y">
+          <fdt:Value>
+            <fdt:Display string="23" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE0_VALUE23_x">
+          <fdt:Value>
+            <fdt:Display string="24" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE0_VALUE23_y">
+          <fdt:Value>
+            <fdt:Display string="24" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE0_VALUE24_x">
+          <fdt:Value>
+            <fdt:Display string="25" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE0_VALUE24_y">
+          <fdt:Value>
+            <fdt:Display string="25" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE0_VALUE25_x">
+          <fdt:Value>
+            <fdt:Display string="26" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE0_VALUE25_y">
+          <fdt:Value>
+            <fdt:Display string="26" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE0_VALUE26_x">
+          <fdt:Value>
+            <fdt:Display string="27" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE0_VALUE26_y">
+          <fdt:Value>
+            <fdt:Display string="27" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE0_VALUE27_x">
+          <fdt:Value>
+            <fdt:Display string="28" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE0_VALUE27_y">
+          <fdt:Value>
+            <fdt:Display string="28" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE0_VALUE28_x">
+          <fdt:Value>
+            <fdt:Display string="29" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE0_VALUE28_y">
+          <fdt:Value>
+            <fdt:Display string="29" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE0_VALUE29_x">
+          <fdt:Value>
+            <fdt:Display string="30" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE0_VALUE29_y">
+          <fdt:Value>
+            <fdt:Display string="30" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE0_VALUE30_x">
+          <fdt:Value>
+            <fdt:Display string="31" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE0_VALUE30_y">
+          <fdt:Value>
+            <fdt:Display string="31" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE0_VALUE31_x">
+          <fdt:Value>
+            <fdt:Display string="32" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE0_VALUE31_y">
+          <fdt:Value>
+            <fdt:Display string="32" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE1_VALUE0_x">
+          <fdt:Value>
+            <fdt:Display string="1" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE1_VALUE0_y">
+          <fdt:Value>
+            <fdt:Display string="1" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE1_VALUE1_x">
+          <fdt:Value>
+            <fdt:Display string="2" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE1_VALUE1_y">
+          <fdt:Value>
+            <fdt:Display string="2" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE1_VALUE2_x">
+          <fdt:Value>
+            <fdt:Display string="3" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE1_VALUE2_y">
+          <fdt:Value>
+            <fdt:Display string="3" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE1_VALUE3_x">
+          <fdt:Value>
+            <fdt:Display string="4" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE1_VALUE3_y">
+          <fdt:Value>
+            <fdt:Display string="4" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE1_VALUE4_x">
+          <fdt:Value>
+            <fdt:Display string="5" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE1_VALUE4_y">
+          <fdt:Value>
+            <fdt:Display string="5" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE1_VALUE5_x">
+          <fdt:Value>
+            <fdt:Display string="6" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE1_VALUE5_y">
+          <fdt:Value>
+            <fdt:Display string="6" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE1_VALUE6_x">
+          <fdt:Value>
+            <fdt:Display string="7" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE1_VALUE6_y">
+          <fdt:Value>
+            <fdt:Display string="7" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE1_VALUE7_x">
+          <fdt:Value>
+            <fdt:Display string="8" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE1_VALUE7_y">
+          <fdt:Value>
+            <fdt:Display string="8" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE1_VALUE8_x">
+          <fdt:Value>
+            <fdt:Display string="9" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE1_VALUE8_y">
+          <fdt:Value>
+            <fdt:Display string="9" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE1_VALUE9_x">
+          <fdt:Value>
+            <fdt:Display string="10" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE1_VALUE9_y">
+          <fdt:Value>
+            <fdt:Display string="10" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE1_VALUE10_x">
+          <fdt:Value>
+            <fdt:Display string="11" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE1_VALUE10_y">
+          <fdt:Value>
+            <fdt:Display string="11" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE1_VALUE11_x">
+          <fdt:Value>
+            <fdt:Display string="12" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE1_VALUE11_y">
+          <fdt:Value>
+            <fdt:Display string="12" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE1_VALUE12_x">
+          <fdt:Value>
+            <fdt:Display string="13" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE1_VALUE12_y">
+          <fdt:Value>
+            <fdt:Display string="13" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE1_VALUE13_x">
+          <fdt:Value>
+            <fdt:Display string="14" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE1_VALUE13_y">
+          <fdt:Value>
+            <fdt:Display string="14" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE1_VALUE14_x">
+          <fdt:Value>
+            <fdt:Display string="15" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE1_VALUE14_y">
+          <fdt:Value>
+            <fdt:Display string="15" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE1_VALUE15_x">
+          <fdt:Value>
+            <fdt:Display string="16" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE1_VALUE15_y">
+          <fdt:Value>
+            <fdt:Display string="16" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE1_VALUE16_x">
+          <fdt:Value>
+            <fdt:Display string="17" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE1_VALUE16_y">
+          <fdt:Value>
+            <fdt:Display string="17" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE1_VALUE17_x">
+          <fdt:Value>
+            <fdt:Display string="18" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE1_VALUE17_y">
+          <fdt:Value>
+            <fdt:Display string="18" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE1_VALUE18_x">
+          <fdt:Value>
+            <fdt:Display string="19" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE1_VALUE18_y">
+          <fdt:Value>
+            <fdt:Display string="19" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE1_VALUE19_x">
+          <fdt:Value>
+            <fdt:Display string="20" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE1_VALUE19_y">
+          <fdt:Value>
+            <fdt:Display string="20" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE1_VALUE20_x">
+          <fdt:Value>
+            <fdt:Display string="21" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE1_VALUE20_y">
+          <fdt:Value>
+            <fdt:Display string="21" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE1_VALUE21_x">
+          <fdt:Value>
+            <fdt:Display string="22" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE1_VALUE21_y">
+          <fdt:Value>
+            <fdt:Display string="22" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE1_VALUE22_x">
+          <fdt:Value>
+            <fdt:Display string="23" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE1_VALUE22_y">
+          <fdt:Value>
+            <fdt:Display string="23" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE1_VALUE23_x">
+          <fdt:Value>
+            <fdt:Display string="24" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE1_VALUE23_y">
+          <fdt:Value>
+            <fdt:Display string="24" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE1_VALUE24_x">
+          <fdt:Value>
+            <fdt:Display string="25" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE1_VALUE24_y">
+          <fdt:Value>
+            <fdt:Display string="25" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE1_VALUE25_x">
+          <fdt:Value>
+            <fdt:Display string="26" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE1_VALUE25_y">
+          <fdt:Value>
+            <fdt:Display string="26" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE1_VALUE26_x">
+          <fdt:Value>
+            <fdt:Display string="27" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE1_VALUE26_y">
+          <fdt:Value>
+            <fdt:Display string="27" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE1_VALUE27_x">
+          <fdt:Value>
+            <fdt:Display string="28" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE1_VALUE27_y">
+          <fdt:Value>
+            <fdt:Display string="28" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE1_VALUE28_x">
+          <fdt:Value>
+            <fdt:Display string="29" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE1_VALUE28_y">
+          <fdt:Value>
+            <fdt:Display string="29" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE1_VALUE29_x">
+          <fdt:Value>
+            <fdt:Display string="30" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE1_VALUE29_y">
+          <fdt:Value>
+            <fdt:Display string="30" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE1_VALUE30_x">
+          <fdt:Value>
+            <fdt:Display string="31" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE1_VALUE30_y">
+          <fdt:Value>
+            <fdt:Display string="31" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE1_VALUE31_x">
+          <fdt:Value>
+            <fdt:Display string="32" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE1_VALUE31_y">
+          <fdt:Value>
+            <fdt:Display string="32" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE2_VALUE0_x">
+          <fdt:Value>
+            <fdt:Display string="1" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE2_VALUE0_y">
+          <fdt:Value>
+            <fdt:Display string="1" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE2_VALUE1_x">
+          <fdt:Value>
+            <fdt:Display string="2" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE2_VALUE1_y">
+          <fdt:Value>
+            <fdt:Display string="2" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE2_VALUE2_x">
+          <fdt:Value>
+            <fdt:Display string="3" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE2_VALUE2_y">
+          <fdt:Value>
+            <fdt:Display string="3" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE2_VALUE3_x">
+          <fdt:Value>
+            <fdt:Display string="4" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE2_VALUE3_y">
+          <fdt:Value>
+            <fdt:Display string="4" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE2_VALUE4_x">
+          <fdt:Value>
+            <fdt:Display string="5" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE2_VALUE4_y">
+          <fdt:Value>
+            <fdt:Display string="5" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE2_VALUE5_x">
+          <fdt:Value>
+            <fdt:Display string="6" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE2_VALUE5_y">
+          <fdt:Value>
+            <fdt:Display string="6" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE2_VALUE6_x">
+          <fdt:Value>
+            <fdt:Display string="7" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE2_VALUE6_y">
+          <fdt:Value>
+            <fdt:Display string="7" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE2_VALUE7_x">
+          <fdt:Value>
+            <fdt:Display string="8" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE2_VALUE7_y">
+          <fdt:Value>
+            <fdt:Display string="8" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE2_VALUE8_x">
+          <fdt:Value>
+            <fdt:Display string="9" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE2_VALUE8_y">
+          <fdt:Value>
+            <fdt:Display string="9" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE2_VALUE9_x">
+          <fdt:Value>
+            <fdt:Display string="10" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE2_VALUE9_y">
+          <fdt:Value>
+            <fdt:Display string="10" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE2_VALUE10_x">
+          <fdt:Value>
+            <fdt:Display string="11" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE2_VALUE10_y">
+          <fdt:Value>
+            <fdt:Display string="11" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE2_VALUE11_x">
+          <fdt:Value>
+            <fdt:Display string="12" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE2_VALUE11_y">
+          <fdt:Value>
+            <fdt:Display string="12" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE2_VALUE12_x">
+          <fdt:Value>
+            <fdt:Display string="13" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE2_VALUE12_y">
+          <fdt:Value>
+            <fdt:Display string="13" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE2_VALUE13_x">
+          <fdt:Value>
+            <fdt:Display string="14" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE2_VALUE13_y">
+          <fdt:Value>
+            <fdt:Display string="14" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE2_VALUE14_x">
+          <fdt:Value>
+            <fdt:Display string="15" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE2_VALUE14_y">
+          <fdt:Value>
+            <fdt:Display string="15" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE2_VALUE15_x">
+          <fdt:Value>
+            <fdt:Display string="16" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE2_VALUE15_y">
+          <fdt:Value>
+            <fdt:Display string="16" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE2_VALUE16_x">
+          <fdt:Value>
+            <fdt:Display string="17" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE2_VALUE16_y">
+          <fdt:Value>
+            <fdt:Display string="17" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE2_VALUE17_x">
+          <fdt:Value>
+            <fdt:Display string="18" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE2_VALUE17_y">
+          <fdt:Value>
+            <fdt:Display string="18" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE2_VALUE18_x">
+          <fdt:Value>
+            <fdt:Display string="19" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE2_VALUE18_y">
+          <fdt:Value>
+            <fdt:Display string="19" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE2_VALUE19_x">
+          <fdt:Value>
+            <fdt:Display string="20" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE2_VALUE19_y">
+          <fdt:Value>
+            <fdt:Display string="20" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE2_VALUE20_x">
+          <fdt:Value>
+            <fdt:Display string="21" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE2_VALUE20_y">
+          <fdt:Value>
+            <fdt:Display string="21" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE2_VALUE21_x">
+          <fdt:Value>
+            <fdt:Display string="22" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE2_VALUE21_y">
+          <fdt:Value>
+            <fdt:Display string="22" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE2_VALUE22_x">
+          <fdt:Value>
+            <fdt:Display string="23" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE2_VALUE22_y">
+          <fdt:Value>
+            <fdt:Display string="23" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE2_VALUE23_x">
+          <fdt:Value>
+            <fdt:Display string="24" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE2_VALUE23_y">
+          <fdt:Value>
+            <fdt:Display string="24" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE2_VALUE24_x">
+          <fdt:Value>
+            <fdt:Display string="25" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE2_VALUE24_y">
+          <fdt:Value>
+            <fdt:Display string="25" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE2_VALUE25_x">
+          <fdt:Value>
+            <fdt:Display string="26" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE2_VALUE25_y">
+          <fdt:Value>
+            <fdt:Display string="26" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE2_VALUE26_x">
+          <fdt:Value>
+            <fdt:Display string="27" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE2_VALUE26_y">
+          <fdt:Value>
+            <fdt:Display string="27" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE2_VALUE27_x">
+          <fdt:Value>
+            <fdt:Display string="28" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE2_VALUE27_y">
+          <fdt:Value>
+            <fdt:Display string="28" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE2_VALUE28_x">
+          <fdt:Value>
+            <fdt:Display string="29" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE2_VALUE28_y">
+          <fdt:Value>
+            <fdt:Display string="29" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE2_VALUE29_x">
+          <fdt:Value>
+            <fdt:Display string="30" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE2_VALUE29_y">
+          <fdt:Value>
+            <fdt:Display string="30" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE2_VALUE30_x">
+          <fdt:Value>
+            <fdt:Display string="31" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE2_VALUE30_y">
+          <fdt:Value>
+            <fdt:Display string="31" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE2_VALUE31_x">
+          <fdt:Value>
+            <fdt:Display string="32" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE2_VALUE31_y">
+          <fdt:Value>
+            <fdt:Display string="32" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE3_VALUE0_x">
+          <fdt:Value>
+            <fdt:Display string="1" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE3_VALUE0_y">
+          <fdt:Value>
+            <fdt:Display string="1" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE3_VALUE1_x">
+          <fdt:Value>
+            <fdt:Display string="2" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE3_VALUE1_y">
+          <fdt:Value>
+            <fdt:Display string="2" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE3_VALUE2_x">
+          <fdt:Value>
+            <fdt:Display string="3" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE3_VALUE2_y">
+          <fdt:Value>
+            <fdt:Display string="3" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE3_VALUE3_x">
+          <fdt:Value>
+            <fdt:Display string="4" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE3_VALUE3_y">
+          <fdt:Value>
+            <fdt:Display string="4" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE3_VALUE4_x">
+          <fdt:Value>
+            <fdt:Display string="5" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE3_VALUE4_y">
+          <fdt:Value>
+            <fdt:Display string="5" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE3_VALUE5_x">
+          <fdt:Value>
+            <fdt:Display string="6" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE3_VALUE5_y">
+          <fdt:Value>
+            <fdt:Display string="6" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE3_VALUE6_x">
+          <fdt:Value>
+            <fdt:Display string="7" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE3_VALUE6_y">
+          <fdt:Value>
+            <fdt:Display string="7" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE3_VALUE7_x">
+          <fdt:Value>
+            <fdt:Display string="8" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE3_VALUE7_y">
+          <fdt:Value>
+            <fdt:Display string="8" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE3_VALUE8_x">
+          <fdt:Value>
+            <fdt:Display string="9" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE3_VALUE8_y">
+          <fdt:Value>
+            <fdt:Display string="9" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE3_VALUE9_x">
+          <fdt:Value>
+            <fdt:Display string="10" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE3_VALUE9_y">
+          <fdt:Value>
+            <fdt:Display string="10" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE3_VALUE10_x">
+          <fdt:Value>
+            <fdt:Display string="11" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE3_VALUE10_y">
+          <fdt:Value>
+            <fdt:Display string="11" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE3_VALUE11_x">
+          <fdt:Value>
+            <fdt:Display string="12" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE3_VALUE11_y">
+          <fdt:Value>
+            <fdt:Display string="12" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE3_VALUE12_x">
+          <fdt:Value>
+            <fdt:Display string="13" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE3_VALUE12_y">
+          <fdt:Value>
+            <fdt:Display string="13" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE3_VALUE13_x">
+          <fdt:Value>
+            <fdt:Display string="14" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE3_VALUE13_y">
+          <fdt:Value>
+            <fdt:Display string="14" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE3_VALUE14_x">
+          <fdt:Value>
+            <fdt:Display string="15" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE3_VALUE14_y">
+          <fdt:Value>
+            <fdt:Display string="15" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE3_VALUE15_x">
+          <fdt:Value>
+            <fdt:Display string="16" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE3_VALUE15_y">
+          <fdt:Value>
+            <fdt:Display string="16" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE3_VALUE16_x">
+          <fdt:Value>
+            <fdt:Display string="17" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE3_VALUE16_y">
+          <fdt:Value>
+            <fdt:Display string="17" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE3_VALUE17_x">
+          <fdt:Value>
+            <fdt:Display string="18" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE3_VALUE17_y">
+          <fdt:Value>
+            <fdt:Display string="18" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE3_VALUE18_x">
+          <fdt:Value>
+            <fdt:Display string="19" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE3_VALUE18_y">
+          <fdt:Value>
+            <fdt:Display string="19" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE3_VALUE19_x">
+          <fdt:Value>
+            <fdt:Display string="20" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE3_VALUE19_y">
+          <fdt:Value>
+            <fdt:Display string="20" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE3_VALUE20_x">
+          <fdt:Value>
+            <fdt:Display string="21" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE3_VALUE20_y">
+          <fdt:Value>
+            <fdt:Display string="21" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE3_VALUE21_x">
+          <fdt:Value>
+            <fdt:Display string="22" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE3_VALUE21_y">
+          <fdt:Value>
+            <fdt:Display string="22" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE3_VALUE22_x">
+          <fdt:Value>
+            <fdt:Display string="23" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE3_VALUE22_y">
+          <fdt:Value>
+            <fdt:Display string="23" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE3_VALUE23_x">
+          <fdt:Value>
+            <fdt:Display string="24" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE3_VALUE23_y">
+          <fdt:Value>
+            <fdt:Display string="24" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE3_VALUE24_x">
+          <fdt:Value>
+            <fdt:Display string="25" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE3_VALUE24_y">
+          <fdt:Value>
+            <fdt:Display string="25" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE3_VALUE25_x">
+          <fdt:Value>
+            <fdt:Display string="26" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE3_VALUE25_y">
+          <fdt:Value>
+            <fdt:Display string="26" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE3_VALUE26_x">
+          <fdt:Value>
+            <fdt:Display string="27" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE3_VALUE26_y">
+          <fdt:Value>
+            <fdt:Display string="27" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE3_VALUE27_x">
+          <fdt:Value>
+            <fdt:Display string="28" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE3_VALUE27_y">
+          <fdt:Value>
+            <fdt:Display string="28" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE3_VALUE28_x">
+          <fdt:Value>
+            <fdt:Display string="29" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE3_VALUE28_y">
+          <fdt:Value>
+            <fdt:Display string="29" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE3_VALUE29_x">
+          <fdt:Value>
+            <fdt:Display string="30" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE3_VALUE29_y">
+          <fdt:Value>
+            <fdt:Display string="30" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE3_VALUE30_x">
+          <fdt:Value>
+            <fdt:Display string="31" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE3_VALUE30_y">
+          <fdt:Value>
+            <fdt:Display string="31" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE3_VALUE31_x">
+          <fdt:Value>
+            <fdt:Display string="32" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE3_VALUE31_y">
+          <fdt:Value>
+            <fdt:Display string="32" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE4_VALUE0_x">
+          <fdt:Value>
+            <fdt:Display string="1" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE4_VALUE0_y">
+          <fdt:Value>
+            <fdt:Display string="1" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE4_VALUE1_x">
+          <fdt:Value>
+            <fdt:Display string="2" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE4_VALUE1_y">
+          <fdt:Value>
+            <fdt:Display string="2" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE4_VALUE2_x">
+          <fdt:Value>
+            <fdt:Display string="3" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE4_VALUE2_y">
+          <fdt:Value>
+            <fdt:Display string="3" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE4_VALUE3_x">
+          <fdt:Value>
+            <fdt:Display string="4" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE4_VALUE3_y">
+          <fdt:Value>
+            <fdt:Display string="4" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE4_VALUE4_x">
+          <fdt:Value>
+            <fdt:Display string="5" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE4_VALUE4_y">
+          <fdt:Value>
+            <fdt:Display string="5" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE4_VALUE5_x">
+          <fdt:Value>
+            <fdt:Display string="6" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE4_VALUE5_y">
+          <fdt:Value>
+            <fdt:Display string="6" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE4_VALUE6_x">
+          <fdt:Value>
+            <fdt:Display string="7" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE4_VALUE6_y">
+          <fdt:Value>
+            <fdt:Display string="7" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE4_VALUE7_x">
+          <fdt:Value>
+            <fdt:Display string="8" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE4_VALUE7_y">
+          <fdt:Value>
+            <fdt:Display string="8" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE4_VALUE8_x">
+          <fdt:Value>
+            <fdt:Display string="9" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE4_VALUE8_y">
+          <fdt:Value>
+            <fdt:Display string="9" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE4_VALUE9_x">
+          <fdt:Value>
+            <fdt:Display string="10" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE4_VALUE9_y">
+          <fdt:Value>
+            <fdt:Display string="10" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE4_VALUE10_x">
+          <fdt:Value>
+            <fdt:Display string="11" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE4_VALUE10_y">
+          <fdt:Value>
+            <fdt:Display string="11" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE4_VALUE11_x">
+          <fdt:Value>
+            <fdt:Display string="12" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE4_VALUE11_y">
+          <fdt:Value>
+            <fdt:Display string="12" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE4_VALUE12_x">
+          <fdt:Value>
+            <fdt:Display string="13" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE4_VALUE12_y">
+          <fdt:Value>
+            <fdt:Display string="13" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE4_VALUE13_x">
+          <fdt:Value>
+            <fdt:Display string="14" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE4_VALUE13_y">
+          <fdt:Value>
+            <fdt:Display string="14" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE4_VALUE14_x">
+          <fdt:Value>
+            <fdt:Display string="15" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE4_VALUE14_y">
+          <fdt:Value>
+            <fdt:Display string="15" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE4_VALUE15_x">
+          <fdt:Value>
+            <fdt:Display string="16" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE4_VALUE15_y">
+          <fdt:Value>
+            <fdt:Display string="16" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE4_VALUE16_x">
+          <fdt:Value>
+            <fdt:Display string="17" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE4_VALUE16_y">
+          <fdt:Value>
+            <fdt:Display string="17" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE4_VALUE17_x">
+          <fdt:Value>
+            <fdt:Display string="18" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE4_VALUE17_y">
+          <fdt:Value>
+            <fdt:Display string="18" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE4_VALUE18_x">
+          <fdt:Value>
+            <fdt:Display string="19" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE4_VALUE18_y">
+          <fdt:Value>
+            <fdt:Display string="19" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE4_VALUE19_x">
+          <fdt:Value>
+            <fdt:Display string="20" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE4_VALUE19_y">
+          <fdt:Value>
+            <fdt:Display string="20" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE4_VALUE20_x">
+          <fdt:Value>
+            <fdt:Display string="21" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE4_VALUE20_y">
+          <fdt:Value>
+            <fdt:Display string="21" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE4_VALUE21_x">
+          <fdt:Value>
+            <fdt:Display string="22" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE4_VALUE21_y">
+          <fdt:Value>
+            <fdt:Display string="22" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE4_VALUE22_x">
+          <fdt:Value>
+            <fdt:Display string="23" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE4_VALUE22_y">
+          <fdt:Value>
+            <fdt:Display string="23" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE4_VALUE23_x">
+          <fdt:Value>
+            <fdt:Display string="24" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE4_VALUE23_y">
+          <fdt:Value>
+            <fdt:Display string="24" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE4_VALUE24_x">
+          <fdt:Value>
+            <fdt:Display string="25" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE4_VALUE24_y">
+          <fdt:Value>
+            <fdt:Display string="25" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE4_VALUE25_x">
+          <fdt:Value>
+            <fdt:Display string="26" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE4_VALUE25_y">
+          <fdt:Value>
+            <fdt:Display string="26" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE4_VALUE26_x">
+          <fdt:Value>
+            <fdt:Display string="27" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE4_VALUE26_y">
+          <fdt:Value>
+            <fdt:Display string="27" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE4_VALUE27_x">
+          <fdt:Value>
+            <fdt:Display string="28" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE4_VALUE27_y">
+          <fdt:Value>
+            <fdt:Display string="28" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE4_VALUE28_x">
+          <fdt:Value>
+            <fdt:Display string="29" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE4_VALUE28_y">
+          <fdt:Value>
+            <fdt:Display string="29" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE4_VALUE29_x">
+          <fdt:Value>
+            <fdt:Display string="30" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE4_VALUE29_y">
+          <fdt:Value>
+            <fdt:Display string="30" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE4_VALUE30_x">
+          <fdt:Value>
+            <fdt:Display string="31" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE4_VALUE30_y">
+          <fdt:Value>
+            <fdt:Display string="31" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE4_VALUE31_x">
+          <fdt:Value>
+            <fdt:Display string="32" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="FIXPOINT_TABLE4_VALUE31_y">
+          <fdt:Value>
+            <fdt:Display string="32" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="INPUT_ENG_UNIT_SENSOR1">
+          <fdt:Value>
+            <fdt:Display string="37" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="OUTPUT_ENG_UNIT_SENSOR1">
+          <fdt:Value>
+            <fdt:Display string="32" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="INPUT_ENG_UNIT_SENSOR2">
+          <fdt:Value>
+            <fdt:Display string="37" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="OUTPUT_ENG_UNIT_SENSOR2">
+          <fdt:Value>
+            <fdt:Display string="32" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="BIAS_SENSOR1">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="BIAS_SENSOR2">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="WIRE_RESISTANCE_SENSOR1">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="WIRE_RESISTANCE_SENSOR2">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="WRITE_PROTECTION_HARDWARE">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="DriftMonitoring">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="DriftLimit">
+          <fdt:Value>
+            <fdt:Display string="0.1" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="DriftLimitUnit">
+          <fdt:Value>
+            <fdt:Display string="32" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="DriftTimeLimit">
+          <fdt:Value>
+            <fdt:Display string="3" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="ErrorSignalingText">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="ErrorSignaling">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="ErrorSignalingCombo">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="CONSTANT_UNIT_DEG_CELSIUS">
+          <fdt:Value>
+            <fdt:Display string="32" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="Space">
+          <fdt:Value>
+            <fdt:Display string="250" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="Address">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="Version">
+          <fdt:Value>
+            <fdt:Display string="05.00.15.32\0000\0000\0000\0000\0000" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="SignallingType">
+          <fdt:Value>
+            <fdt:Display string="off\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;private&amp;&amp;Pwd">
+          <fdt:Value>
+            <fdt:Display string="\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000\0000" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;private&amp;&amp;UseDefaultSettings">
+          <fdt:Value>
+            <fdt:Display string="True" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;ObjectLimit&amp;&amp;MFR_ID">
+          <fdt:Value>
+            <fdt:Display string="0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;ObjectLimit&amp;&amp;MFR_DEVICE_TYPE">
+          <fdt:Value>
+            <fdt:Display string="0xFF" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;ObjectLimit&amp;&amp;PHY_SIGNALING">
+          <fdt:Value>
+            <fdt:Display string="0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;ObjectLimit&amp;&amp;CFG_PV_SELECT">
+          <fdt:Value>
+            <fdt:Display string="0xFF 0x0 0x0 0x0 0x0 0xFF 0x0 0x0 0xFF" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;ObjectLimit&amp;&amp;CFG_SV_SELECT">
+          <fdt:Value>
+            <fdt:Display string="0xFF 0x0 0x0 0x0 0x0 0xFF 0x0 0x0 0xFF" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;ObjectLimit&amp;&amp;CFG_TV_SELECT">
+          <fdt:Value>
+            <fdt:Display string="0xFF 0x0 0x0 0x0 0x0 0xFF 0x0 0x0 0xFF" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;ObjectLimit&amp;&amp;CFG_QV_SELECT">
+          <fdt:Value>
+            <fdt:Display string="0xFF 0x0 0x0 0x0 0x0 0xFF 0x0 0x0 0xFF" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;ObjectLimit&amp;&amp;PRIMARY_UNITS">
+          <fdt:Value>
+            <fdt:Display string="0xFF 0xFF 0xFF 0xFF 0x0 0x0 0x0 0x0 0xFF 0x0 0x0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;ObjectLimit&amp;&amp;PRIMARY_CURR_UNIT">
+          <fdt:Value>
+            <fdt:Display string="0xFF" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;ObjectLimit&amp;&amp;PrimaryValueStatus">
+          <fdt:Value>
+            <fdt:Display string="0xFF 0xFF 0xFF 0xFF 0xFF" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;ObjectLimit&amp;&amp;SecondaryValueStatus">
+          <fdt:Value>
+            <fdt:Display string="0xFF 0xFF 0xFF 0xFF 0xFF" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;ObjectLimit&amp;&amp;TeritiaryValueStatus">
+          <fdt:Value>
+            <fdt:Display string="0xFF 0xFF 0xFF 0xFF 0xFF" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;ObjectLimit&amp;&amp;QuaternaryValueStatus">
+          <fdt:Value>
+            <fdt:Display string="0xFF 0xFF 0xFF 0xFF 0xFF" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;ObjectLimit&amp;&amp;PrimaryValueStatus_Read">
+          <fdt:Value>
+            <fdt:Display string="0xFF 0xFF 0xFF 0xFF 0xFF" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;ObjectLimit&amp;&amp;SecondaryValueStatus_Read">
+          <fdt:Value>
+            <fdt:Display string="0xFF 0xFF 0xFF 0xFF 0xFF" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;ObjectLimit&amp;&amp;TeritiaryValueStatus_Read">
+          <fdt:Value>
+            <fdt:Display string="0xFF 0xFF 0xFF 0xFF 0xFF" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;ObjectLimit&amp;&amp;QuaternaryValueStatus_Read">
+          <fdt:Value>
+            <fdt:Display string="0xFF 0xFF 0xFF 0xFF 0xFF" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;ObjectLimit&amp;&amp;PRIMARY_SENSOR_UNITS">
+          <fdt:Value>
+            <fdt:Display string="0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;ObjectLimit&amp;&amp;SECONDARY_SENSOR_UNITS">
+          <fdt:Value>
+            <fdt:Display string="0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;ObjectLimit&amp;&amp;PRIMARY_ALARM_SELECT">
+          <fdt:Value>
+            <fdt:Display string="0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;ObjectLimit&amp;&amp;PRIMARY_RANGE_UNITS">
+          <fdt:Value>
+            <fdt:Display string="0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;ObjectLimit&amp;&amp;PRIV_LABEL_DISTRIBUTOR">
+          <fdt:Value>
+            <fdt:Display string="0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;ObjectLimit&amp;&amp;SENSORTYPE1">
+          <fdt:Value>
+            <fdt:Display string="0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;ObjectLimit&amp;&amp;SENSORTYPE2">
+          <fdt:Value>
+            <fdt:Display string="0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;ObjectLimit&amp;&amp;MEASTYPE_CJMODE1">
+          <fdt:Value>
+            <fdt:Display string="0xFF 0xFF 0xFF" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;ObjectLimit&amp;&amp;MEASTYPE_CJMODE2">
+          <fdt:Value>
+            <fdt:Display string="0xFF 0xFF 0xFF 0xFF" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;ObjectLimit&amp;&amp;MEASTYPE_RUI1">
+          <fdt:Value>
+            <fdt:Display string="0xFF 0xFF 0xFF 0xFF 0xFF 0xFF" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;ObjectLimit&amp;&amp;MEASTYPE_RUI2">
+          <fdt:Value>
+            <fdt:Display string="0xFF 0xFF 0xFF 0xFF 0xFF 0xFF" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;ObjectLimit&amp;&amp;WIRE_NUMBER1">
+          <fdt:Value>
+            <fdt:Display string="0xFF 0xFF 0xFF" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;ObjectLimit&amp;&amp;WIRE_NUMBER2">
+          <fdt:Value>
+            <fdt:Display string="0xFF 0xFF 0xFF" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;ObjectLimit&amp;&amp;AO_REACTION">
+          <fdt:Value>
+            <fdt:Display string="0xFF 0xFF" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;ObjectLimit&amp;&amp;TRIM_UNIT_SENSOR2">
+          <fdt:Value>
+            <fdt:Display string="0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;ObjectLimit&amp;&amp;INPUT_ENG_UNIT_SENSOR1">
+          <fdt:Value>
+            <fdt:Display string="0xFF 0xFF" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;ObjectLimit&amp;&amp;OUTPUT_ENG_UNIT_SENSOR1">
+          <fdt:Value>
+            <fdt:Display string="0xFF 0xFF 0xFF 0xFF" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;ObjectLimit&amp;&amp;INPUT_ENG_UNIT_SENSOR2">
+          <fdt:Value>
+            <fdt:Display string="0xFF 0xFF" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;ObjectLimit&amp;&amp;OUTPUT_ENG_UNIT_SENSOR2">
+          <fdt:Value>
+            <fdt:Display string="0xFF 0xFF 0xFF 0xFF" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;ObjectLimit&amp;&amp;DriftLimitUnit">
+          <fdt:Value>
+            <fdt:Display string="0xFF 0xFF 0xFF" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;ObjectLimit&amp;&amp;DriftTimeLimit">
+          <fdt:Value>
+            <fdt:Display string="0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;ObjectLimit&amp;&amp;ErrorSignalingCombo">
+          <fdt:Value>
+            <fdt:Display string="0xFF 0xFF 0xFF" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;ObjectLimit&amp;&amp;CONSTANT_UNIT_DEG_CELSIUS">
+          <fdt:Value>
+            <fdt:Display string="" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;ObjectLimit&amp;&amp;Space">
+          <fdt:Value>
+            <fdt:Display string="" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;CurrentLimitMin&amp;&amp;PRIMARY_DAMP">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;CurrentLimitMax&amp;&amp;PRIMARY_DAMP">
+          <fdt:Value>
+            <fdt:Display string="100" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;CurrentLimitMin&amp;&amp;CJCEXT_VALUE1">
+          <fdt:Value>
+            <fdt:Display string="-40" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;CurrentLimitMax&amp;&amp;CJCEXT_VALUE1">
+          <fdt:Value>
+            <fdt:Display string="85" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;CurrentLimitMin&amp;&amp;CJCEXT_VALUE2">
+          <fdt:Value>
+            <fdt:Display string="-40" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;CurrentLimitMax&amp;&amp;CJCEXT_VALUE2">
+          <fdt:Value>
+            <fdt:Display string="85" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;CurrentLimitMin&amp;&amp;AO_UNDERRANGE_VALUE">
+          <fdt:Value>
+            <fdt:Display string="3.5" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;CurrentLimitMax&amp;&amp;AO_UNDERRANGE_VALUE">
+          <fdt:Value>
+            <fdt:Display string="4" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;CurrentLimitMin&amp;&amp;AO_OVERRANGE_VALUE">
+          <fdt:Value>
+            <fdt:Display string="20" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;CurrentLimitMax&amp;&amp;AO_OVERRANGE_VALUE">
+          <fdt:Value>
+            <fdt:Display string="23.6000003814697" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;CurrentLimitMin&amp;&amp;DIAG_OPERATION_MODE">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;CurrentLimitMax&amp;&amp;DIAG_OPERATION_MODE">
+          <fdt:Value>
+            <fdt:Display string="1" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;CurrentLimitMin&amp;&amp;WRITE_PROTECTION_HARDWARE">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;CurrentLimitMax&amp;&amp;WRITE_PROTECTION_HARDWARE">
+          <fdt:Value>
+            <fdt:Display string="1" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;CurrentLimitMin&amp;&amp;DriftMonitoring">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;CurrentLimitMax&amp;&amp;DriftMonitoring">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;CurrentLimitMin&amp;&amp;DriftLimit">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;CurrentLimitMax&amp;&amp;DriftLimit">
+          <fdt:Value>
+            <fdt:Display string="3.4028230607371E+38" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;CurrentLimitMin&amp;&amp;ErrorSignalingText">
+          <fdt:Value>
+            <fdt:Display string="0" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;CurrentLimitMax&amp;&amp;ErrorSignalingText">
+          <fdt:Value>
+            <fdt:Display string="128" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;CurrentLimitMin&amp;&amp;CONSTANT_UNIT_DEG_CELSIUS">
+          <fdt:Value>
+            <fdt:Display string="32" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;CurrentLimitMax&amp;&amp;CONSTANT_UNIT_DEG_CELSIUS">
+          <fdt:Value>
+            <fdt:Display string="32" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;CurrentLimitMin&amp;&amp;Space">
+          <fdt:Value>
+            <fdt:Display string="250" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="&amp;&amp;CurrentLimitMax&amp;&amp;Space">
+          <fdt:Value>
+            <fdt:Display string="250" />
+          </fdt:Value>
+        </fdt:DtmVariable>
+      </fdt:DtmVariables>
+    </ExportedVariables>
+  </DtmDevice>
+</FDT>

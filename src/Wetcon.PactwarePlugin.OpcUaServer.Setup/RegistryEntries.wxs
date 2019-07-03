@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <Fragment>
+        <ComponentGroup Id="RegistryEntries">
+            <Component Id="PactwarePluginRegistryEntries" Guid="a2863d39-39ee-4b65-90af-d2c94f4d54aa" Directory="INSTALLDIR">
+                <RegistryKey Root="HKLM" Key="Software\PACTware\PACTware 5.0\PWADDIN\{2487DD09-1566-4CF9-A604-6AD3148B3858}">
+                    <RegistryValue Type="string" Value="OpcUaServer Plugin"/>
+                    <RegistryValue Name="Manufacturer" Type="string" Value="wetcon GmbH"/>
+                    <RegistryValue Name="Object" Type="string" Value="PluginPW5"/>
+                    <RegistryValue Name="Path" Type="string" Value="[INSTALLDIR]Wetcon.PactwarePlugin.OpcUaServer.dll"/>
+                    <RegistryValue Name="State" Type="integer" Value="1"/>
+                </RegistryKey>
+            </Component>
+        </ComponentGroup>
+    </Fragment>
+</Wix>

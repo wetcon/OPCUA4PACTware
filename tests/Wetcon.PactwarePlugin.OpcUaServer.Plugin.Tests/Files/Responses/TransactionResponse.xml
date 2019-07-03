@@ -1,0 +1,6 @@
+﻿<?xml version="1.0"?>
+<FDT xmlns="x-schema:FDTIOLinkCommunicationSchema.xml" xmlns:fdt="x-schema:FDTDataTypesSchema.xml">
+  <ReadProcessDataResponse communicationReference="d5ebb180-d1c0-4b3b-8952-802240beb57d" direction="input" pdValid="1" errorCode="0" additionalCode="0">
+    <fdt:CommunicationData byteArray="0151"/>
+  </ReadProcessDataResponse>
+</FDT>

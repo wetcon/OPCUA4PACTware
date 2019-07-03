@@ -1,0 +1,409 @@
+﻿<?xml version="1.0"?>
+<FDT xmlns="x-schema:DTMParameterSchema.xml" xmlns:fdt="x-schema:FDTDataTypesSchema.xml" fdt:storageState="persistent" fdt:dataSetState="default" fdt:modifiedInDevice="0">
+  <fdt:DtmDeviceType xmlns:fdt="x-schema:FDTDataTypesSchema.xml" manufacturerId="310" deviceTypeId="372" deviceTypeInformation="C:\ProgramData\IO-Link\Generic IO-Link Device DTM\IO-Link DDs\310\372-IODD1.0.1\ifm-000174-20150804-IODD1.0.1.xml">
+    <fdt:VersionInformation name="O5D100..O5D152 IODD1.0.1" version="V1.0.7" vendor="ifm electronic gmbh (IODDs)" date="2015-08-04"/>
+    <fdt:SupportedLanguages>
+      <fdt:LanguageId languageId="9"/>
+      <fdt:LanguageId languageId="7"/>
+    </fdt:SupportedLanguages>
+    <fdt:BusCategories>
+      <fdt:BusCategory busCategory="2C4CD8B8-D509-4ECB-94A7-019F12569C8B" busCategoryName="IO-Link">
+        <fdt:CommunicationTypeEntry communicationType="required"/>
+      </fdt:BusCategory>
+    </fdt:BusCategories>
+    <fdt:DeviceIcon path="C:\ProgramData\IO-Link\Generic IO-Link Device DTM\IO-Link DDs\IOLinkSlaveDtm.ico"/>
+    <fdt:DeviceTypeVariants>
+      <fdt:DeviceTypeVariant deviceTypeVariant="&lt;Ids name=&quot;O5D100&quot; ioLinkRevision=&quot;16&quot; hardwareRevision=&quot;&quot; firmwareRevision=&quot;&quot; productId=&quot;O5D100&quot;/&gt;"/>
+      <fdt:DeviceTypeVariant deviceTypeVariant="&lt;Ids name=&quot;O5D102&quot; ioLinkRevision=&quot;16&quot; hardwareRevision=&quot;&quot; firmwareRevision=&quot;&quot; productId=&quot;O5D102&quot;/&gt;"/>
+      <fdt:DeviceTypeVariant deviceTypeVariant="&lt;Ids name=&quot;O5D150&quot; ioLinkRevision=&quot;16&quot; hardwareRevision=&quot;&quot; firmwareRevision=&quot;&quot; productId=&quot;O5D150&quot;/&gt;"/>
+      <fdt:DeviceTypeVariant deviceTypeVariant="&lt;Ids name=&quot;O5D152&quot; ioLinkRevision=&quot;16&quot; hardwareRevision=&quot;&quot; firmwareRevision=&quot;&quot; productId=&quot;O5D152&quot;/&gt;"/>
+    </fdt:DeviceTypeVariants>
+  </fdt:DtmDeviceType>
+  <DtmDevice fdt:tag="O5D100..O5D152 IODD1.0.1">
+    <fdt:ChannelReferences>
+      <fdt:ChannelReference idref="InputChannel">
+        <fdt:ChannelInformation>
+          <fdt:BusCategories>
+            <fdt:BusCategory busCategory="2C4CD8B8-D509-4ECB-94A7-019F12569C8B"/>
+          </fdt:BusCategories>
+          <fdt:ChannelModes>
+            <fdt:ChannelMode channelMode="processValue"/>
+          </fdt:ChannelModes>
+        </fdt:ChannelInformation>
+      </fdt:ChannelReference>
+    </fdt:ChannelReferences>
+    <ExportedVariables>
+      <fdt:DtmVariables name="Parameter" descriptor="Root of all parameters">
+        <fdt:DtmVariable name="V_VendorName" descriptor="Vendor Name" statusFlag="ok">
+          <fdt:Value readAccess="1" writeAccess="0">
+            <fdt:Display string="ifm electronic gmbh"/>
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="V_VendorText" descriptor="Vendor Text" statusFlag="ok">
+          <fdt:Value readAccess="1" writeAccess="0">
+            <fdt:Display string="www.ifm.com"/>
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="V_ProductName" descriptor="Product Name" statusFlag="ok">
+          <fdt:Value readAccess="1" writeAccess="0">
+            <fdt:Display string="O5D100"/>
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="V_ProductID" descriptor="Product ID" statusFlag="ok">
+          <fdt:Value readAccess="1" writeAccess="0">
+            <fdt:Display string="O5D100"/>
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="V_ProductText" descriptor="Product Text" statusFlag="ok">
+          <fdt:Value readAccess="1" writeAccess="0">
+            <fdt:Display string="Laser Sensor"/>
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="V_HardwareRevision" descriptor="Hardware Version" statusFlag="ok">
+          <fdt:Value readAccess="1" writeAccess="0">
+            <fdt:Display string="AF"/>
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="V_FirmwareRevision" descriptor="Firmware Version" statusFlag="ok">
+          <fdt:Value readAccess="1" writeAccess="0">
+            <fdt:Display string="341"/>
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="V_ApplicationSpecificName" descriptor="Application Specific Name" statusFlag="ok">
+          <fdt:Value readAccess="1" writeAccess="0">
+            <fdt:Display string="***"/>
+          </fdt:Value>
+        </fdt:DtmVariable>
+        <fdt:DtmVariables name="V_BDC1_SP" descriptor="SP">
+          <fdt:DtmVariable name="V_BDC1_SP_1" descriptor="Switch Point 1" statusFlag="ok">
+            <fdt:Value readAccess="1" writeAccess="0">
+              <fdt:Variant dataType="unsigned" byteLength="2">
+                <fdt:NumberData number="100"/>
+              </fdt:Variant>
+            </fdt:Value>
+            <fdt:Ranges readAccess="0" writeAccess="0">
+              <fdt:Range>
+                <fdt:LowerRange>
+                  <fdt:NumberData number="5"/>
+                </fdt:LowerRange>
+                <fdt:UpperRange>
+                  <fdt:NumberData number="200"/>
+                </fdt:UpperRange>
+              </fdt:Range>
+            </fdt:Ranges>
+          </fdt:DtmVariable>
+          <fdt:DtmVariable name="V_BDC1_SP_2" descriptor="Switch Point 2" statusFlag="ok">
+            <fdt:Value readAccess="1" writeAccess="0">
+              <fdt:Variant dataType="unsigned" byteLength="2">
+                <fdt:NumberData number="0"/>
+              </fdt:Variant>
+            </fdt:Value>
+            <fdt:Ranges readAccess="0" writeAccess="0">
+              <fdt:Range>
+                <fdt:LowerRange>
+                  <fdt:NumberData number="0"/>
+                </fdt:LowerRange>
+                <fdt:UpperRange>
+                  <fdt:NumberData number="0"/>
+                </fdt:UpperRange>
+              </fdt:Range>
+            </fdt:Ranges>
+          </fdt:DtmVariable>
+        </fdt:DtmVariables>
+        <fdt:DtmVariables name="V_BDC1_Config" descriptor="SP">
+          <fdt:DtmVariable name="V_BDC1_Config_1" descriptor="Switchpoint Logic" statusFlag="ok">
+            <fdt:Value readAccess="1" writeAccess="0">
+              <fdt:Variant dataType="unsigned" byteLength="1">
+                <fdt:NumberData number="0"/>
+              </fdt:Variant>
+            </fdt:Value>
+            <fdt:Ranges readAccess="0" writeAccess="0">
+              <fdt:Range>
+                <fdt:LowerRange>
+                  <fdt:NumberData number="0"/>
+                </fdt:LowerRange>
+                <fdt:UpperRange>
+                  <fdt:NumberData number="0"/>
+                </fdt:UpperRange>
+              </fdt:Range>
+              <fdt:Range>
+                <fdt:LowerRange>
+                  <fdt:NumberData number="1"/>
+                </fdt:LowerRange>
+                <fdt:UpperRange>
+                  <fdt:NumberData number="1"/>
+                </fdt:UpperRange>
+              </fdt:Range>
+            </fdt:Ranges>
+          </fdt:DtmVariable>
+          <fdt:DtmVariable name="V_BDC1_Config_2" descriptor="Switchpoint Mode" statusFlag="ok">
+            <fdt:Value readAccess="1" writeAccess="0">
+              <fdt:Variant dataType="unsigned" byteLength="1">
+                <fdt:NumberData number="1"/>
+              </fdt:Variant>
+            </fdt:Value>
+            <fdt:Ranges readAccess="0" writeAccess="0">
+              <fdt:Range>
+                <fdt:LowerRange>
+                  <fdt:NumberData number="1"/>
+                </fdt:LowerRange>
+                <fdt:UpperRange>
+                  <fdt:NumberData number="1"/>
+                </fdt:UpperRange>
+              </fdt:Range>
+            </fdt:Ranges>
+          </fdt:DtmVariable>
+          <fdt:DtmVariable name="V_BDC1_Config_3" descriptor="Switchpoint Hysteresis" statusFlag="ok">
+            <fdt:Value readAccess="1" writeAccess="0">
+              <fdt:Variant dataType="unsigned" byteLength="2">
+                <fdt:NumberData number="0"/>
+              </fdt:Variant>
+            </fdt:Value>
+            <fdt:Ranges readAccess="0" writeAccess="0">
+              <fdt:Range>
+                <fdt:LowerRange>
+                  <fdt:NumberData number="0"/>
+                </fdt:LowerRange>
+                <fdt:UpperRange>
+                  <fdt:NumberData number="0"/>
+                </fdt:UpperRange>
+              </fdt:Range>
+            </fdt:Ranges>
+          </fdt:DtmVariable>
+        </fdt:DtmVariables>
+        <fdt:DtmVariable name="V_Align" descriptor="Align" statusFlag="ok">
+          <fdt:Value readAccess="1" writeAccess="0">
+            <fdt:Variant dataType="unsigned" byteLength="1">
+              <fdt:NumberData number="16"/>
+            </fdt:Variant>
+          </fdt:Value>
+          <fdt:Ranges readAccess="0" writeAccess="0">
+            <fdt:Range>
+              <fdt:LowerRange>
+                <fdt:NumberData number="0"/>
+              </fdt:LowerRange>
+              <fdt:UpperRange>
+                <fdt:NumberData number="100"/>
+              </fdt:UpperRange>
+            </fdt:Range>
+          </fdt:Ranges>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="V_dFOValue" descriptor="dFO" statusFlag="ok">
+          <fdt:Value readAccess="1" writeAccess="0">
+            <fdt:Variant dataType="unsigned" byteLength="2">
+              <fdt:NumberData number="100"/>
+            </fdt:Variant>
+          </fdt:Value>
+          <fdt:Ranges readAccess="0" writeAccess="0">
+            <fdt:Range>
+              <fdt:LowerRange>
+                <fdt:NumberData number="0"/>
+              </fdt:LowerRange>
+              <fdt:UpperRange>
+                <fdt:NumberData number="2000"/>
+              </fdt:UpperRange>
+            </fdt:Range>
+          </fdt:Ranges>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="V_dSValue" descriptor="dS" statusFlag="ok">
+          <fdt:Value readAccess="1" writeAccess="0">
+            <fdt:Variant dataType="unsigned" byteLength="2">
+              <fdt:NumberData number="0"/>
+            </fdt:Variant>
+          </fdt:Value>
+          <fdt:Ranges readAccess="0" writeAccess="0">
+            <fdt:Range>
+              <fdt:LowerRange>
+                <fdt:NumberData number="0"/>
+              </fdt:LowerRange>
+              <fdt:UpperRange>
+                <fdt:NumberData number="2000"/>
+              </fdt:UpperRange>
+            </fdt:Range>
+          </fdt:Ranges>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="V_drValue" descriptor="dr" statusFlag="ok">
+          <fdt:Value readAccess="1" writeAccess="0">
+            <fdt:Variant dataType="unsigned" byteLength="2">
+              <fdt:NumberData number="0"/>
+            </fdt:Variant>
+          </fdt:Value>
+          <fdt:Ranges readAccess="0" writeAccess="0">
+            <fdt:Range>
+              <fdt:LowerRange>
+                <fdt:NumberData number="0"/>
+              </fdt:LowerRange>
+              <fdt:UpperRange>
+                <fdt:NumberData number="2000"/>
+              </fdt:UpperRange>
+            </fdt:Range>
+          </fdt:Ranges>
+        </fdt:DtmVariable>
+        <fdt:DtmVariables name="V_Limit_PDV" descriptor="Process data limits">
+          <fdt:DtmVariable name="V_Limit_PDV_1" descriptor="Min" statusFlag="ok">
+            <fdt:Value readAccess="1" writeAccess="0">
+              <fdt:Variant dataType="unsigned" byteLength="2">
+                <fdt:NumberData number="5"/>
+              </fdt:Variant>
+            </fdt:Value>
+          </fdt:DtmVariable>
+          <fdt:DtmVariable name="V_Limit_PDV_2" descriptor="Max" statusFlag="ok">
+            <fdt:Value readAccess="1" writeAccess="0">
+              <fdt:Variant dataType="unsigned" byteLength="2">
+                <fdt:NumberData number="200"/>
+              </fdt:Variant>
+            </fdt:Value>
+          </fdt:DtmVariable>
+        </fdt:DtmVariables>
+        <fdt:DtmVariable name="V_LaserConfig" descriptor="Laser" statusFlag="ok">
+          <fdt:Value readAccess="1" writeAccess="0">
+            <fdt:Variant dataType="unsigned" byteLength="1">
+              <fdt:NumberData number="1"/>
+            </fdt:Variant>
+          </fdt:Value>
+          <fdt:Ranges readAccess="0" writeAccess="0">
+            <fdt:Range>
+              <fdt:LowerRange>
+                <fdt:NumberData number="0"/>
+              </fdt:LowerRange>
+              <fdt:UpperRange>
+                <fdt:NumberData number="0"/>
+              </fdt:UpperRange>
+            </fdt:Range>
+            <fdt:Range>
+              <fdt:LowerRange>
+                <fdt:NumberData number="1"/>
+              </fdt:LowerRange>
+              <fdt:UpperRange>
+                <fdt:NumberData number="1"/>
+              </fdt:UpperRange>
+            </fdt:Range>
+          </fdt:Ranges>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="V_DisplayConfig" descriptor="Display" statusFlag="ok">
+          <fdt:Value readAccess="1" writeAccess="0">
+            <fdt:Variant dataType="unsigned" byteLength="1">
+              <fdt:NumberData number="1"/>
+            </fdt:Variant>
+          </fdt:Value>
+          <fdt:Ranges readAccess="0" writeAccess="0">
+            <fdt:Range>
+              <fdt:LowerRange>
+                <fdt:NumberData number="0"/>
+              </fdt:LowerRange>
+              <fdt:UpperRange>
+                <fdt:NumberData number="0"/>
+              </fdt:UpperRange>
+            </fdt:Range>
+            <fdt:Range>
+              <fdt:LowerRange>
+                <fdt:NumberData number="1"/>
+              </fdt:LowerRange>
+              <fdt:UpperRange>
+                <fdt:NumberData number="1"/>
+              </fdt:UpperRange>
+            </fdt:Range>
+            <fdt:Range>
+              <fdt:LowerRange>
+                <fdt:NumberData number="2"/>
+              </fdt:LowerRange>
+              <fdt:UpperRange>
+                <fdt:NumberData number="2"/>
+              </fdt:UpperRange>
+            </fdt:Range>
+          </fdt:Ranges>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="V_KeyLock" descriptor="Keylock" statusFlag="ok">
+          <fdt:Value readAccess="1" writeAccess="0">
+            <fdt:Variant dataType="unsigned" byteLength="1">
+              <fdt:NumberData number="1"/>
+            </fdt:Variant>
+          </fdt:Value>
+          <fdt:Ranges readAccess="0" writeAccess="0">
+            <fdt:Range>
+              <fdt:LowerRange>
+                <fdt:NumberData number="0"/>
+              </fdt:LowerRange>
+              <fdt:UpperRange>
+                <fdt:NumberData number="0"/>
+              </fdt:UpperRange>
+            </fdt:Range>
+            <fdt:Range>
+              <fdt:LowerRange>
+                <fdt:NumberData number="1"/>
+              </fdt:LowerRange>
+              <fdt:UpperRange>
+                <fdt:NumberData number="1"/>
+              </fdt:UpperRange>
+            </fdt:Range>
+          </fdt:Ranges>
+        </fdt:DtmVariable>
+        <fdt:DtmVariable name="V_SystemCommand" descriptor="System Command" statusFlag="invalid">
+          <fdt:Value readAccess="0" writeAccess="0">
+            <fdt:Variant dataType="unsigned" byteLength="1">
+              <fdt:NumberData number="0"/>
+            </fdt:Variant>
+          </fdt:Value>
+          <fdt:Ranges readAccess="0" writeAccess="0">
+            <fdt:Range>
+              <fdt:LowerRange>
+                <fdt:NumberData number="130"/>
+              </fdt:LowerRange>
+              <fdt:UpperRange>
+                <fdt:NumberData number="130"/>
+              </fdt:UpperRange>
+            </fdt:Range>
+            <fdt:Range>
+              <fdt:LowerRange>
+                <fdt:NumberData number="240"/>
+              </fdt:LowerRange>
+              <fdt:UpperRange>
+                <fdt:NumberData number="240"/>
+              </fdt:UpperRange>
+            </fdt:Range>
+            <fdt:Range>
+              <fdt:LowerRange>
+                <fdt:NumberData number="241"/>
+              </fdt:LowerRange>
+              <fdt:UpperRange>
+                <fdt:NumberData number="241"/>
+              </fdt:UpperRange>
+            </fdt:Range>
+            <fdt:Range>
+              <fdt:LowerRange>
+                <fdt:NumberData number="242"/>
+              </fdt:LowerRange>
+              <fdt:UpperRange>
+                <fdt:NumberData number="242"/>
+              </fdt:UpperRange>
+            </fdt:Range>
+            <fdt:Range>
+              <fdt:LowerRange>
+                <fdt:NumberData number="243"/>
+              </fdt:LowerRange>
+              <fdt:UpperRange>
+                <fdt:NumberData number="243"/>
+              </fdt:UpperRange>
+            </fdt:Range>
+          </fdt:Ranges>
+        </fdt:DtmVariable>
+        <fdt:DtmVariables name="InputChannel" descriptor="Process data input">
+          <fdt:DtmVariable name="V_PdInT_1" descriptor="Distance">
+            <fdt:Value readAccess="1" writeAccess="0">
+              <fdt:Variant dataType="unsigned" byteLength="2">
+                <fdt:NumberData number="0"/>
+              </fdt:Variant>
+            </fdt:Value>
+          </fdt:DtmVariable>
+          <fdt:DtmVariable name="V_PdInT_2" descriptor="Switchstate [OUT1].">
+            <fdt:Value readAccess="1" writeAccess="0">
+              <fdt:Variant dataType="binary">
+                <fdt:BinaryVariable binData="00"/>
+              </fdt:Variant>
+            </fdt:Value>
+          </fdt:DtmVariable>
+        </fdt:DtmVariables>
+      </fdt:DtmVariables>
+    </ExportedVariables>
+  </DtmDevice>
+</FDT>

@@ -1,0 +1,4 @@
+﻿<?xml version="1.0"?>
+<FDT xmlns="x-schema:FDTIOLinkCommunicationSchema.xml" xmlns:fdt="x-schema:FDTDataTypesSchema.xml">
+  <ConnectResponse communicationReference="d5ebb180-d1c0-4b3b-8952-802240beb57d" errorCode="0" additionalCode="0"/>
+</FDT>

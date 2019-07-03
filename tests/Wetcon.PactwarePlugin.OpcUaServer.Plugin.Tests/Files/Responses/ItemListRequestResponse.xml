@@ -1,0 +1,226 @@
+﻿<FDT xmlns="x-schema:DTMItemListSchema.xml" xmlns:fdt="x-schema:FDTDataTypesSchema.xml">
+  <DtmItemInfoList>
+    <DtmItemInfoGroup fdt:nodeId="" fdt:name="allVariables" label="All Variables">
+      <DtmItemInfoGroup fdt:nodeId="" fdt:name="identification" label="Identification">
+        <DtmItemInfo fdt:nodeId="V_VendorName.69666D20656C656374726F6E696320676D626800000000000000000000000000" fdt:id="V_VendorName" fdt:name="V_VendorName" label="Vendor Name" fdt:dataType="ascii" itemType="specific" fdt:readAccess="1" fdt:writeAccess="0">
+          <fdt:SemanticInformation semanticId="PA.16.0" applicationDomain="FDT_IO_LINK" address="PA.16.0"/>
+          <ItemKind itemKind="others"/>
+        </DtmItemInfo>
+        <DtmItemInfo fdt:nodeId="V_VendorText.7777772E69666D2E636F6D000000000000000000000000000000000000000000" fdt:id="V_VendorText" fdt:name="V_VendorText" label="Vendor Text" fdt:dataType="ascii" itemType="specific" fdt:readAccess="1" fdt:writeAccess="0">
+          <fdt:SemanticInformation semanticId="PA.17.0" applicationDomain="FDT_IO_LINK" address="PA.17.0"/>
+          <ItemKind itemKind="others"/>
+        </DtmItemInfo>
+        <DtmItemInfo fdt:nodeId="V_ProductName.4F35443130300000000000000000000000000000000000000000000000000000" fdt:id="V_ProductName" fdt:name="V_ProductName" label="Product Name" fdt:dataType="ascii" itemType="specific" fdt:readAccess="1" fdt:writeAccess="0">
+          <fdt:SemanticInformation semanticId="PA.18.0" applicationDomain="FDT_IO_LINK" address="PA.18.0"/>
+          <ItemKind itemKind="others"/>
+        </DtmItemInfo>
+        <DtmItemInfo fdt:nodeId="V_ProductID.4F35443130300000000000000000000000000000000000000000000000000000" fdt:id="V_ProductID" fdt:name="V_ProductID" label="Product ID" fdt:dataType="ascii" itemType="specific" fdt:readAccess="1" fdt:writeAccess="0">
+          <fdt:SemanticInformation semanticId="PA.19.0" applicationDomain="FDT_IO_LINK" address="PA.19.0"/>
+          <ItemKind itemKind="others"/>
+        </DtmItemInfo>
+        <DtmItemInfo fdt:nodeId="V_ProductText.4C617365722053656E736F720000000000000000000000000000000000000000" fdt:id="V_ProductText" fdt:name="V_ProductText" label="Product Text" fdt:dataType="ascii" itemType="specific" fdt:readAccess="1" fdt:writeAccess="0">
+          <fdt:SemanticInformation semanticId="PA.20.0" applicationDomain="FDT_IO_LINK" address="PA.20.0"/>
+          <ItemKind itemKind="others"/>
+        </DtmItemInfo>
+        <DtmItemInfo fdt:nodeId="V_HardwareRevision.4146000000000000000000000000000000000000000000000000000000000000" fdt:id="V_HardwareRevision" fdt:name="V_HardwareRevision" label="Hardware Version" fdt:dataType="ascii" itemType="specific" fdt:readAccess="1" fdt:writeAccess="0">
+          <fdt:SemanticInformation semanticId="PA.22.0" applicationDomain="FDT_IO_LINK" address="PA.22.0"/>
+          <ItemKind itemKind="others"/>
+        </DtmItemInfo>
+        <DtmItemInfo fdt:nodeId="V_FirmwareRevision.33343100000000000000000000000000" fdt:id="V_FirmwareRevision" fdt:name="V_FirmwareRevision" label="Firmware Version" fdt:dataType="ascii" itemType="specific" fdt:readAccess="1" fdt:writeAccess="0">
+          <fdt:SemanticInformation semanticId="PA.23.0" applicationDomain="FDT_IO_LINK" address="PA.23.0"/>
+          <ItemKind itemKind="others"/>
+        </DtmItemInfo>
+        <DtmItemInfo fdt:nodeId="V_ApplicationSpecificName.2A2A2A00000000000000000000000000" fdt:id="V_ApplicationSpecificName" fdt:name="V_ApplicationSpecificName" label="Application Specific Name" fdt:dataType="ascii" itemType="specific" fdt:readAccess="1" fdt:writeAccess="1">
+          <fdt:SemanticInformation semanticId="PA.24.0" applicationDomain="FDT_IO_LINK" address="PA.24.0"/>
+          <ItemKind itemKind="others"/>
+        </DtmItemInfo>
+      </DtmItemInfoGroup>
+      <DtmItemInfoGroup fdt:nodeId="" fdt:name="configParameters" label="Parameters">
+        <DtmItemInfo fdt:nodeId="V_Align.11" fdt:id="V_Align" fdt:name="V_Align" label="Align" fdt:dataType="unsigned" itemType="specific" fdt:readAccess="1" fdt:writeAccess="0">
+          <fdt:SemanticInformation semanticId="PA.69.0" applicationDomain="FDT_IO_LINK" address="PA.69.0"/>
+          <ItemKind itemKind="others"/>
+          <RangeDescriptions>
+            <RangeDescription>
+              <LowerRangeDescription>
+                <fdt:NumberData number="0"/>
+              </LowerRangeDescription>
+              <UpperRangeDescription>
+                <fdt:NumberData number="100"/>
+              </UpperRangeDescription>
+            </RangeDescription>
+          </RangeDescriptions>
+        </DtmItemInfo>
+        <DtmItemInfo fdt:nodeId="V_dFOValue.0064" fdt:id="V_dFOValue" fdt:name="V_dFOValue" label="dFO" fdt:dataType="unsigned" itemType="specific" fdt:readAccess="1" fdt:writeAccess="1">
+          <fdt:SemanticInformation semanticId="PA.74.0" applicationDomain="FDT_IO_LINK" address="PA.74.0"/>
+          <ItemKind itemKind="others"/>
+          <RangeDescriptions>
+            <RangeDescription>
+              <LowerRangeDescription>
+                <fdt:NumberData number="0"/>
+              </LowerRangeDescription>
+              <UpperRangeDescription>
+                <fdt:NumberData number="2000"/>
+              </UpperRangeDescription>
+            </RangeDescription>
+          </RangeDescriptions>
+        </DtmItemInfo>
+        <DtmItemInfo fdt:nodeId="V_dSValue.0000" fdt:id="V_dSValue" fdt:name="V_dSValue" label="dS" fdt:dataType="unsigned" itemType="specific" fdt:readAccess="1" fdt:writeAccess="1">
+          <fdt:SemanticInformation semanticId="PA.76.0" applicationDomain="FDT_IO_LINK" address="PA.76.0"/>
+          <ItemKind itemKind="others"/>
+          <RangeDescriptions>
+            <RangeDescription>
+              <LowerRangeDescription>
+                <fdt:NumberData number="0"/>
+              </LowerRangeDescription>
+              <UpperRangeDescription>
+                <fdt:NumberData number="2000"/>
+              </UpperRangeDescription>
+            </RangeDescription>
+          </RangeDescriptions>
+        </DtmItemInfo>
+        <DtmItemInfo fdt:nodeId="V_drValue.0000" fdt:id="V_drValue" fdt:name="V_drValue" label="dr" fdt:dataType="unsigned" itemType="specific" fdt:readAccess="1" fdt:writeAccess="1">
+          <fdt:SemanticInformation semanticId="PA.78.0" applicationDomain="FDT_IO_LINK" address="PA.78.0"/>
+          <ItemKind itemKind="others"/>
+          <RangeDescriptions>
+            <RangeDescription>
+              <LowerRangeDescription>
+                <fdt:NumberData number="0"/>
+              </LowerRangeDescription>
+              <UpperRangeDescription>
+                <fdt:NumberData number="2000"/>
+              </UpperRangeDescription>
+            </RangeDescription>
+          </RangeDescriptions>
+        </DtmItemInfo>
+        <DtmItemInfo fdt:nodeId="V_LaserConfig.01" fdt:id="V_LaserConfig" fdt:name="V_LaserConfig" label="Laser" fdt:dataType="unsigned" itemType="specific" fdt:readAccess="1" fdt:writeAccess="1">
+          <fdt:SemanticInformation semanticId="PA.80.0" applicationDomain="FDT_IO_LINK" address="PA.80.0"/>
+          <ItemKind itemKind="others"/>
+          <ValueDescription>
+            <PossibleEnumerations>
+              <fdt:EnumeratorEntries>
+                <fdt:EnumeratorEntry index="0" name="Laser off"/>
+                <fdt:EnumeratorEntry index="1" name="Laser on"/>
+              </fdt:EnumeratorEntries>
+            </PossibleEnumerations>
+          </ValueDescription>
+        </DtmItemInfo>
+        <DtmItemInfo fdt:nodeId="V_DisplayConfig.01" fdt:id="V_DisplayConfig" fdt:name="V_DisplayConfig" label="Display" fdt:dataType="unsigned" itemType="specific" fdt:readAccess="1" fdt:writeAccess="1">
+          <fdt:SemanticInformation semanticId="PA.96.0" applicationDomain="FDT_IO_LINK" address="PA.96.0"/>
+          <ItemKind itemKind="others"/>
+          <ValueDescription>
+            <PossibleEnumerations>
+              <fdt:EnumeratorEntries>
+                <fdt:EnumeratorEntry index="0" name="Display off"/>
+                <fdt:EnumeratorEntry index="1" name="Display on"/>
+                <fdt:EnumeratorEntry index="2" name="Display rotated"/>
+              </fdt:EnumeratorEntries>
+            </PossibleEnumerations>
+          </ValueDescription>
+        </DtmItemInfo>
+        <DtmItemInfo fdt:nodeId="V_KeyLock.01" fdt:id="V_KeyLock" fdt:name="V_KeyLock" label="Keylock" fdt:dataType="unsigned" itemType="specific" fdt:readAccess="1" fdt:writeAccess="1">
+          <fdt:SemanticInformation semanticId="PA.100.0" applicationDomain="FDT_IO_LINK" address="PA.100.0"/>
+          <ItemKind itemKind="others"/>
+          <ValueDescription>
+            <PossibleEnumerations>
+              <fdt:EnumeratorEntries>
+                <fdt:EnumeratorEntry index="0" name="Locked"/>
+                <fdt:EnumeratorEntry index="1" name="Unlocked"/>
+              </fdt:EnumeratorEntries>
+            </PossibleEnumerations>
+          </ValueDescription>
+        </DtmItemInfo>
+        <DtmItemInfo fdt:nodeId="V_SystemCommand.00" fdt:id="V_SystemCommand" fdt:name="V_SystemCommand" label="System Command" fdt:dataType="unsigned" itemType="specific" fdt:readAccess="0" fdt:writeAccess="1">
+          <fdt:SemanticInformation semanticId="PA.2.0" applicationDomain="FDT_IO_LINK" address="PA.2.0"/>
+          <ItemKind itemKind="others"/>
+          <ValueDescription>
+            <PossibleEnumerations>
+              <fdt:EnumeratorEntries>
+                <fdt:EnumeratorEntry index="130" name="Restore Factory Setting"/>
+                <fdt:EnumeratorEntry index="240" name="Command triggers Event 8DFE to appear"/>
+                <fdt:EnumeratorEntry index="241" name="Command triggers Event 8DFE to disappear"/>
+                <fdt:EnumeratorEntry index="242" name="Command triggers Event 8DFF to appear"/>
+                <fdt:EnumeratorEntry index="243" name="Command triggers Event 8DFF to disappear"/>
+              </fdt:EnumeratorEntries>
+            </PossibleEnumerations>
+          </ValueDescription>
+        </DtmItemInfo>
+        <DtmItemInfoGroup fdt:nodeId="V_BDC1_SP.00640000" fdt:name="V_BDC1_SP" label="SP">
+          <fdt:SemanticInformation semanticId="PA.60.0" applicationDomain="FDT_IO_LINK" address="PA.60.0"/>
+          <DtmItemInfo fdt:nodeId="V_BDC1_SP_1.00640000" fdt:id="V_BDC1_SP_1" fdt:name="V_BDC1_SP_1" label="Switch Point 1" fdt:dataType="unsigned" itemType="specific" fdt:readAccess="1" fdt:writeAccess="1">
+            <fdt:SemanticInformation semanticId="PA.60.1" applicationDomain="FDT_IO_LINK" address="PA.60.1"/>
+            <ItemKind itemKind="others"/>
+            <RangeDescriptions>
+              <RangeDescription>
+                <LowerRangeDescription>
+                  <fdt:NumberData number="5"/>
+                </LowerRangeDescription>
+                <UpperRangeDescription>
+                  <fdt:NumberData number="200"/>
+                </UpperRangeDescription>
+              </RangeDescription>
+            </RangeDescriptions>
+          </DtmItemInfo>
+          <DtmItemInfo fdt:nodeId="V_BDC1_SP_2.00640000" fdt:id="V_BDC1_SP_2" fdt:name="V_BDC1_SP_2" label="Switch Point 2" fdt:dataType="unsigned" itemType="specific" fdt:readAccess="1" fdt:writeAccess="1">
+            <fdt:SemanticInformation semanticId="PA.60.2" applicationDomain="FDT_IO_LINK" address="PA.60.2"/>
+            <ItemKind itemKind="others"/>
+            <ValueDescription>
+              <PossibleEnumerations>
+                <fdt:EnumeratorEntries>
+                  <fdt:EnumeratorEntry index="0" name="(Not used)"/>
+                </fdt:EnumeratorEntries>
+              </PossibleEnumerations>
+            </ValueDescription>
+          </DtmItemInfo>
+        </DtmItemInfoGroup>
+        <DtmItemInfoGroup fdt:nodeId="V_BDC1_Config.00010000" fdt:name="V_BDC1_Config" label="SP">
+          <fdt:SemanticInformation semanticId="PA.61.0" applicationDomain="FDT_IO_LINK" address="PA.61.0"/>
+          <DtmItemInfo fdt:nodeId="V_BDC1_Config_1.00010000" fdt:id="V_BDC1_Config_1" fdt:name="V_BDC1_Config_1" label="Switchpoint Logic" fdt:dataType="unsigned" itemType="specific" fdt:readAccess="1" fdt:writeAccess="1">
+            <fdt:SemanticInformation semanticId="PA.61.1" applicationDomain="FDT_IO_LINK" address="PA.61.1"/>
+            <ItemKind itemKind="others"/>
+            <ValueDescription>
+              <PossibleEnumerations>
+                <fdt:EnumeratorEntries>
+                  <fdt:EnumeratorEntry index="0" name="Closing Contact"/>
+                  <fdt:EnumeratorEntry index="1" name="Break Contact"/>
+                </fdt:EnumeratorEntries>
+              </PossibleEnumerations>
+            </ValueDescription>
+          </DtmItemInfo>
+          <DtmItemInfo fdt:nodeId="V_BDC1_Config_2.00010000" fdt:id="V_BDC1_Config_2" fdt:name="V_BDC1_Config_2" label="Switchpoint Mode" fdt:dataType="unsigned" itemType="specific" fdt:readAccess="1" fdt:writeAccess="1">
+            <fdt:SemanticInformation semanticId="PA.61.2" applicationDomain="FDT_IO_LINK" address="PA.61.2"/>
+            <ItemKind itemKind="others"/>
+            <ValueDescription>
+              <PossibleEnumerations>
+                <fdt:EnumeratorEntries>
+                  <fdt:EnumeratorEntry index="1" name="Single Point"/>
+                </fdt:EnumeratorEntries>
+              </PossibleEnumerations>
+            </ValueDescription>
+          </DtmItemInfo>
+          <DtmItemInfo fdt:nodeId="V_BDC1_Config_3.00010000" fdt:id="V_BDC1_Config_3" fdt:name="V_BDC1_Config_3" label="Switchpoint Hysteresis" fdt:dataType="unsigned" itemType="specific" fdt:readAccess="1" fdt:writeAccess="1">
+            <fdt:SemanticInformation semanticId="PA.61.3" applicationDomain="FDT_IO_LINK" address="PA.61.3"/>
+            <ItemKind itemKind="others"/>
+            <ValueDescription>
+              <PossibleEnumerations>
+                <fdt:EnumeratorEntries>
+                  <fdt:EnumeratorEntry index="0" name="(Not used)"/>
+                </fdt:EnumeratorEntries>
+              </PossibleEnumerations>
+            </ValueDescription>
+          </DtmItemInfo>
+        </DtmItemInfoGroup>
+        <DtmItemInfoGroup fdt:nodeId="V_Limit_PDV.000500C8" fdt:name="V_Limit_PDV" label="Process data limits">
+          <fdt:SemanticInformation semanticId="PA.64.0" applicationDomain="FDT_IO_LINK" address="PA.64.0"/>
+          <DtmItemInfo fdt:nodeId="V_Limit_PDV_1.000500C8" fdt:id="V_Limit_PDV_1" fdt:name="V_Limit_PDV_1" label="Min" fdt:dataType="unsigned" itemType="specific" fdt:readAccess="1" fdt:writeAccess="0">
+            <fdt:SemanticInformation semanticId="PA.64.1" applicationDomain="FDT_IO_LINK" address="PA.64.1"/>
+            <ItemKind itemKind="others"/>
+          </DtmItemInfo>
+          <DtmItemInfo fdt:nodeId="V_Limit_PDV_2.000500C8" fdt:id="V_Limit_PDV_2" fdt:name="V_Limit_PDV_2" label="Max" fdt:dataType="unsigned" itemType="specific" fdt:readAccess="1" fdt:writeAccess="0">
+            <fdt:SemanticInformation semanticId="PA.64.2" applicationDomain="FDT_IO_LINK" address="PA.64.2"/>
+            <ItemKind itemKind="others"/>
+          </DtmItemInfo>
+        </DtmItemInfoGroup>
+      </DtmItemInfoGroup>
+    </DtmItemInfoGroup>
+  </DtmItemInfoList>
+</FDT>

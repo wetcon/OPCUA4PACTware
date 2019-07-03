@@ -1,0 +1,11 @@
+﻿<FDT xmlns="x-schema:DTMItemListSchema.xml" xmlns:fdt="x-schema:FDTDataTypesSchema.xml">
+  <DtmItemList>
+    <DtmItem fdt:id="V_BDC1_SP_1">
+      <TimeStamp fdt:time="2019-04-12T17:32:31.705"/>
+      <Quality qualityBits="good"/>
+      <fdt:Variant dataType="unsigned" byteLength="1">
+        <fdt:NumberData number="18"/>
+      </fdt:Variant>
+    </DtmItem>
+  </DtmItemList>
+</FDT>

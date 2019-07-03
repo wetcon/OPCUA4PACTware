@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WixLocalization Culture="en-US" xmlns="http://schemas.microsoft.com/wix/2006/localization">
+  <String Id="NET462NotInstalled">.NET Framework 4.6.2 or later must be installed prior to installation of this product.</String>
+  <String Id="PWNotInstalled">This product requires PACTware 5 to be installed.</String>
+  <String Id="DowngradeErrorMessage">A newer version of the FielDeviceCloud PACTware Plugin is already installed. Setup will now exit.</String>
+</WixLocalization>

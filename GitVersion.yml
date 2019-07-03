@@ -1,0 +1,6 @@
+next-version: 1.0
+assembly-versioning-scheme: MajorMinorPatchTag
+mode: Mainline
+branches: {}
+ignore:
+  sha: []

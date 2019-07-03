@@ -1,0 +1,8 @@
+﻿<?xml version="1.0"?>
+<FDT xmlns="x-schema:DTMProtocolsSchema.xml" xmlns:fdt="x-schema:FDTDataTypesSchema.xml">
+  <fdt:BusCategories>
+    <fdt:BusCategory busCategory="2C4CD8B8-D509-4ECB-94A7-019F12569C8B" busCategoryName="IO-Link">
+      <fdt:CommunicationTypeEntry communicationType="supported" />
+    </fdt:BusCategory>
+  </fdt:BusCategories>
+</FDT>
