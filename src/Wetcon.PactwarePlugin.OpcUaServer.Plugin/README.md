@@ -34,6 +34,18 @@ Select the plugin in the Add-in manager list and press the **Options** button on
 
 You can edit more OPC UA settings like security, transport quotas and server configurations by locating and editing the `WetconOpcUaServer.Config.xml` file. You can find it in the installation directory or in the `bin/debug` folder of the project if you built the plugin from source. 
 
+**Location of certificates**
+
+Each OPC UA application installation must have an application instance certificate which identifies the application and the machine the application is running on.
+
+By default, the plugin uses a certificate directory store located at `${APPDATA}\wetcon\PACTwarePlugins\OpcUaServer\Certificates\own\`. The _certs_ subdirectory is intended to contain the certificates whereas the _private_ subdirectory contains the private keys. If you want to use your own certificate, make sure to copy the public and private key to the appropriate folders of the certificate directory store and adapt the `WetconOpcUaServer.Config.xml` file accordingly. If the plugin is started for the first time (and no own certificate was provided by an administrator), it will create its own certificate and save it to the directory store.
+
+Trusted (client) certificates are kept in this location: `${APPDATA}\wetcon\PACTwarePlugins\OpcUaServer\Certificates\trusted\certs\`.
+
+It is also possible to use a windows certificate store instead of the directory store.
+
+A convenient tool to administer the application configuration and certificates is the [UA Configuration Tool](http://opcfoundation.github.io/UA-.NETStandard/help/ua_configuration_tool.htm).
+
 **Local Discovery Server**
 
 If you want to enable registering with a Local Discovery Server (LDS), set the value of `<MaxRegistrationInterval>` in the configuration file to a value greater than zero.

@@ -6,7 +6,7 @@
 >
   <ApplicationName>PactwareOpcUaServerPlugin</ApplicationName>
   <ApplicationUri>urn:localhost:wetcon:PactwareOpcUaServerPlugin</ApplicationUri>
-  <ProductUri>http://wetcon.net/pactwareplugin/opcuaserver</ProductUri>
+  <ProductUri>https://www.wetcon.net/fdi-fdt-pactware-opc-ua/</ProductUri>
   <ApplicationType>Server_0</ApplicationType>
 
   <SecurityConfiguration>
@@ -15,7 +15,7 @@
     <ApplicationCertificate>
       <StoreType>Directory</StoreType>
       <StorePath>%AppData%\wetcon\PACTwarePlugins\OpcUaServer\Certificates\own</StorePath>
-      <SubjectName>CN=PactwareOpcUaServerPlugin/O=wetcon/DC=localhost</SubjectName>
+      <SubjectName>CN=PactwareOpcUaServerPlugin, DC=localhost</SubjectName>
     </ApplicationCertificate>
 
     <!-- Where the issuer certificate are stored (certificate authorities) -->

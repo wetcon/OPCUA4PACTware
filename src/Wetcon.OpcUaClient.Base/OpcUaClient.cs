@@ -42,7 +42,7 @@ namespace Wetcon.OpcUaClient.Base
 
         }
 
-        public async virtual Task Initialize(Opc.Ua.Server.StandardServer server)
+        public virtual async Task Initialize(Opc.Ua.Server.StandardServer server)
         {
             var endpoints = server.GetEndpoints();
             if (endpoints.Count == 0)
@@ -54,7 +54,7 @@ namespace Wetcon.OpcUaClient.Base
             await Initialize(firstEndpointUrl);
         }
 
-        public async virtual Task Initialize(string endpointUrl)
+        public virtual async Task Initialize(string endpointUrl)
         {
             var config = new ApplicationConfiguration()
             {
@@ -64,14 +64,14 @@ namespace Wetcon.OpcUaClient.Base
                 {
                     ApplicationCertificate = new CertificateIdentifier
                     {
-                        StoreType = @"Windows",
-                        StorePath = @"CurrentUser\My",
-                        SubjectName = Utils.Format(@"CN={0}, DC={1}", "Wetcon.OpcUaClient", System.Net.Dns.GetHostName())
+                        StoreType = @"Directory",
+                        StorePath = @"%AppData%\wetcon\PACTwarePlugins\OpcUaServer\Certificates\own",
+                        SubjectName = @"CN=Wetcon.OpcUaClient,DC=localhost",
                     },
                     TrustedPeerCertificates = new CertificateTrustList
                     {
-                        StoreType = @"Windows",
-                        StorePath = @"CurrentUser\TrustedPeople",
+                        StoreType = @"Directory",
+                        StorePath = @"%AppData%\wetcon\PACTwarePlugins\OpcUaServer\Certificates\trusted",
                     },
                     NonceLength = 32,
                     AutoAcceptUntrustedCertificates = true
