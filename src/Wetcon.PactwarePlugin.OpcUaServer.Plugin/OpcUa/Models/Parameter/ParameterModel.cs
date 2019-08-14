@@ -130,8 +130,6 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.OpcUa.Models
                 .ReadOfflineDeviceParameters(itemSelectionList);
         }
 
-
-
         private ServiceResult GetValueIDtmParameter(ref object value)
         {
             try

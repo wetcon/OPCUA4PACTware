@@ -49,7 +49,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.Plugin.Tests
 
             var offlineDevice = testServices.CreateOfflineDevice();
             var deviceParameterSet = (ParameterSetModel)offlineDevice.ParameterSet;
-            var result = deviceParameterSet.GetParameters().ToList();
+            var result = deviceParameterSet.GetParameters(CreateServerContext()).ToList();
 
             Assert.AreEqual(2, result.Count);
             Assert.AreEqual(ParameterDataSourceKind.DtmSingleInstanceDataAccess, ((ParameterModel)result[0]).DtmParameter.Source);
@@ -71,7 +71,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.Plugin.Tests
 
             var offlineDevice = testServices.CreateOfflineDevice();
             var deviceParameterSet = (ParameterSetModel)offlineDevice.ParameterSet;
-            var result = deviceParameterSet.GetParameters().ToList();
+            var result = deviceParameterSet.GetParameters(CreateServerContext()).ToList();
 
             Assert.AreEqual(2, result.Count);
             Assert.AreEqual(ParameterDataSourceKind.DtmParameter, ((ParameterModel)result[0]).DtmParameter.Source);
@@ -93,7 +93,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.Plugin.Tests
 
             var offlineDevice = testServices.CreateOfflineDevice();
             var deviceParameterSet = (ParameterSetModel)offlineDevice.ParameterSet;
-            var result = deviceParameterSet.GetParameters().ToList();
+            var result = deviceParameterSet.GetParameters(CreateServerContext()).ToList();
 
             Assert.AreEqual(3, result.Count);
             Assert.AreEqual(ParameterDataSourceKind.DtmSingleInstanceDataAccess, ((ParameterModel)result[0]).DtmParameter.Source);
@@ -113,7 +113,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.Plugin.Tests
 
             var onlineDevice = testServices.CreateOnlineDevice(false);
             var deviceParameterSet = (ParameterSetModel)onlineDevice.ParameterSet;
-            var result = deviceParameterSet.GetParameters().ToList();
+            var result = deviceParameterSet.GetParameters(CreateServerContext()).ToList();
 
             Assert.AreEqual(2, result.Count);
             Assert.AreEqual(ParameterDataSourceKind.DtmSingleDeviceDataAccess, ((ParameterModel)result[0]).DtmParameter.Source);
@@ -131,7 +131,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.Plugin.Tests
 
             var onlineDevice = testServices.CreateOnlineDevice(true);
             var deviceParameterSet = (ParameterSetModel)onlineDevice.ParameterSet;
-            var result = deviceParameterSet.GetParameters().ToList();
+            var result = deviceParameterSet.GetParameters(CreateServerContext()).ToList();
 
             Assert.AreEqual(2, result.Count);
             Assert.IsTrue(result[0] is ProcessParameterModel);
@@ -151,6 +151,13 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.Plugin.Tests
                     id => new DtmParameter(id, string.Empty, string.Empty, Fdt.Models.DtmDataTypeKind.ascii, 0, dataSourceKind)
                 )
             );
+        }
+
+        private Opc.Ua.Server.ServerSystemContext CreateServerContext()
+        {
+            var serverInternal = Substitute.For<Opc.Ua.Server.IServerInternal>();
+
+            return new Opc.Ua.Server.ServerSystemContext(serverInternal);
         }
     }
 }

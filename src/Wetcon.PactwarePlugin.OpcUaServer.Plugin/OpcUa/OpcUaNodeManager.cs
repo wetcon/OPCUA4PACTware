@@ -112,8 +112,8 @@ namespace Wetcon.PactwarePlugin.OpcUaServer
                             var existingParameterIds = parameterSet.Parameters
                                 .Select(p => p.NodeId)
                                 .ToList();
-
-                            parameterSet.ReloadParameters();
+                            
+                            parameterSet.ReloadParameters(SystemContext);
 
                             var obsoleteNodes = existingParameterIds
                                 .Where(p => parameterSet.Parameters.All(n => n.NodeId != p))

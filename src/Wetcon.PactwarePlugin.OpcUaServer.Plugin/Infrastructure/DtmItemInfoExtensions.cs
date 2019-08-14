@@ -36,6 +36,8 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.Infrastructure
         {
             var accessLevel = DtmVariableParser.GetAccessLevel(dtmItemInfo.ReadAccess.ToString(), dtmItemInfo.WriteAccess.ToString());
 
+            // todo: add unit
+
             return new DtmParameter(dtmItemInfo.Id, dtmItemInfo.Name, string.IsNullOrEmpty(dtmItemInfo.Descriptor) ? dtmItemInfo.Label : dtmItemInfo.Descriptor,
                 dtmItemInfo.DataType, accessLevel, parameterDataSourceKind);
         }

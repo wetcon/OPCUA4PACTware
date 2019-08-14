@@ -26,6 +26,7 @@ using System;
 using System.Collections.Generic;
 using log4net;
 using Opc.Ua;
+using Opc.Ua.Server;
 using Wetcon.PactwarePlugin.OpcUaServer.Fdt;
 using Wetcon.PactwarePlugin.OpcUaServer.IODD;
 
@@ -46,7 +47,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.OpcUa.Models
         public List<BaseDataVariableState> Parameters { get; private set; }
 
         /// <summary>
-        /// Initializes a new instance of <see cref="ParameterSetModel"/>
+        /// Initializes a new instance of <see cref="ParameterSetModel"/>.
         /// </summary>
         /// <param name="parent"></param>
         public ParameterSetModel(NodeState parent) : base(parent)
@@ -55,9 +56,9 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.OpcUa.Models
             Parameters = new List<BaseDataVariableState>();
         }
 
-        public void ReloadParameters()
+        public void ReloadParameters(ServerSystemContext context)
         {
-            Parameters = GetParameters();
+            Parameters = GetParameters(context);
         }
 
         /// <inheritdoc/>
@@ -72,7 +73,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.OpcUa.Models
         /// Gets the device parameters models.
         /// </summary>
         /// <returns></returns>
-        public List<BaseDataVariableState> GetParameters()
+        public List<BaseDataVariableState> GetParameters(ServerSystemContext context)
         {
             var parameters = new List<BaseDataVariableState>();
 
@@ -85,6 +86,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.OpcUa.Models
                 {
                     var parameterModel = new ParameterModel(DeviceModel, dtmItemInfo);
                     SetParameterId(parameterModel);
+                    parameterModel.AddUnit(context);
                     parameters.Add(parameterModel);
                 }
 
@@ -97,6 +99,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.OpcUa.Models
                     {
                         var parameterModel = new ProcessParameterModel(DeviceModel, parameter);
                         SetParameterId(parameterModel);
+                        parameterModel.AddUnit(context);
                         parameters.Add(parameterModel);
                     }
                 }

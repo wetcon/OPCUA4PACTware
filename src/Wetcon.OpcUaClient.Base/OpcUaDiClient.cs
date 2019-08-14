@@ -22,8 +22,6 @@
    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 */
 
-using System;
-using System.Linq;
 using System.Threading.Tasks;
 using Opc.Ua;
 
@@ -84,34 +82,6 @@ namespace Wetcon.OpcUaClient.Base
                 string.Empty).ToString();
 
             return new DeviceProperties(manufacturer, model, serialnumber);
-        }
-
-        public StatusCode WriteVariable(NodeId nodeId, int value)
-        {
-            var writeValue = new WriteValue
-            {
-                NodeId = nodeId,
-                AttributeId = Attributes.Value,
-                Value =
-                {
-                    Value = value,
-                    StatusCode = StatusCodes.Good,
-                    ServerTimestamp = DateTime.MinValue,
-                    SourceTimestamp = DateTime.MinValue
-                }
-            };
-
-            var valuesToWrite = new WriteValueCollection
-            {
-                writeValue
-            };
-
-            _session.Write(null, valuesToWrite, out var results, out var info);
-
-            ClientBase.ValidateResponse(results, valuesToWrite);
-            ClientBase.ValidateDiagnosticInfos(info, valuesToWrite);
-
-            return results.First();
         }
     }
 }

@@ -72,6 +72,21 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.OpcUa.Models
             }
         }
 
+        public void AddUnit(Opc.Ua.Server.ServerSystemContext context)
+        {
+            var engineeringUnits = new PropertyState<EUInformation>(this)
+            {
+                Value = new EUInformation("unitName", Constants.ServerNamespaceUri)
+            };
+            var nodeId = new NodeId($"{NodeId.Identifier}.Unit", 2);
+            var qualifiedName = new QualifiedName("EUInformation");
+            var displayName = new LocalizedText("Unit");
+
+            AddChild(engineeringUnits);
+
+            engineeringUnits.Create(context, nodeId, qualifiedName, displayName, true);
+        }
+
         private bool CanWrite => (AccessLevel & AccessLevels.CurrentWrite) != 0;
 
         private bool CanRead => (AccessLevel & AccessLevels.CurrentRead) != 0;
