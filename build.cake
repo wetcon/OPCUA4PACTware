@@ -181,7 +181,7 @@ Task("WiXCandle")
         NoLogo = true,
         Defines = new Dictionary<string, string> 
         {
-            { "Version", gitVersion.SemVer },
+            { "Version", gitVersion.MajorMinorPatch },
             { "SourceDir", "./src/Wetcon.PactwarePlugin.OpcUaServer.Setup/" }
         }
     });
