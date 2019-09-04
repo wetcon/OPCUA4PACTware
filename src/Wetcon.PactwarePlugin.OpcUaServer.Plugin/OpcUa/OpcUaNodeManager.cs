@@ -202,7 +202,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer
         {
             if (e.Success)
             {
-                UpdateDeviceSet(e.ProjectNode);
+                RemoveDeviceNodes(e.ProjectNode);
             }
         }
 
@@ -222,7 +222,40 @@ namespace Wetcon.PactwarePlugin.OpcUaServer
             }
         }
 
-        private void UpdateDeviceSet(IPACTwareProjectNode projectNodeToExclude = null)
+        private void RemoveDeviceNodes(IPACTwareProjectNode projectNode)
+        {
+            if (_pactwareUIKernel?.PACTwareKernel?.Project == null)
+            {
+                return;
+            }
+
+            try
+            {
+                s_log.Info("Removing device nodes...");
+                lock (Lock)
+                {
+                    var devices = _pactwareUIKernel.GetDeviceProjectNodes(projectNode);
+                    var offlineNodes = FindChildNodes<BaseDeviceModel>(DeviceSetNode).ToList();
+                    var nodesToDelete = offlineNodes
+                        .Where(node => devices.All(d => !ReferenceEquals(d, node.PactwareProjectNode)))
+                        .ToList();
+
+                    foreach (var node in nodesToDelete)
+                    {
+                        node.FdtService?.OnUnloadProjectNode();
+                        DeleteNode(SystemContext, node.NodeId);
+                    }
+                }
+                s_log.Info("Finished removing device nodes...");
+            }
+            catch (Exception ex)
+            {
+                s_log.Error(nameof(RemoveDeviceNodes) + " error.", ex);
+                throw;
+            }
+        }
+
+        private void UpdateDeviceSet()
         {
             try
             {
@@ -233,24 +266,17 @@ namespace Wetcon.PactwarePlugin.OpcUaServer
 
                 s_log.Info("Updating device nodes...");
 
-                var devices = _pactwareUIKernel.GetDeviceProjectNodes(projectNodeToExclude);
-
                 lock (Lock)
                 {
+
+                    var devices = _pactwareUIKernel.GetDeviceProjectNodes();
                     var offlineDeviceNodes = FindChildNodes<BaseDeviceModel>(DeviceSetNode).ToArray();
-                    // Delete Device nodes not valid anymore.
-                    var nodesToDelete = offlineDeviceNodes.Where(n =>
-                        devices.All(d => !ReferenceEquals(d, n.PactwareProjectNode)));
-                    nodesToDelete.ToList().ForEach(n =>
-                    {
-                        n.FdtService?.OnUnloadProjectNode();
-                        DeleteNode(SystemContext, n.NodeId);
-                    });
 
                     foreach (var device in devices)
                     {
                         var offlineDeviceNode = offlineDeviceNodes.FirstOrDefault(d =>
                             d.PactwareProjectNode == device);
+
                         if (offlineDeviceNode != null)
                         {
                             // Device node already exists.
