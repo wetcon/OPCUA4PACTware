@@ -36,9 +36,26 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.Infrastructure
     public class DtmInterface<T> : IDisposable where T : class
     {
         private readonly IPACTwareProjectNode _projectNode;
-        private T _objectPointer;
+        private bool _disposed;
+        private object _objectPointer;
 
-        public T ObjectPointer => _objectPointer = _objectPointer ?? GetObjectPointer();
+        public T ObjectPointer
+        {
+            get
+            {
+                if (_disposed)
+                {
+                    throw new ObjectDisposedException(ToString());
+                }
+
+                if (_objectPointer == null)
+                {
+                    _objectPointer = GetObjectPointer();
+                }
+
+                return _objectPointer as T;
+            }
+        }
 
         private DtmInterface(IPACTwareProjectNode projectNode)
         {
@@ -53,14 +70,18 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.Infrastructure
 
         public void Dispose()
         {
-            ReleaseObjectPointer();
+            if (!_disposed)
+            {
+                ReleaseObjectPointer();
+                _disposed = true;
+            }
         }
 
         /// <summary>
         /// Returns the object pointer from a project node.
         /// </summary>
         /// <returns>The object pointer or <see langword="null"/>.</returns>
-        private T GetObjectPointer()
+        private object GetObjectPointer()
         {
             if (null == _projectNode)
             {
@@ -68,14 +89,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.Infrastructure
             }
 
             var result = _projectNode.BeginGetObjectPointer(clsGuid.GetGuid(), null, null);
-            var pointer = _projectNode.EndGetObjectPointer(result);
-
-            if (pointer is T objectPointer)
-            {
-                return objectPointer;
-            }
-
-            return null;
+            return _projectNode.EndGetObjectPointer(result);
         }
 
         /// <summary>
@@ -83,14 +97,14 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.Infrastructure
         /// </summary>
         private void ReleaseObjectPointer()
         {
-            if (null == _projectNode)
+            if (null == _projectNode || null == _objectPointer)
             {
                 return;
             }
 
             var result = _projectNode.BeginReleaseObjectPointer(clsGuid.GetGuid(), null, null);
-
             _projectNode.EndReleaseObjectPointer(result);
+            _objectPointer = null;
         }
     }
 }
