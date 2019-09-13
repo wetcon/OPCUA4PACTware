@@ -70,13 +70,13 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.Plugin.Tests
             Assert.AreEqual(ProcessDataType.UIntegerT, uintItem.DataType);
             Assert.AreEqual(4, uintItem.BitOffset);
             Assert.AreEqual(12, uintItem.BitLength);
-            Assert.AreEqual("TN_PDV1", uintItem.DisplayName);
+            Assert.AreEqual("Distance", uintItem.DisplayName);
 
             var booleanItem = items[1];
 
             Assert.AreEqual(ProcessDataType.BooleanT, booleanItem.DataType);
             Assert.AreEqual(0, booleanItem.BitOffset);
-            Assert.AreEqual("TN_PDV2", booleanItem.DisplayName);
+            Assert.AreEqual("Switchstate [OUT1].", booleanItem.DisplayName);
         }
 
         [TestMethod]
@@ -86,7 +86,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.Plugin.Tests
             var interpreter = new ProcessDataInterpreter("0151"); // 21, 1            
 
             var uintValue = interpreter.Read(items[0]);
-            Assert.AreEqual(21, uintValue);
+            Assert.AreEqual((ulong)21, uintValue);
 
             var booleanValue = interpreter.Read(items[1]);
             Assert.IsTrue((bool)booleanValue);
