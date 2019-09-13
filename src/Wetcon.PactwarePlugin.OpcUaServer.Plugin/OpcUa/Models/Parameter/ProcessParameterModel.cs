@@ -26,8 +26,8 @@ using System;
 using System.ComponentModel;
 using log4net;
 using Opc.Ua;
+using Wetcon.IoLink.Helper;
 using Wetcon.PactwarePlugin.OpcUaServer.Fdt;
-using Wetcon.PactwarePlugin.OpcUaServer.IODD;
 
 namespace Wetcon.PactwarePlugin.OpcUaServer.OpcUa.Models
 {
@@ -37,28 +37,31 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.OpcUa.Models
     public class ProcessParameterModel : BaseParameterModel
     {
         private static readonly ILog s_log = LogManager.GetLogger(typeof(ProcessParameterModel));
+        private readonly string _nodeName;
 
-        public ProcessDataRecord ProcessDataRecord { get; }
+        public ProcessMetaDataRecord ProcessMetaDataRecord { get; }
 
         /// <summary>
         /// Initializes a new instance of <see cref="ParameterModel"/>.
         /// </summary>
         /// <param name="deviceModel"></param>
         /// <param name="processDataRecord"></param>
-        public ProcessParameterModel(NodeState deviceModel, ProcessDataRecord processDataRecord) : base(deviceModel, AccessLevels.CurrentRead)
+        public ProcessParameterModel(NodeState deviceModel, ProcessMetaDataRecord processDataRecord)
+            : base(deviceModel, AccessLevels.CurrentRead)
         {
-            ProcessDataRecord = processDataRecord;
-            ParameterId = processDataRecord.Name;
-            ParameterName = processDataRecord.Name;
-            DisplayName = new LocalizedText(processDataRecord.Name);
+            ProcessMetaDataRecord = processDataRecord;
+            _nodeName = $"{ProcessMetaDataRecord.ParentId ?? "ProcessData"}.{ProcessMetaDataRecord.DisplayName}";
+            ParameterId = _nodeName;
+            ParameterName = _nodeName;
+            DisplayName = new LocalizedText(_nodeName);
             TypeDefinitionId = VariableTypeIds.BaseDataVariableType;
-            DataType = GetOpcUaDataTypeId(processDataRecord.Type);
+            DataType = GetOpcUaDataTypeId(processDataRecord.DataType);
         }
 
         protected override void Initialize(ISystemContext context)
         {
             base.Initialize(context);
-            Description = new LocalizedText("Process Parameter " + ProcessDataRecord.Name);
+            Description = new LocalizedText("Process Parameter " + _nodeName);
         }
 
         protected override ServiceResult GetValue(ref object value, ref StatusCode statusCode, ref DateTime timestamp)
@@ -96,14 +99,21 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.OpcUa.Models
             }
         }
 
-        private NodeId GetOpcUaDataTypeId(DataType dataType)
+        private NodeId GetOpcUaDataTypeId(ProcessDataType dataType)
         {
             switch (dataType)
             {
-                case IODD.DataType.Boolean:
+                case ProcessDataType.BooleanT:
+                    return DataTypeIds.Boolean;
+                case ProcessDataType.UIntegerT:
+                    return DataTypeIds.UInt64;
+                case ProcessDataType.IntegerT:
+                    return DataTypeIds.Int64;
+                case ProcessDataType.Float32T:
+                    return DataTypeIds.Float;
+                case ProcessDataType.StringT:
                     return DataTypeIds.String;
-                case IODD.DataType.UInteger:
-                    return DataTypeIds.UInt32;
+
                 default:
                     throw new InvalidEnumArgumentException(dataType.ToString());
             }
@@ -116,8 +126,8 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.OpcUa.Models
                 return new DataValue(StatusCodes.Bad) { SourceTimestamp = DateTime.Now };
             }
 
-            var processData = new ProcessData(response);
-            var value = ProcessDataRecord.GetValue(processData);
+            var interpreter = new ProcessDataInterpreter(response);
+            var value = interpreter.Read(ProcessMetaDataRecord);
 
             return new DataValue(new Variant(value)) { SourceTimestamp = DateTime.Now };
         }

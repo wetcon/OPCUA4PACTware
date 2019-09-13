@@ -69,11 +69,16 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.Plugin.Tests
         public OpcUaClient.Base.OpcUaClient Client { get; }
         public OpcUaServer Server { get; }
 
-        public NodeId DeviceSetNodeId => Opc.Ua.Di.ObjectIds.DeviceSet.ToNodeId(Server.CurrentInstance.NamespaceUris);
+        public NodeId DeviceSetNodeId => Opc.Ua.Di.ObjectIds
+            .DeviceSet
+            .ToNodeId(Server.CurrentInstance.NamespaceUris);
 
-        public NodeId GetNodeIdByDisplayName(ReferenceDescriptionCollection referenceDescriptionCollection, string displayName)
+        public NodeId GetNodeIdByDisplayName(ReferenceDescriptionCollection referenceDescriptionCollection,
+            string displayName)
         {
-            var expandedNodeId = referenceDescriptionCollection.First(rd => rd.DisplayName.Text.Equals(displayName)).NodeId;
+            var expandedNodeId = referenceDescriptionCollection
+                .First(rd => rd.DisplayName.Text.Equals(displayName))
+                .NodeId;
 
             return expandedNodeId.ToNodeId(Server.CurrentInstance.NamespaceUris);
         }

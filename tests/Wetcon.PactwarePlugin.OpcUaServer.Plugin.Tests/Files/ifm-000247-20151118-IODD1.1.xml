@@ -1,0 +1,1075 @@
+<?xml version="1.0" encoding="utf-8"?>
+<IODevice xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.io-link.com/IODD/2010/10" xsi:schemaLocation="http://www.io-link.com/IODD/2010/10 IODD1.1.xsd">
+  <DocumentInfo version="V1.0.0.13" releaseDate="2015-11-18" copyright="Copyright 2015, Builder: 2.5.2.6, Time: 12:32:10" />
+  <ProfileHeader>
+    <ProfileIdentification>IO Device Profile</ProfileIdentification>
+    <ProfileRevision>1.1</ProfileRevision>
+    <ProfileName>Device Profile for IO Devices</ProfileName>
+    <ProfileSource>IO-Link Consortium</ProfileSource>
+    <ProfileClassID>Device</ProfileClassID>
+    <ISO15745Reference>
+      <ISO15745Part>1</ISO15745Part>
+      <ISO15745Edition>1</ISO15745Edition>
+      <ProfileTechnology>IODD</ProfileTechnology>
+    </ISO15745Reference>
+  </ProfileHeader>
+  <ProfileBody>
+    <DeviceIdentity vendorId="310" vendorName="ifm electronic gmbh" deviceId="583">
+      <VendorText textId="TI_VendorText" />
+      <VendorUrl textId="TI_VendorUrl" />
+      <VendorLogo name="ifm-logo.png" />
+      <DeviceName textId="TI_DeviceName" />
+      <DeviceFamily textId="TI_DeviceFamily" />
+      <DeviceVariantCollection>
+        <DeviceVariant productId="TN7511" deviceSymbol="ifm-TN-NG-pic.png" deviceIcon="ifm-TN-NG-icon.png">
+          <Name textId="TI_ProductName0" />
+          <Description textId="TI_ProductDescr0" />
+        </DeviceVariant>
+      </DeviceVariantCollection>
+    </DeviceIdentity>
+    <DeviceFunction>
+      <Features blockParameter="true" dataStorage="true" profileCharacteristic="1 32768 32770 32771">
+        <SupportedAccessLocks localUserInterface="true" dataStorage="true" parameter="false" localParameterization="false" />
+      </Features>
+      <VariableCollection>
+        <StdVariableRef id="V_DirectParameters_1" />
+        <StdVariableRef id="V_DirectParameters_2" />
+        <StdVariableRef id="V_SystemCommand">
+          <StdSingleValueRef value="130" />
+          <SingleValue value="161">
+            <Name textId="TI_SysCmd161_Name" />
+          </SingleValue>
+          <SingleValue value="162">
+            <Name textId="TI_SysCmd162_Name" />
+          </SingleValue>
+          <SingleValue value="163">
+            <Name textId="TI_SysCmd163_Name" />
+          </SingleValue>
+          <SingleValue value="240">
+            <Name textId="TI_SysCmd240_Name" />
+          </SingleValue>
+          <SingleValue value="241">
+            <Name textId="TI_SysCmd241_Name" />
+          </SingleValue>
+          <SingleValue value="242">
+            <Name textId="TI_SysCmd242_Name" />
+          </SingleValue>
+          <SingleValue value="243">
+            <Name textId="TI_SysCmd243_Name" />
+          </SingleValue>
+          <SingleValue value="255">
+            <Name textId="TI_SysCmd255_Name" />
+          </SingleValue>
+        </StdVariableRef>
+        <StdVariableRef id="V_DeviceAccessLocks">
+          <StdRecordItemRef subindex="2" defaultValue="false" />
+          <StdRecordItemRef subindex="4" defaultValue="false" />
+        </StdVariableRef>
+        <StdVariableRef id="V_VendorName" fixedLengthRestriction="19" defaultValue="ifm electronic gmbh" />
+        <StdVariableRef id="V_VendorText" fixedLengthRestriction="11" defaultValue="www.ifm.com" />
+        <StdVariableRef id="V_ProductName" fixedLengthRestriction="6" defaultValue="TN7511" />
+        <StdVariableRef id="V_ProductID" fixedLengthRestriction="6" defaultValue="TN7511" />
+        <StdVariableRef id="V_ProductText" fixedLengthRestriction="29" defaultValue="Electronic temperature sensor" />
+        <StdVariableRef id="V_SerialNumber" fixedLengthRestriction="12" />
+        <StdVariableRef id="V_HardwareRevision" fixedLengthRestriction="2" />
+        <StdVariableRef id="V_FirmwareRevision" fixedLengthRestriction="5" />
+        <StdVariableRef id="V_ApplicationSpecificTag" fixedLengthRestriction="32" defaultValue="***" />
+        <StdVariableRef id="V_DeviceStatus" defaultValue="0" />
+        <StdVariableRef id="V_DetailedDeviceStatus" defaultValue="0x00,0x00,0x00" fixedLengthRestriction="7" />
+        <StdVariableRef id="V_ProcessDataInput" />
+        <Variable id="V_P-n" index="500" accessRights="rw" defaultValue="0">
+          <Datatype xsi:type="UIntegerT" bitLength="8">
+            <SingleValue value="0">
+              <Name textId="TI_P-n_SV_0" />
+            </SingleValue>
+            <SingleValue value="1">
+              <Name textId="TI_P-n_SV_1" />
+            </SingleValue>
+          </Datatype>
+          <Name textId="TI_P-n_Name" />
+          <Description textId="TI_P-n_Description" />
+        </Variable>
+        <Variable id="V_FOU1" index="531" accessRights="rw" defaultValue="4">
+          <Datatype xsi:type="UIntegerT" bitLength="8">
+            <SingleValue value="2">
+              <Name textId="TI_FOU1_SV_0" />
+            </SingleValue>
+            <SingleValue value="4">
+              <Name textId="TI_FOU1_SV_1" />
+            </SingleValue>
+          </Datatype>
+          <Name textId="TI_FOU1_Name" />
+          <Description textId="TI_FOU1_Description" />
+        </Variable>
+        <Variable id="V_FOU2" index="532" accessRights="rw" defaultValue="4">
+          <Datatype xsi:type="UIntegerT" bitLength="8">
+            <SingleValue value="2">
+              <Name textId="TI_FOU2_SV_0" />
+            </SingleValue>
+            <SingleValue value="4">
+              <Name textId="TI_FOU2_SV_1" />
+            </SingleValue>
+          </Datatype>
+          <Name textId="TI_FOU2_Name" />
+          <Description textId="TI_FOU2_Description" />
+        </Variable>
+        <Variable id="V_Loc" index="550" accessRights="rw" defaultValue="1">
+          <Datatype xsi:type="UIntegerT" bitLength="8">
+            <SingleValue value="0">
+              <Name textId="TI_Loc_SV_0" />
+            </SingleValue>
+            <SingleValue value="1">
+              <Name textId="TI_Loc_SV_1" />
+            </SingleValue>
+          </Datatype>
+          <Name textId="TI_Loc_Name" />
+          <Description textId="TI_Loc_Description" />
+        </Variable>
+        <Variable id="V_uni" index="551" accessRights="rw" defaultValue="0">
+          <Datatype xsi:type="UIntegerT" bitLength="8">
+            <SingleValue value="0">
+              <Name textId="TI_uni_SV_0" />
+            </SingleValue>
+            <SingleValue value="1">
+              <Name textId="TI_uni_SV_1" />
+            </SingleValue>
+          </Datatype>
+          <Name textId="TI_uni_Name" />
+          <Description textId="TI_uni_Description" />
+        </Variable>
+        <Variable id="V_diS" index="552" accessRights="rw">
+          <Datatype xsi:type="RecordT" bitLength="16" subindexAccessSupported="false">
+            <RecordItem subindex="1" bitOffset="7">
+              <SimpleDatatype xsi:type="BooleanT">
+                <SingleValue value="false">
+                  <Name textId="TI_diS_SV_OFF_false" />
+                </SingleValue>
+                <SingleValue value="true">
+                  <Name textId="TI_diS_SV_OFF_true" />
+                </SingleValue>
+              </SimpleDatatype>
+              <Name textId="TI_diS_Off" />
+            </RecordItem>
+            <RecordItem subindex="2" bitOffset="6">
+              <SimpleDatatype xsi:type="BooleanT">
+                <SingleValue value="false">
+                  <Name textId="TI_diS_SV_ROT_false" />
+                </SingleValue>
+                <SingleValue value="true">
+                  <Name textId="TI_diS_SV_ROT_true" />
+                </SingleValue>
+              </SimpleDatatype>
+              <Name textId="TI_diS_Rot" />
+            </RecordItem>
+            <RecordItem subindex="3" bitOffset="0">
+              <SimpleDatatype xsi:type="UIntegerT" bitLength="6">
+                <SingleValue value="1">
+                  <Name textId="TI_diS_SV_Update_d1" />
+                </SingleValue>
+                <SingleValue value="2">
+                  <Name textId="TI_diS_SV_Update_d2" />
+                </SingleValue>
+                <SingleValue value="4">
+                  <Name textId="TI_diS_SV_Update_d3" />
+                </SingleValue>
+              </SimpleDatatype>
+              <Name textId="TI_diS_Refresh" />
+            </RecordItem>
+          </Datatype>
+          <RecordItemInfo subindex="1" defaultValue="false" />
+          <RecordItemInfo subindex="2" defaultValue="false" />
+          <RecordItemInfo subindex="3" defaultValue="2" />
+          <Name textId="TI_diS_Name" />
+          <Description textId="TI_diS_Descr" />
+        </Variable>
+        <Variable id="V_coLr" index="554" accessRights="rw" defaultValue="2">
+          <Datatype xsi:type="UIntegerT" bitLength="8">
+            <SingleValue value="2">
+              <Name textId="TI_coLr_SV_0" />
+            </SingleValue>
+            <SingleValue value="3">
+              <Name textId="TI_coLr_SV_1" />
+            </SingleValue>
+            <SingleValue value="4">
+              <Name textId="TI_coLr_SV_2" />
+            </SingleValue>
+            <SingleValue value="5">
+              <Name textId="TI_coLr_SV_3" />
+            </SingleValue>
+            <SingleValue value="6">
+              <Name textId="TI_coLr_SV_4" />
+            </SingleValue>
+            <SingleValue value="7">
+              <Name textId="TI_coLr_SV_5" />
+            </SingleValue>
+            <SingleValue value="8">
+              <Name textId="TI_coLr_SV_6" />
+            </SingleValue>
+            <SingleValue value="9">
+              <Name textId="TI_coLr_SV_7" />
+            </SingleValue>
+            <SingleValue value="10">
+              <Name textId="TI_coLr_SV_8" />
+            </SingleValue>
+            <SingleValue value="11">
+              <Name textId="TI_coLr_SV_9" />
+            </SingleValue>
+          </Datatype>
+          <Name textId="TI_coLr_Name" />
+          <Description textId="TI_coLr_Description" />
+        </Variable>
+        <Variable id="V_cFL" index="555" accessRights="rw" defaultValue="-500">
+          <Datatype xsi:type="IntegerT" bitLength="16">
+            <ValueRange lowerValue="-500" upperValue="1450" />
+          </Datatype>
+          <Name textId="TI_cFL_Name" />
+          <Description textId="TI_cFL_Description" />
+        </Variable>
+        <Variable id="V_cFH" index="556" accessRights="rw" defaultValue="1500">
+          <Datatype xsi:type="IntegerT" bitLength="16">
+            <ValueRange lowerValue="-450" upperValue="1500" />
+          </Datatype>
+          <Name textId="TI_cFH_Name" />
+          <Description textId="TI_cFH_Description" />
+        </Variable>
+        <Variable id="V_Hi" index="560" accessRights="ro" dynamic="true">
+          <Datatype xsi:type="IntegerT" bitLength="16">
+            <SingleValue value="8184">
+              <Name textId="TI_OL_Name" />
+            </SingleValue>
+            <ValueRange lowerValue="-500" upperValue="1500" />
+            <SingleValue value="-8184">
+              <Name textId="TI_UL_Name" />
+            </SingleValue>
+          </Datatype>
+          <Name textId="TI_Hi_Name" />
+          <Description textId="TI_Hi_Description" />
+        </Variable>
+        <Variable id="V_Lo" index="561" accessRights="ro" dynamic="true">
+          <Datatype xsi:type="IntegerT" bitLength="16">
+            <SingleValue value="8184">
+              <Name textId="TI_OL_Name" />
+            </SingleValue>
+            <ValueRange lowerValue="-500" upperValue="1500" />
+            <SingleValue value="-8184">
+              <Name textId="TI_UL_Name" />
+            </SingleValue>
+          </Datatype>
+          <Name textId="TI_Lo_Name" />
+          <Description textId="TI_Lo_Description" />
+        </Variable>
+        <Variable id="V_ou1" index="580" accessRights="rw" defaultValue="3">
+          <Datatype xsi:type="UIntegerT" bitLength="8">
+            <SingleValue value="3">
+              <Name textId="TI_ou1_SV_0" />
+            </SingleValue>
+            <SingleValue value="4">
+              <Name textId="TI_ou1_SV_1" />
+            </SingleValue>
+            <SingleValue value="5">
+              <Name textId="TI_ou1_SV_2" />
+            </SingleValue>
+            <SingleValue value="6">
+              <Name textId="TI_ou1_SV_3" />
+            </SingleValue>
+          </Datatype>
+          <Name textId="TI_ou1_Name" />
+          <Description textId="TI_ou1_Description" />
+        </Variable>
+        <Variable id="V_VDMA-dS1" index="581" accessRights="rw" defaultValue="0">
+          <Datatype xsi:type="UIntegerT" bitLength="16">
+            <ValueRange lowerValue="0" upperValue="500" />
+          </Datatype>
+          <Name textId="TI_VDMA-dS1_Name" />
+          <Description textId="TI_VDMA-dS1_Description" />
+        </Variable>
+        <Variable id="V_VDMA-dr1" index="582" accessRights="rw" defaultValue="0">
+          <Datatype xsi:type="UIntegerT" bitLength="16">
+            <ValueRange lowerValue="0" upperValue="500" />
+          </Datatype>
+          <Name textId="TI_VDMA-dr1_Name" />
+          <Description textId="TI_VDMA-dr1_Description" />
+        </Variable>
+        <Variable id="V_SP_FH1" index="583" accessRights="rw" defaultValue="600">
+          <Datatype xsi:type="IntegerT" bitLength="16">
+            <ValueRange lowerValue="-498" upperValue="1500" />
+          </Datatype>
+          <Name textId="TI_SP_FH1_Name" />
+          <Description textId="TI_SP_FH1_Description" />
+        </Variable>
+        <Variable id="V_rP_FL1" index="584" accessRights="rw" defaultValue="500">
+          <Datatype xsi:type="IntegerT" bitLength="16">
+            <ValueRange lowerValue="-500" upperValue="1498" />
+          </Datatype>
+          <Name textId="TI_rP_FL1_Name" />
+          <Description textId="TI_rP_FL1_Description" />
+        </Variable>
+        <Variable id="V_ou2" index="590" accessRights="rw" defaultValue="3">
+          <Datatype xsi:type="UIntegerT" bitLength="8">
+            <SingleValue value="3">
+              <Name textId="TI_ou2_SV_0" />
+            </SingleValue>
+            <SingleValue value="4">
+              <Name textId="TI_ou2_SV_1" />
+            </SingleValue>
+            <SingleValue value="5">
+              <Name textId="TI_ou2_SV_2" />
+            </SingleValue>
+            <SingleValue value="6">
+              <Name textId="TI_ou2_SV_3" />
+            </SingleValue>
+          </Datatype>
+          <Name textId="TI_ou2_Name" />
+          <Description textId="TI_ou2_Description" />
+        </Variable>
+        <Variable id="V_VDMA-dS2" index="591" accessRights="rw" defaultValue="0">
+          <Datatype xsi:type="UIntegerT" bitLength="16">
+            <ValueRange lowerValue="0" upperValue="500" />
+          </Datatype>
+          <Name textId="TI_VDMA-dS2_Name" />
+          <Description textId="TI_VDMA-dS2_Description" />
+        </Variable>
+        <Variable id="V_VDMA-dr2" index="592" accessRights="rw" defaultValue="0">
+          <Datatype xsi:type="UIntegerT" bitLength="16">
+            <ValueRange lowerValue="0" upperValue="500" />
+          </Datatype>
+          <Name textId="TI_VDMA-dr2_Name" />
+          <Description textId="TI_VDMA-dr2_Description" />
+        </Variable>
+        <Variable id="V_SP_FH2" index="593" accessRights="rw" defaultValue="1200">
+          <Datatype xsi:type="IntegerT" bitLength="16">
+            <ValueRange lowerValue="-498" upperValue="1500" />
+          </Datatype>
+          <Name textId="TI_SP_FH2_Name" />
+          <Description textId="TI_SP_FH2_Description" />
+        </Variable>
+        <Variable id="V_rP_FL2" index="594" accessRights="rw" defaultValue="1000">
+          <Datatype xsi:type="IntegerT" bitLength="16">
+            <ValueRange lowerValue="-500" upperValue="1498" />
+          </Datatype>
+          <Name textId="TI_rP_FL2_Name" />
+          <Description textId="TI_rP_FL2_Description" />
+        </Variable>
+        <Variable id="V_coFU" index="681" accessRights="rw" defaultValue="0">
+          <Datatype xsi:type="IntegerT" bitLength="16">
+            <ValueRange lowerValue="-100" upperValue="100" />
+          </Datatype>
+          <Name textId="TI_coFU_Name" />
+          <Description textId="TI_coFU_Description" />
+        </Variable>
+      </VariableCollection>
+      <ProcessDataCollection>
+        <ProcessData id="V_PdT">
+          <ProcessDataIn id="V_PdInT" bitLength="16">
+            <Datatype xsi:type="RecordT" bitLength="16" subindexAccessSupported="false">
+              <RecordItem bitOffset="2" subindex="1">
+                <SimpleDatatype xsi:type="IntegerT" bitLength="14">
+                  <SingleValue value="8184">
+                    <Name textId="TI_OL_Name" />
+                  </SingleValue>
+                  <ValueRange lowerValue="-500" upperValue="1500" />
+                  <SingleValue value="-8184">
+                    <Name textId="TI_UL_Name" />
+                  </SingleValue>
+                </SimpleDatatype>
+                <Name textId="TI_PD_VR_1_Name" />
+                <Description textId="TI_PD_VR_1_Descr" />
+              </RecordItem>
+              <RecordItem bitOffset="1" subindex="2">
+                <SimpleDatatype xsi:type="BooleanT">
+                  <SingleValue value="false">
+                    <Name textId="TI_PD_SV_2_false" />
+                  </SingleValue>
+                  <SingleValue value="true">
+                    <Name textId="TI_PD_SV_2_true" />
+                  </SingleValue>
+                </SimpleDatatype>
+                <Name textId="TI_PD_SV_2_Name" />
+                <Description textId="TI_PD_SV_2_Descr" />
+              </RecordItem>
+              <RecordItem bitOffset="0" subindex="3">
+                <SimpleDatatype xsi:type="BooleanT">
+                  <SingleValue value="false">
+                    <Name textId="TI_PD_SV_3_false" />
+                  </SingleValue>
+                  <SingleValue value="true">
+                    <Name textId="TI_PD_SV_3_true" />
+                  </SingleValue>
+                </SimpleDatatype>
+                <Name textId="TI_PD_SV_3_Name" />
+                <Description textId="TI_PD_SV_3_Descr" />
+              </RecordItem>
+            </Datatype>
+            <Name textId="TI_PdIn_Name" />
+          </ProcessDataIn>
+        </ProcessData>
+      </ProcessDataCollection>
+      <ErrorTypeCollection>
+        <StdErrorTypeRef code="128" additionalCode="0" />
+        <StdErrorTypeRef code="128" additionalCode="17" />
+        <StdErrorTypeRef code="128" additionalCode="18" />
+        <StdErrorTypeRef code="128" additionalCode="32" />
+        <StdErrorTypeRef code="128" additionalCode="35" />
+        <StdErrorTypeRef code="128" additionalCode="48" />
+        <StdErrorTypeRef code="128" additionalCode="51" />
+        <StdErrorTypeRef code="128" additionalCode="52" />
+        <StdErrorTypeRef code="128" additionalCode="53" />
+        <StdErrorTypeRef code="128" additionalCode="54" />
+        <StdErrorTypeRef code="128" additionalCode="64" />
+        <StdErrorTypeRef code="128" additionalCode="65" />
+        <StdErrorTypeRef code="128" additionalCode="130" />
+      </ErrorTypeCollection>
+      <EventCollection>
+        <StdEventRef code="20480" />
+        <StdEventRef code="25376" />
+        <StdEventRef code="30480" />
+        <StdEventRef code="35856" />
+        <StdEventRef code="35888" />
+        <Event code="36350" type="Warning">
+          <Name textId="TI_Ev_8DFE_Name" />
+          <Description textId="TI_Ev_8DFE_Descr" />
+        </Event>
+        <Event code="36351" type="Warning">
+          <Name textId="TI_Ev_8DFF_Name" />
+          <Description textId="TI_Ev_8DFF_Descr" />
+        </Event>
+      </EventCollection>
+      <UserInterface>
+        <MenuCollection>
+          <Menu id="M_MR_SR_Param">
+            <MenuRef menuId="M_MR_SR_Output_Configuration" />
+            <MenuRef menuId="M_MR_SR_Digital_Output1">
+              <Condition variableId="V_ou1" value="3" />
+            </MenuRef>
+            <MenuRef menuId="M_MR_SR_Digital_Output1">
+              <Condition variableId="V_ou1" value="4" />
+            </MenuRef>
+            <MenuRef menuId="M_MR_SR_Digital_Output1">
+              <Condition variableId="V_ou1" value="5" />
+            </MenuRef>
+            <MenuRef menuId="M_MR_SR_Digital_Output1">
+              <Condition variableId="V_ou1" value="6" />
+            </MenuRef>
+            <MenuRef menuId="M_MR_SR_Digital_Output2">
+              <Condition variableId="V_ou2" value="3" />
+            </MenuRef>
+            <MenuRef menuId="M_MR_SR_Digital_Output2">
+              <Condition variableId="V_ou2" value="4" />
+            </MenuRef>
+            <MenuRef menuId="M_MR_SR_Digital_Output2">
+              <Condition variableId="V_ou2" value="5" />
+            </MenuRef>
+            <MenuRef menuId="M_MR_SR_Digital_Output2">
+              <Condition variableId="V_ou2" value="6" />
+            </MenuRef>
+            <MenuRef menuId="M_MR_SR_Memory_1002">
+              <Condition variableId="V_uni" value="1" />
+            </MenuRef>
+            <MenuRef menuId="M_MR_SR_Memory_1001">
+              <Condition variableId="V_uni" value="0" />
+            </MenuRef>
+            <MenuRef menuId="M_MR_SR_Fault_Output_Configuration1">
+              <Condition variableId="V_ou1" value="3" />
+            </MenuRef>
+            <MenuRef menuId="M_MR_SR_Fault_Output_Configuration1">
+              <Condition variableId="V_ou1" value="4" />
+            </MenuRef>
+            <MenuRef menuId="M_MR_SR_Fault_Output_Configuration1">
+              <Condition variableId="V_ou1" value="5" />
+            </MenuRef>
+            <MenuRef menuId="M_MR_SR_Fault_Output_Configuration1">
+              <Condition variableId="V_ou1" value="6" />
+            </MenuRef>
+            <MenuRef menuId="M_MR_SR_Fault_Output_Configuration2">
+              <Condition variableId="V_ou2" value="3" />
+            </MenuRef>
+            <MenuRef menuId="M_MR_SR_Fault_Output_Configuration2">
+              <Condition variableId="V_ou2" value="4" />
+            </MenuRef>
+            <MenuRef menuId="M_MR_SR_Fault_Output_Configuration2">
+              <Condition variableId="V_ou2" value="5" />
+            </MenuRef>
+            <MenuRef menuId="M_MR_SR_Fault_Output_Configuration2">
+              <Condition variableId="V_ou2" value="6" />
+            </MenuRef>
+            <MenuRef menuId="M_MR_SR_Display" />
+            <MenuRef menuId="M_MR_SR_Calibration_1002">
+              <Condition variableId="V_uni" value="1" />
+            </MenuRef>
+            <MenuRef menuId="M_MR_SR_Calibration_1001">
+              <Condition variableId="V_uni" value="0" />
+            </MenuRef>
+            <MenuRef menuId="M_MR_SR_ColourFrame">
+              <Condition variableId="V_coLr" value="10" />
+            </MenuRef>
+            <MenuRef menuId="M_MR_SR_ColourFrame">
+              <Condition variableId="V_coLr" value="11" />
+            </MenuRef>
+            <MenuRef menuId="M_MR_SR_Setup" />
+          </Menu>
+          <Menu id="M_MR_SR_Setup">
+            <Name textId="TI_M_Setup_Name" />
+            <RecordItemRef variableId="V_DeviceAccessLocks" subindex="2" />
+            <RecordItemRef variableId="V_DeviceAccessLocks" subindex="4" />
+            <VariableRef variableId="V_SystemCommand">
+              <Button buttonValue="240" />
+            </VariableRef>
+            <VariableRef variableId="V_SystemCommand">
+              <Button buttonValue="241" />
+            </VariableRef>
+            <VariableRef variableId="V_SystemCommand">
+              <Button buttonValue="242" />
+            </VariableRef>
+            <VariableRef variableId="V_SystemCommand">
+              <Button buttonValue="243" />
+            </VariableRef>
+            <VariableRef variableId="V_SystemCommand">
+              <Button buttonValue="130" />
+            </VariableRef>
+          </Menu>
+          <Menu id="M_MR_SR_Diagnosis">
+            <Name textId="TI_M_Diagnosis_Name" />
+            <VariableRef variableId="V_DeviceStatus" />
+            <VariableRef variableId="V_DetailedDeviceStatus" />
+          </Menu>
+          <Menu id="M_MR_SR_Output_Configuration">
+            <Name textId="TI_M_Output_Configuration_Name" />
+            <VariableRef variableId="V_ou1" />
+            <VariableRef variableId="V_ou2" />
+            <VariableRef variableId="V_P-n" />
+          </Menu>
+          <Menu id="M_MR_SR_Digital_Output1_1001">
+            <Name textId="TI_M_Digital_Output1_Name" />
+            <VariableRef variableId="V_VDMA-dS1" displayFormat="Dec.1" gradient="0.1" offset="0" unitCode="1054" />
+            <VariableRef variableId="V_VDMA-dr1" displayFormat="Dec.1" gradient="0.1" offset="0" unitCode="1054" />
+            <VariableRef variableId="V_SP_FH1" displayFormat="Dec.1" gradient="0.1" offset="0" unitCode="1001" />
+            <VariableRef variableId="V_rP_FL1" displayFormat="Dec.1" gradient="0.1" offset="0" unitCode="1001" />
+          </Menu>
+          <Menu id="M_MR_SR_Digital_Output2_1001">
+            <Name textId="TI_M_Digital_Output2_Name" />
+            <VariableRef variableId="V_VDMA-dS2" displayFormat="Dec.1" gradient="0.1" offset="0" unitCode="1054" />
+            <VariableRef variableId="V_VDMA-dr2" displayFormat="Dec.1" gradient="0.1" offset="0" unitCode="1054" />
+            <VariableRef variableId="V_SP_FH2" displayFormat="Dec.1" gradient="0.1" offset="0" unitCode="1001" />
+            <VariableRef variableId="V_rP_FL2" displayFormat="Dec.1" gradient="0.1" offset="0" unitCode="1001" />
+          </Menu>
+          <Menu id="M_MR_SR_Fault_Output_Configuration1">
+            <Name textId="TI_M_Fault_Output_Configuration1_Name" />
+            <VariableRef variableId="V_FOU1" />
+          </Menu>
+          <Menu id="M_MR_SR_Fault_Output_Configuration2">
+            <Name textId="TI_M_Fault_Output_Configuration2_Name" />
+            <VariableRef variableId="V_FOU2" />
+          </Menu>
+          <Menu id="M_MR_SR_Display">
+            <Name textId="TI_M_Display_Name" />
+            <VariableRef variableId="V_uni" />
+            <VariableRef variableId="V_coLr" />
+            <VariableRef variableId="V_diS" />
+            <VariableRef variableId="V_Loc" />
+          </Menu>
+          <Menu id="M_MR_SR_Memory_1001">
+            <Name textId="TI_M_Memory_Name" />
+            <VariableRef variableId="V_Lo" displayFormat="Dec.1" gradient="0.1" offset="0" unitCode="1001" />
+            <VariableRef variableId="V_Hi" displayFormat="Dec.1" gradient="0.1" offset="0" unitCode="1001" />
+            <VariableRef variableId="V_SystemCommand">
+              <Button buttonValue="161" />
+            </VariableRef>
+            <VariableRef variableId="V_SystemCommand">
+              <Button buttonValue="162" />
+            </VariableRef>
+            <VariableRef variableId="V_SystemCommand">
+              <Button buttonValue="163" />
+            </VariableRef>
+          </Menu>
+          <Menu id="M_MR_SR_Calibration_1001">
+            <Name textId="TI_M_Calibration_Name" />
+            <VariableRef variableId="V_coFU" displayFormat="Dec.1" gradient="0.1" offset="0" unitCode="1001" />
+          </Menu>
+          <Menu id="M_MR_SR_ColourFrame_1001">
+            <Name textId="TI_M_ColourFrame_Name" />
+            <VariableRef variableId="V_cFL" displayFormat="Dec.1" gradient="0.1" offset="0" unitCode="1001" />
+            <VariableRef variableId="V_cFH" displayFormat="Dec.1" gradient="0.1" offset="0" unitCode="1001" />
+          </Menu>
+          <Menu id="M_MR_SR_Ident">
+            <VariableRef variableId="V_VendorName" />
+            <VariableRef variableId="V_ProductName" />
+            <VariableRef variableId="V_ProductText" />
+            <VariableRef variableId="V_SerialNumber" />
+            <VariableRef variableId="V_HardwareRevision" />
+            <VariableRef variableId="V_FirmwareRevision" />
+            <VariableRef variableId="V_ApplicationSpecificTag" />
+          </Menu>
+          <Menu id="M_MR_SR_Observation_1001">
+            <Name textId="TI_PdIn_Name" />
+            <RecordItemRef variableId="V_ProcessDataInput" subindex="1" gradient="0.1" offset="0" displayFormat="Dec.1" unitCode="1001" />
+            <RecordItemRef variableId="V_ProcessDataInput" subindex="2" />
+            <RecordItemRef variableId="V_ProcessDataInput" subindex="3" />
+          </Menu>
+          <Menu id="M_OR_Param">
+            <MenuRef menuId="M_OR_Output_Configuration" />
+            <MenuRef menuId="M_OR_Digital_Output1">
+              <Condition variableId="V_ou1" value="3" />
+            </MenuRef>
+            <MenuRef menuId="M_OR_Digital_Output1">
+              <Condition variableId="V_ou1" value="4" />
+            </MenuRef>
+            <MenuRef menuId="M_OR_Digital_Output1">
+              <Condition variableId="V_ou1" value="5" />
+            </MenuRef>
+            <MenuRef menuId="M_OR_Digital_Output1">
+              <Condition variableId="V_ou1" value="6" />
+            </MenuRef>
+            <MenuRef menuId="M_OR_Digital_Output2">
+              <Condition variableId="V_ou2" value="3" />
+            </MenuRef>
+            <MenuRef menuId="M_OR_Digital_Output2">
+              <Condition variableId="V_ou2" value="4" />
+            </MenuRef>
+            <MenuRef menuId="M_OR_Digital_Output2">
+              <Condition variableId="V_ou2" value="5" />
+            </MenuRef>
+            <MenuRef menuId="M_OR_Digital_Output2">
+              <Condition variableId="V_ou2" value="6" />
+            </MenuRef>
+            <MenuRef menuId="M_OR_Memory_1002">
+              <Condition variableId="V_uni" value="1" />
+            </MenuRef>
+            <MenuRef menuId="M_OR_Memory_1001">
+              <Condition variableId="V_uni" value="0" />
+            </MenuRef>
+            <MenuRef menuId="M_OR_Fault_Output_Configuration1">
+              <Condition variableId="V_ou1" value="3" />
+            </MenuRef>
+            <MenuRef menuId="M_OR_Fault_Output_Configuration1">
+              <Condition variableId="V_ou1" value="4" />
+            </MenuRef>
+            <MenuRef menuId="M_OR_Fault_Output_Configuration1">
+              <Condition variableId="V_ou1" value="5" />
+            </MenuRef>
+            <MenuRef menuId="M_OR_Fault_Output_Configuration1">
+              <Condition variableId="V_ou1" value="6" />
+            </MenuRef>
+            <MenuRef menuId="M_OR_Fault_Output_Configuration2">
+              <Condition variableId="V_ou2" value="3" />
+            </MenuRef>
+            <MenuRef menuId="M_OR_Fault_Output_Configuration2">
+              <Condition variableId="V_ou2" value="4" />
+            </MenuRef>
+            <MenuRef menuId="M_OR_Fault_Output_Configuration2">
+              <Condition variableId="V_ou2" value="5" />
+            </MenuRef>
+            <MenuRef menuId="M_OR_Fault_Output_Configuration2">
+              <Condition variableId="V_ou2" value="6" />
+            </MenuRef>
+            <MenuRef menuId="M_OR_Display" />
+            <MenuRef menuId="M_OR_Calibration_1002">
+              <Condition variableId="V_uni" value="1" />
+            </MenuRef>
+            <MenuRef menuId="M_OR_Calibration_1001">
+              <Condition variableId="V_uni" value="0" />
+            </MenuRef>
+            <MenuRef menuId="M_OR_ColourFrame">
+              <Condition variableId="V_coLr" value="10" />
+            </MenuRef>
+            <MenuRef menuId="M_OR_ColourFrame">
+              <Condition variableId="V_coLr" value="11" />
+            </MenuRef>
+            <MenuRef menuId="M_OR_Setup" />
+          </Menu>
+          <Menu id="M_OR_Setup">
+            <Name textId="TI_M_Setup_Name" />
+            <RecordItemRef variableId="V_DeviceAccessLocks" subindex="2" accessRightRestriction="ro" />
+            <RecordItemRef variableId="V_DeviceAccessLocks" subindex="4" accessRightRestriction="ro" />
+          </Menu>
+          <Menu id="M_OR_Diagnosis">
+            <Name textId="TI_M_Diagnosis_Name" />
+            <VariableRef variableId="V_DeviceStatus" accessRightRestriction="ro" />
+            <VariableRef variableId="V_DetailedDeviceStatus" accessRightRestriction="ro" />
+          </Menu>
+          <Menu id="M_OR_Output_Configuration">
+            <Name textId="TI_M_Output_Configuration_Name" />
+            <VariableRef variableId="V_ou1" accessRightRestriction="ro" />
+            <VariableRef variableId="V_ou2" accessRightRestriction="ro" />
+            <VariableRef variableId="V_P-n" accessRightRestriction="ro" />
+          </Menu>
+          <Menu id="M_OR_Digital_Output1_1001">
+            <Name textId="TI_M_Digital_Output1_Name" />
+            <VariableRef variableId="V_VDMA-dS1" displayFormat="Dec.1" gradient="0.1" offset="0" unitCode="1054" accessRightRestriction="ro" />
+            <VariableRef variableId="V_VDMA-dr1" displayFormat="Dec.1" gradient="0.1" offset="0" unitCode="1054" accessRightRestriction="ro" />
+            <VariableRef variableId="V_SP_FH1" displayFormat="Dec.1" gradient="0.1" offset="0" unitCode="1001" accessRightRestriction="ro" />
+            <VariableRef variableId="V_rP_FL1" displayFormat="Dec.1" gradient="0.1" offset="0" unitCode="1001" accessRightRestriction="ro" />
+          </Menu>
+          <Menu id="M_OR_Digital_Output2_1001">
+            <Name textId="TI_M_Digital_Output2_Name" />
+            <VariableRef variableId="V_VDMA-dS2" displayFormat="Dec.1" gradient="0.1" offset="0" unitCode="1054" accessRightRestriction="ro" />
+            <VariableRef variableId="V_VDMA-dr2" displayFormat="Dec.1" gradient="0.1" offset="0" unitCode="1054" accessRightRestriction="ro" />
+            <VariableRef variableId="V_SP_FH2" displayFormat="Dec.1" gradient="0.1" offset="0" unitCode="1001" accessRightRestriction="ro" />
+            <VariableRef variableId="V_rP_FL2" displayFormat="Dec.1" gradient="0.1" offset="0" unitCode="1001" accessRightRestriction="ro" />
+          </Menu>
+          <Menu id="M_OR_Fault_Output_Configuration1">
+            <Name textId="TI_M_Fault_Output_Configuration1_Name" />
+            <VariableRef variableId="V_FOU1" accessRightRestriction="ro" />
+          </Menu>
+          <Menu id="M_OR_Fault_Output_Configuration2">
+            <Name textId="TI_M_Fault_Output_Configuration2_Name" />
+            <VariableRef variableId="V_FOU2" accessRightRestriction="ro" />
+          </Menu>
+          <Menu id="M_OR_Display">
+            <Name textId="TI_M_Display_Name" />
+            <VariableRef variableId="V_uni" accessRightRestriction="ro" />
+            <VariableRef variableId="V_coLr" accessRightRestriction="ro" />
+            <VariableRef variableId="V_diS" accessRightRestriction="ro" />
+            <VariableRef variableId="V_Loc" accessRightRestriction="ro" />
+          </Menu>
+          <Menu id="M_OR_Memory_1001">
+            <Name textId="TI_M_Memory_Name" />
+            <VariableRef variableId="V_Lo" displayFormat="Dec.1" gradient="0.1" offset="0" unitCode="1001" accessRightRestriction="ro" />
+            <VariableRef variableId="V_Hi" displayFormat="Dec.1" gradient="0.1" offset="0" unitCode="1001" accessRightRestriction="ro" />
+          </Menu>
+          <Menu id="M_OR_Calibration_1001">
+            <Name textId="TI_M_Calibration_Name" />
+            <VariableRef variableId="V_coFU" displayFormat="Dec.1" gradient="0.1" offset="0" unitCode="1001" accessRightRestriction="ro" />
+          </Menu>
+          <Menu id="M_OR_ColourFrame_1001">
+            <Name textId="TI_M_ColourFrame_Name" />
+            <VariableRef variableId="V_cFL" displayFormat="Dec.1" gradient="0.1" offset="0" unitCode="1001" accessRightRestriction="ro" />
+            <VariableRef variableId="V_cFH" displayFormat="Dec.1" gradient="0.1" offset="0" unitCode="1001" accessRightRestriction="ro" />
+          </Menu>
+          <Menu id="M_OR_Ident">
+            <VariableRef variableId="V_VendorName" accessRightRestriction="ro" />
+            <VariableRef variableId="V_ProductName" accessRightRestriction="ro" />
+            <VariableRef variableId="V_ProductText" accessRightRestriction="ro" />
+            <VariableRef variableId="V_SerialNumber" accessRightRestriction="ro" />
+            <VariableRef variableId="V_HardwareRevision" accessRightRestriction="ro" />
+            <VariableRef variableId="V_FirmwareRevision" accessRightRestriction="ro" />
+            <VariableRef variableId="V_ApplicationSpecificTag" accessRightRestriction="ro" />
+          </Menu>
+          <Menu id="M_OR_Observation_1001">
+            <Name textId="TI_PdIn_Name" />
+            <RecordItemRef variableId="V_ProcessDataInput" subindex="1" gradient="0.1" offset="0" displayFormat="Dec.1" unitCode="1001" accessRightRestriction="ro" />
+            <RecordItemRef variableId="V_ProcessDataInput" subindex="2" accessRightRestriction="ro" />
+            <RecordItemRef variableId="V_ProcessDataInput" subindex="3" accessRightRestriction="ro" />
+          </Menu>
+          <Menu id="M_MR_SR_Digital_Output1_1002">
+            <Name textId="TI_M_Digital_Output1_Name" />
+            <VariableRef variableId="V_VDMA-dS1" displayFormat="Dec.1" gradient="0.1" offset="0" unitCode="1054" />
+            <VariableRef variableId="V_VDMA-dr1" displayFormat="Dec.1" gradient="0.1" offset="0" unitCode="1054" />
+            <VariableRef variableId="V_SP_FH1" displayFormat="Dec.1" gradient="0.18" offset="32" unitCode="1002" />
+            <VariableRef variableId="V_rP_FL1" displayFormat="Dec.1" gradient="0.18" offset="32" unitCode="1002" />
+          </Menu>
+          <Menu id="M_MR_SR_Digital_Output1">
+            <Name textId="TI_M_Digital_Output1_Name" />
+            <MenuRef menuId="M_MR_SR_Digital_Output1_1001">
+              <Condition variableId="V_uni" value="0" />
+            </MenuRef>
+            <MenuRef menuId="M_MR_SR_Digital_Output1_1002">
+              <Condition variableId="V_uni" value="1" />
+            </MenuRef>
+          </Menu>
+          <Menu id="M_MR_SR_Digital_Output2_1002">
+            <Name textId="TI_M_Digital_Output2_Name" />
+            <VariableRef variableId="V_VDMA-dS2" displayFormat="Dec.1" gradient="0.1" offset="0" unitCode="1054" />
+            <VariableRef variableId="V_VDMA-dr2" displayFormat="Dec.1" gradient="0.1" offset="0" unitCode="1054" />
+            <VariableRef variableId="V_SP_FH2" displayFormat="Dec.1" gradient="0.18" offset="32" unitCode="1002" />
+            <VariableRef variableId="V_rP_FL2" displayFormat="Dec.1" gradient="0.18" offset="32" unitCode="1002" />
+          </Menu>
+          <Menu id="M_MR_SR_Digital_Output2">
+            <Name textId="TI_M_Digital_Output2_Name" />
+            <MenuRef menuId="M_MR_SR_Digital_Output2_1001">
+              <Condition variableId="V_uni" value="0" />
+            </MenuRef>
+            <MenuRef menuId="M_MR_SR_Digital_Output2_1002">
+              <Condition variableId="V_uni" value="1" />
+            </MenuRef>
+          </Menu>
+          <Menu id="M_MR_SR_Memory_1002">
+            <Name textId="TI_M_Memory_Name" />
+            <VariableRef variableId="V_Lo" displayFormat="Dec.1" gradient="0.18" offset="32" unitCode="1002" />
+            <VariableRef variableId="V_Hi" displayFormat="Dec.1" gradient="0.18" offset="32" unitCode="1002" />
+            <VariableRef variableId="V_SystemCommand">
+              <Button buttonValue="161" />
+            </VariableRef>
+            <VariableRef variableId="V_SystemCommand">
+              <Button buttonValue="162" />
+            </VariableRef>
+            <VariableRef variableId="V_SystemCommand">
+              <Button buttonValue="163" />
+            </VariableRef>
+          </Menu>
+          <Menu id="M_MR_SR_Calibration_1002">
+            <Name textId="TI_M_Calibration_Name" />
+            <VariableRef variableId="V_coFU" displayFormat="Dec.1" gradient="0.18" offset="32" unitCode="1002" />
+          </Menu>
+          <Menu id="M_MR_SR_ColourFrame_1002">
+            <Name textId="TI_M_ColourFrame_Name" />
+            <VariableRef variableId="V_cFL" displayFormat="Dec.1" gradient="0.18" offset="32" unitCode="1002" />
+            <VariableRef variableId="V_cFH" displayFormat="Dec.1" gradient="0.18" offset="32" unitCode="1002" />
+          </Menu>
+          <Menu id="M_MR_SR_ColourFrame">
+            <Name textId="TI_M_ColourFrame_Name" />
+            <MenuRef menuId="M_MR_SR_ColourFrame_1001">
+              <Condition variableId="V_uni" value="0" />
+            </MenuRef>
+            <MenuRef menuId="M_MR_SR_ColourFrame_1002">
+              <Condition variableId="V_uni" value="1" />
+            </MenuRef>
+          </Menu>
+          <Menu id="M_MR_SR_Observation_1002">
+            <Name textId="TI_PdIn_Name" />
+            <RecordItemRef variableId="V_ProcessDataInput" subindex="1" gradient="0.18" offset="32" displayFormat="Dec.1" unitCode="1002" />
+            <RecordItemRef variableId="V_ProcessDataInput" subindex="2" />
+            <RecordItemRef variableId="V_ProcessDataInput" subindex="3" />
+          </Menu>
+          <Menu id="M_MR_SR_Observation">
+            <Name textId="TI_PdIn_Name" />
+            <MenuRef menuId="M_MR_SR_Observation_1001">
+              <Condition variableId="V_uni" value="0" />
+            </MenuRef>
+            <MenuRef menuId="M_MR_SR_Observation_1002">
+              <Condition variableId="V_uni" value="1" />
+            </MenuRef>
+          </Menu>
+          <Menu id="M_OR_Digital_Output1_1002">
+            <Name textId="TI_M_Digital_Output1_Name" />
+            <VariableRef variableId="V_VDMA-dS1" displayFormat="Dec.1" gradient="0.1" offset="0" unitCode="1054" accessRightRestriction="ro" />
+            <VariableRef variableId="V_VDMA-dr1" displayFormat="Dec.1" gradient="0.1" offset="0" unitCode="1054" accessRightRestriction="ro" />
+            <VariableRef variableId="V_SP_FH1" displayFormat="Dec.1" gradient="0.18" offset="32" unitCode="1002" accessRightRestriction="ro" />
+            <VariableRef variableId="V_rP_FL1" displayFormat="Dec.1" gradient="0.18" offset="32" unitCode="1002" accessRightRestriction="ro" />
+          </Menu>
+          <Menu id="M_OR_Digital_Output1">
+            <Name textId="TI_M_Digital_Output1_Name" />
+            <MenuRef menuId="M_OR_Digital_Output1_1001">
+              <Condition variableId="V_uni" value="0" />
+            </MenuRef>
+            <MenuRef menuId="M_OR_Digital_Output1_1002">
+              <Condition variableId="V_uni" value="1" />
+            </MenuRef>
+          </Menu>
+          <Menu id="M_OR_Digital_Output2_1002">
+            <Name textId="TI_M_Digital_Output2_Name" />
+            <VariableRef variableId="V_VDMA-dS2" displayFormat="Dec.1" gradient="0.1" offset="0" unitCode="1054" accessRightRestriction="ro" />
+            <VariableRef variableId="V_VDMA-dr2" displayFormat="Dec.1" gradient="0.1" offset="0" unitCode="1054" accessRightRestriction="ro" />
+            <VariableRef variableId="V_SP_FH2" displayFormat="Dec.1" gradient="0.18" offset="32" unitCode="1002" accessRightRestriction="ro" />
+            <VariableRef variableId="V_rP_FL2" displayFormat="Dec.1" gradient="0.18" offset="32" unitCode="1002" accessRightRestriction="ro" />
+          </Menu>
+          <Menu id="M_OR_Digital_Output2">
+            <Name textId="TI_M_Digital_Output2_Name" />
+            <MenuRef menuId="M_OR_Digital_Output2_1001">
+              <Condition variableId="V_uni" value="0" />
+            </MenuRef>
+            <MenuRef menuId="M_OR_Digital_Output2_1002">
+              <Condition variableId="V_uni" value="1" />
+            </MenuRef>
+          </Menu>
+          <Menu id="M_OR_Memory_1002">
+            <Name textId="TI_M_Memory_Name" />
+            <VariableRef variableId="V_Lo" displayFormat="Dec.1" gradient="0.18" offset="32" unitCode="1002" accessRightRestriction="ro" />
+            <VariableRef variableId="V_Hi" displayFormat="Dec.1" gradient="0.18" offset="32" unitCode="1002" accessRightRestriction="ro" />
+          </Menu>
+          <Menu id="M_OR_Calibration_1002">
+            <Name textId="TI_M_Calibration_Name" />
+            <VariableRef variableId="V_coFU" displayFormat="Dec.1" gradient="0.18" offset="32" unitCode="1002" accessRightRestriction="ro" />
+          </Menu>
+          <Menu id="M_OR_ColourFrame_1002">
+            <Name textId="TI_M_ColourFrame_Name" />
+            <VariableRef variableId="V_cFL" displayFormat="Dec.1" gradient="0.18" offset="32" unitCode="1002" accessRightRestriction="ro" />
+            <VariableRef variableId="V_cFH" displayFormat="Dec.1" gradient="0.18" offset="32" unitCode="1002" accessRightRestriction="ro" />
+          </Menu>
+          <Menu id="M_OR_ColourFrame">
+            <Name textId="TI_M_ColourFrame_Name" />
+            <MenuRef menuId="M_OR_ColourFrame_1001">
+              <Condition variableId="V_uni" value="0" />
+            </MenuRef>
+            <MenuRef menuId="M_OR_ColourFrame_1002">
+              <Condition variableId="V_uni" value="1" />
+            </MenuRef>
+          </Menu>
+          <Menu id="M_OR_Observation_1002">
+            <Name textId="TI_PdIn_Name" />
+            <RecordItemRef variableId="V_ProcessDataInput" subindex="1" gradient="0.18" offset="32" displayFormat="Dec.1" unitCode="1002" accessRightRestriction="ro" />
+            <RecordItemRef variableId="V_ProcessDataInput" subindex="2" accessRightRestriction="ro" />
+            <RecordItemRef variableId="V_ProcessDataInput" subindex="3" accessRightRestriction="ro" />
+          </Menu>
+          <Menu id="M_OR_Observation">
+            <Name textId="TI_PdIn_Name" />
+            <MenuRef menuId="M_OR_Observation_1001">
+              <Condition variableId="V_uni" value="0" />
+            </MenuRef>
+            <MenuRef menuId="M_OR_Observation_1002">
+              <Condition variableId="V_uni" value="1" />
+            </MenuRef>
+          </Menu>
+        </MenuCollection>
+        <ObserverRoleMenuSet>
+          <IdentificationMenu menuId="M_OR_Ident" />
+          <ParameterMenu menuId="M_OR_Param" />
+          <ObservationMenu menuId="M_OR_Observation" />
+          <DiagnosisMenu menuId="M_OR_Diagnosis" />
+        </ObserverRoleMenuSet>
+        <MaintenanceRoleMenuSet>
+          <IdentificationMenu menuId="M_MR_SR_Ident" />
+          <ParameterMenu menuId="M_MR_SR_Param" />
+          <ObservationMenu menuId="M_MR_SR_Observation" />
+          <DiagnosisMenu menuId="M_MR_SR_Diagnosis" />
+        </MaintenanceRoleMenuSet>
+        <SpecialistRoleMenuSet>
+          <IdentificationMenu menuId="M_MR_SR_Ident" />
+          <ParameterMenu menuId="M_MR_SR_Param" />
+          <ObservationMenu menuId="M_MR_SR_Observation" />
+          <DiagnosisMenu menuId="M_MR_SR_Diagnosis" />
+        </SpecialistRoleMenuSet>
+      </UserInterface>
+    </DeviceFunction>
+  </ProfileBody>
+  <CommNetworkProfile xsi:type="IOLinkCommNetworkProfileT" iolinkRevision="V1.1">
+    <TransportLayers>
+      <PhysicalLayer minCycleTime="2300" sioSupported="true" bitrate="COM2" mSequenceCapability="33">
+        <Connection xsi:type="M12-4ConnectionT" connectionSymbol="ifm-TN-NG-con-pic.png">
+          <ProductRef productId="TN7511" />
+          <Wire1 />
+          <Wire2 function="Other" />
+          <Wire3 />
+          <Wire4 />
+        </Connection>
+      </PhysicalLayer>
+    </TransportLayers>
+    <Test>
+      <Config1 index="241" testValue="0xFE" />
+      <Config2 index="1000" testValue="0x01" />
+      <Config3 index="24" testValue="0x31,0x32,0x33,0x34,0x35,0x36,0x37,0x38,0x39,0x41,0x42,0x43,0x44,0x45,0x46" />
+      <Config7 index="2">
+        <EventTrigger appearValue="240" disappearValue="241" />
+        <EventTrigger appearValue="242" disappearValue="243" />
+      </Config7>
+    </Test>
+  </CommNetworkProfile>
+  <ExternalTextCollection>
+    <PrimaryLanguage xml:lang="en">
+      <Text id="TI_ProductName0" value="TN7511" />
+      <Text id="TI_ProductDescr0" value="Electronic temperature sensor, -50...150 °C, IO-Link, " />
+      <Text id="TI_VendorText" value="www.ifm.com" />
+      <Text id="TI_VendorUrl" value="www.ifm.com/ifmgb/web/io-link-download.htm" />
+      <Text id="TI_DeviceFamily" value="TN" />
+      <Text id="TI_DeviceName" value="TN7511" />
+      <Text id="TI_SysCmd255_Name" value="Command without effect, for internal use only" />
+      <Text id="TI_SysCmd161_Name" value="Reset [Hi] and [Lo] memory" />
+      <Text id="TI_SysCmd162_Name" value="Reset [Lo] memory" />
+      <Text id="TI_SysCmd163_Name" value="Reset [Hi] memory" />
+      <Text id="TI_SysCmd240_Name" value="IO-Link 1.1 system test command 240, Event 8DFE appears" />
+      <Text id="TI_SysCmd241_Name" value="IO-Link 1.1 system test command 241, Event 8DFE disappears" />
+      <Text id="TI_SysCmd242_Name" value="IO-Link 1.1 system test command 242, Event 8DFF appears" />
+      <Text id="TI_SysCmd243_Name" value="IO-Link 1.1 system test command 243, Event 8DFF disappears" />
+      <Text id="TI_ou1_Name" value="ou1" />
+      <Text id="TI_ou1_Description" value="Output configuration [OUT 1]" />
+      <Text id="TI_ou1_SV_0" value="Hno / Hysteresis fct normally open" />
+      <Text id="TI_ou1_SV_1" value="Hnc / Hysteresis fct normally closed" />
+      <Text id="TI_ou1_SV_2" value="Fno / Window fct normally open" />
+      <Text id="TI_ou1_SV_3" value="Fnc / Window fct normally closed" />
+      <Text id="TI_ou2_Name" value="ou2" />
+      <Text id="TI_ou2_Description" value="Output configuration [OUT 2]" />
+      <Text id="TI_ou2_SV_0" value="Hno / Hysteresis fct normally open" />
+      <Text id="TI_ou2_SV_1" value="Hnc / Hysteresis fct normally closed" />
+      <Text id="TI_ou2_SV_2" value="Fno / Window fct normally open" />
+      <Text id="TI_ou2_SV_3" value="Fnc / Window fct normally closed" />
+      <Text id="TI_VDMA-dS1_Name" value="dS1" />
+      <Text id="TI_VDMA-dS1_Description" value="Switching delay for [OUT 1]" />
+      <Text id="TI_VDMA-dr1_Name" value="dr1" />
+      <Text id="TI_VDMA-dr1_Description" value="Reset delay for [OUT 1]" />
+      <Text id="TI_VDMA-dS2_Name" value="dS2" />
+      <Text id="TI_VDMA-dS2_Description" value="Switching delay for [OUT 2]" />
+      <Text id="TI_VDMA-dr2_Name" value="dr2" />
+      <Text id="TI_VDMA-dr2_Description" value="Reset delay for [OUT 2]" />
+      <Text id="TI_FOU1_Name" value="FOU1" />
+      <Text id="TI_FOU1_Description" value="[OUT 1] behaviour in case of fault" />
+      <Text id="TI_FOU1_SV_0" value="On" />
+      <Text id="TI_FOU1_SV_1" value="OFF" />
+      <Text id="TI_FOU2_Name" value="FOU2" />
+      <Text id="TI_FOU2_Description" value="[OUT 2] behaviour in case of fault" />
+      <Text id="TI_FOU2_SV_0" value="On" />
+      <Text id="TI_FOU2_SV_1" value="OFF" />
+      <Text id="TI_uni_Name" value="uni" />
+      <Text id="TI_uni_Description" value="Selection of unit on the sensor display" />
+      <Text id="TI_uni_SV_0" value="°C" />
+      <Text id="TI_uni_SV_1" value="°F" />
+      <Text id="TI_P-n_Name" value="P-n" />
+      <Text id="TI_P-n_Description" value="Output polarity for the switching outputs" />
+      <Text id="TI_P-n_SV_0" value="PnP" />
+      <Text id="TI_P-n_SV_1" value="nPn" />
+      <Text id="TI_OL_Name" value="OL" />
+      <Text id="TI_UL_Name" value="UL" />
+      <Text id="TI_Lo_Name" value="Lo" />
+      <Text id="TI_Lo_Description" value="Minimum memory value" />
+      <Text id="TI_Hi_Name" value="Hi" />
+      <Text id="TI_Hi_Description" value="Maximum memory value" />
+      <Text id="TI_coFU_Name" value="coF" />
+      <Text id="TI_coFU_Description" value="Zero-point calibration (Calibration offset)" />
+      <Text id="TI_coLr_Name" value="coLr" />
+      <Text id="TI_coLr_Description" value="Assignment of the display colours 'red' and 'green' within the measuring range" />
+      <Text id="TI_coLr_SV_0" value="rEd / Display colour red (independent of the measured value)" />
+      <Text id="TI_coLr_SV_1" value="GrEn / Display colour green (independent of the measured value)" />
+      <Text id="TI_coLr_SV_2" value="r1ou / Display colour red when OUT1 switches" />
+      <Text id="TI_coLr_SV_3" value="G1ou / Display colour green when OUT1 switches" />
+      <Text id="TI_coLr_SV_4" value="r2ou / Display colour red when OUT2 switches" />
+      <Text id="TI_coLr_SV_5" value="G2ou / Display colour green when OUT2 switches" />
+      <Text id="TI_coLr_SV_6" value="r-12 / Display colour red when the measured value is between the limit values of OUT1 and OUT2" />
+      <Text id="TI_coLr_SV_7" value="G-12 / Display colour green when the measured value is between the limit values of OUT1 and OUT2" />
+      <Text id="TI_coLr_SV_8" value="r-cF / Display colour red when the measured value is between the freely definable limit values [cFL] and [cFH]" />
+      <Text id="TI_coLr_SV_9" value="G-cF / Display colour green when the measured value is between the freely definable limit values [cFL] and [cFH]" />
+      <Text id="TI_cFL_Name" value="cFL" />
+      <Text id="TI_cFL_Description" value="Lower value for colour change.  Parameter only active after selection of a freely definable colour window in the coLr parameter: [r-cF] or [G-cF]. The setting range corresponds to the measuring range and its maximum limit is [cFH]" />
+      <Text id="TI_cFH_Name" value="cFH" />
+      <Text id="TI_cFH_Description" value="Upper value for colour change. Parameter only active after selection of a freely definable colour window in the coLr parameter: [r-cF] or [G-cF]. The setting range corresponds to the measuring range and its minimum limit is [cFL]" />
+      <Text id="TI_diS_Name" value="diS" />
+      <Text id="TI_diS_Descr" value="Display settings" />
+      <Text id="TI_diS_Off" value="Display On / OFF" />
+      <Text id="TI_diS_SV_OFF_true" value="OFF" />
+      <Text id="TI_diS_SV_OFF_false" value="On" />
+      <Text id="TI_diS_Rot" value="Display orientation" />
+      <Text id="TI_diS_SV_ROT_true" value="Rotated 180°" />
+      <Text id="TI_diS_SV_ROT_false" value="Not rotated" />
+      <Text id="TI_diS_Refresh" value="Update rate" />
+      <Text id="TI_diS_SV_Update_d1" value="d1 / fast" />
+      <Text id="TI_diS_SV_Update_d2" value="d2 / medium" />
+      <Text id="TI_diS_SV_Update_d3" value="d3 / slow" />
+      <Text id="TI_Loc_Name" value="Loc" />
+      <Text id="TI_Loc_Description" value="[Loc] locks the local user interface to prevent unintentional changes,  [Loc] is resettable at the device" />
+      <Text id="TI_Loc_SV_0" value="Loc" />
+      <Text id="TI_Loc_SV_1" value="uLoc" />
+      <Text id="TI_SP_FH1_Name" value="SP_FH1" />
+      <Text id="TI_SP_FH1_Description" value="Switch point 1, [SP1] must be greater than [rP1]. Please take into account the current [rP1] value. [SP1] will be refused if below [rP1].  [SP] = [FH] and [rP] = [FL] if [OU1] = Fno, Fnc." />
+      <Text id="TI_rP_FL1_Name" value="rP_FL1" />
+      <Text id="TI_rP_FL1_Description" value="Reset point 1, [rP1] must be smaller than [SP1]. Please take into account the current [SP1] value.I[rP1] will be refused if above [SP1]. [rP] = [FL] and [SP] = [FH] if [OU1] = Fno, Fnc." />
+      <Text id="TI_SP_FH2_Name" value="SP_FH2" />
+      <Text id="TI_SP_FH2_Description" value="Switch point 2, [SP2] must be greater than [rP2]. Please take into account the current [rP2] value. [SP2] will be refused if below [rP2].  [SP] = [FH] and [rP] = [FL] if [OU2] = Fno, Fnc." />
+      <Text id="TI_rP_FL2_Name" value="rP_FL2" />
+      <Text id="TI_rP_FL2_Description" value="Reset point 2, [rP2] must be smaller than [SP2]. Please take into account the current [SP2] value.I[rP2] will be refused if above [SP2]. [rP] = [FL] and [SP] = [FH] if [OU2] = Fno, Fnc." />
+      <Text id="TI_PD_VR_1_Name" value="Temperature" />
+      <Text id="TI_PD_VR_1_Descr" value="Current temperature" />
+      <Text id="TI_PD_SV_2_Name" value="OUT2" />
+      <Text id="TI_PD_SV_2_true" value="active" />
+      <Text id="TI_PD_SV_2_false" value="inactive" />
+      <Text id="TI_PD_SV_2_Descr" value="Status depends on [OU2]" />
+      <Text id="TI_PD_SV_3_Name" value="OUT1" />
+      <Text id="TI_PD_SV_3_true" value="active" />
+      <Text id="TI_PD_SV_3_false" value="inactive" />
+      <Text id="TI_PD_SV_3_Descr" value="Status depends on [OU1]" />
+      <Text id="TI_PdIn_Name" value="Process Data Input" />
+      <Text id="TI_Ev_8DFE_Name" value="Test Event 1" />
+      <Text id="TI_Ev_8DFE_Descr" value="Event appears by setting index 2 to value 240, Event disappears by setting index 2 to value 241" />
+      <Text id="TI_Ev_8DFF_Name" value="Test Event 2" />
+      <Text id="TI_Ev_8DFF_Descr" value="Event appears by setting index 2 to value 242, Event disappears by setting index 2 to value 243" />
+      <Text id="TI_M_Setup_Name" value="Setup " />
+      <Text id="TI_M_Diagnosis_Name" value="Diagnosis " />
+      <Text id="TI_M_Output_Configuration_Name" value="Output configuration " />
+      <Text id="TI_M_Digital_Output1_Name" value="Digital output 1" />
+      <Text id="TI_M_Digital_Output2_Name" value="Digital output 2" />
+      <Text id="TI_M_Fault_Output_Configuration1_Name" value="Fault Configuration Output 1" />
+      <Text id="TI_M_Fault_Output_Configuration2_Name" value="Fault Configuration Output 2" />
+      <Text id="TI_M_Display_Name" value="Setting of the sensor display " />
+      <Text id="TI_M_Memory_Name" value="Memory " />
+      <Text id="TI_M_Calibration_Name" value="Calibration " />
+      <Text id="TI_M_ColourFrame_Name" value="Colour frame  " />
+    </PrimaryLanguage>
+  </ExternalTextCollection>
+  <Stamp crc="25928036"><Checker name="IODD-Checker V1.1.1" version="V1.1.1.0"/></Stamp>
+</IODevice>

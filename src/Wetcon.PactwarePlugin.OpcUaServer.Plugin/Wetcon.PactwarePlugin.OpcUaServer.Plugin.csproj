@@ -330,6 +330,9 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Wetcon.IoLink.Helper">
+      <HintPath>DLLs\Wetcon.IoLink.Helper.dll</HintPath>
+    </Reference>
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
@@ -379,11 +382,6 @@
     <Compile Include="CompletedAsyncResult.cs" />
     <Compile Include="Infrastructure\IPACTwareUIKernelExtensions.cs" />
     <Compile Include="Infrastructure\TaskExtensions.cs" />
-    <Compile Include="IODD\Models\ProcessDataRecord.cs" />
-    <Compile Include="IODD\ProcessData.cs" />
-    <Compile Include="IODD\Models\IODD1_0_1.cs" />
-    <Compile Include="IODD\Models\IODD1_1.cs" />
-    <Compile Include="IODD\ProcessDataRecordParser.cs" />
     <Compile Include="OpcUa\Constants.cs" />
     <Compile Include="OpcUa\Di\Opc.Ua.Di.Classes.cs" />
     <Compile Include="OpcUa\Di\Opc.Ua.Di.Constants.cs" />
@@ -465,7 +463,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="IODD\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>REM powershell -command "Start-Process $(ProjectDir)Wetcon.PactwarePlugin.OpcUaServer_x64.bat -Verb runas"</PostBuildEvent>
