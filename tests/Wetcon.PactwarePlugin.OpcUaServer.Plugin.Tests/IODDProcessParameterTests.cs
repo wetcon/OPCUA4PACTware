@@ -22,46 +22,83 @@
    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 */
 
+using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Wetcon.PactwarePlugin.OpcUaServer.IODD;
+using Wetcon.IoLink.Helper;
 
 namespace Wetcon.PactwarePlugin.OpcUaServer.Plugin.Tests
 {
     [TestClass]
     public class IODDProcessParameterTests
     {
+        [TestMethod]
+        public void ParseIODD11()
+        {
+            var items = ParseMetaData(DeviceDescriptionVersion.Version_11);
+
+            Assert.AreEqual(3, items.Count);
+
+            var uintItem = items[0];
+
+            Assert.AreEqual(ProcessDataType.IntegerT, uintItem.DataType);
+            Assert.AreEqual(2, uintItem.BitOffset);
+            Assert.AreEqual(14, uintItem.BitLength);
+            Assert.AreEqual("Temperature", uintItem.DisplayName);
+
+            var booleanItem1 = items[1];
+
+            Assert.AreEqual(ProcessDataType.BooleanT, booleanItem1.DataType);
+            Assert.AreEqual(1, booleanItem1.BitOffset);
+            Assert.AreEqual("OUT2", booleanItem1.DisplayName);
+
+            var booleanItem2 = items[2];
+
+            Assert.AreEqual(ProcessDataType.BooleanT, booleanItem2.DataType);
+            Assert.AreEqual(0, booleanItem2.BitOffset);
+            Assert.AreEqual("OUT1", booleanItem2.DisplayName);
+        }
 
         [TestMethod]
-        public void ParseIODD()
+        public void ParseIODD101()
         {
-            var items = ProcessDataRecordParser.Parse(FileAccess.GetPath("ifm-000174-20150804-IODD1.0.1.xml"));
+            var items = ParseMetaData(DeviceDescriptionVersion.Version_101);
+
             Assert.AreEqual(2, items.Count);
 
             var uintItem = items[0];
 
-            Assert.AreEqual(DataType.UInteger, uintItem.Type);
+            Assert.AreEqual(ProcessDataType.UIntegerT, uintItem.DataType);
             Assert.AreEqual(4, uintItem.BitOffset);
             Assert.AreEqual(12, uintItem.BitLength);
-            Assert.AreEqual("TN_PDV1", uintItem.Name);
+            Assert.AreEqual("Distance", uintItem.DisplayName);
 
             var booleanItem = items[1];
 
-            Assert.AreEqual(DataType.Boolean, booleanItem.Type);
+            Assert.AreEqual(ProcessDataType.BooleanT, booleanItem.DataType);
             Assert.AreEqual(0, booleanItem.BitOffset);
-            Assert.AreEqual("TN_PDV2", booleanItem.Name);
+            Assert.AreEqual("Switchstate [OUT1].", booleanItem.DisplayName);
         }
 
         [TestMethod]
         public void GetProcessDataValues()
         {
-            var items = ProcessDataRecordParser.Parse(FileAccess.GetPath("ifm-000174-20150804-IODD1.0.1.xml"));
-            var processData = new ProcessData("0151"); //21,  1
+            var items = ParseMetaData(DeviceDescriptionVersion.Version_101);
+            var interpreter = new ProcessDataInterpreter("0151"); // 21, 1            
 
-            var uintValue = items[0].GetValue(processData);
-            Assert.AreEqual(21, uintValue);
+            var uintValue = interpreter.Read(items[0]);
+            Assert.AreEqual((ulong)21, uintValue);
 
-            var booleanValue = items[1].GetValue(processData);
+            var booleanValue = interpreter.Read(items[1]);
             Assert.IsTrue((bool)booleanValue);
+        }
+
+        private List<ProcessMetaDataRecord> ParseMetaData(DeviceDescriptionVersion version)
+        {
+            var filename = version == DeviceDescriptionVersion.Version_101 ?
+                "ifm-000174-20150804-IODD1.0.1.xml" : "ifm-000247-20151118-IODD1.1.xml";
+            var ioDDFilePath = FileAccess.GetPath(filename);
+            DeviceDescriptionReader.TryReadFromFilename(ioDDFilePath, out var ioDeviceDescription);
+            return ioDeviceDescription.GetProcessMetaData()[0].ProcessDataRecords;
         }
     }
 }

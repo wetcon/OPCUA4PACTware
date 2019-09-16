@@ -23,9 +23,10 @@
 */
 
 using System.Collections.Generic;
+using System.Linq;
 using System.Xml;
 using PWID.Interfaces;
-using Wetcon.PactwarePlugin.OpcUaServer.IODD;
+using Wetcon.IoLink.Helper;
 
 namespace Wetcon.PactwarePlugin.OpcUaServer.Fdt
 {
@@ -37,16 +38,17 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.Fdt
         /// </summary>
         /// <param name="pactwareProjectNode"></param>
         /// <returns></returns>
-        public static List<ProcessDataRecord> FromPWProjectNode(IPACTwareProjectNode pactwareProjectNode)
+        public static List<ProcessMetaDataRecord> FromPWProjectNode(IPACTwareProjectNode pactwareProjectNode)
         {
             var ioDDFilePath = GetIODDFilePath(pactwareProjectNode);
-
-            if (!System.IO.File.Exists(ioDDFilePath))
+            if (DeviceDescriptionReader.TryReadFromFilename(ioDDFilePath, out var ioDeviceDescription))
             {
-                return new List<ProcessDataRecord>();
+                return ioDeviceDescription.GetProcessMetaData()
+                            .SelectMany(md => md.ProcessDataRecords)
+                            .ToList();
             }
 
-            return ProcessDataRecordParser.Parse(ioDDFilePath);
+            return new List<ProcessMetaDataRecord>();
         }
 
         private static string GetIODDFilePath(IPACTwareProjectNode pactwareProjectNode)
@@ -55,13 +57,14 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.Fdt
             var xmlDoc = new XmlDocument();
             xmlDoc.LoadXml(xml);
             var deviceTypeNodes = xmlDoc.GetElementsByTagName("fdt:DtmDeviceType");
+            var deviceTypeInformationAttribute = deviceTypeNodes[0].Attributes["deviceTypeInformation"];
 
-            if (deviceTypeNodes.Count == 0 || deviceTypeNodes[0].Attributes["deviceTypeInformation"] == null)
+            if (deviceTypeNodes.Count == 0 || deviceTypeInformationAttribute == null)
             {
                 return string.Empty;
             }
 
-            return deviceTypeNodes[0].Attributes["deviceTypeInformation"].Value;
+            return deviceTypeInformationAttribute.Value;
         }
     }
 }

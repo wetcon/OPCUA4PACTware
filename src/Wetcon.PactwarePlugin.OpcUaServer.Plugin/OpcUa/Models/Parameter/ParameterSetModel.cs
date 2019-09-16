@@ -26,8 +26,8 @@ using System;
 using System.Collections.Generic;
 using log4net;
 using Opc.Ua;
+using Wetcon.IoLink.Helper;
 using Wetcon.PactwarePlugin.OpcUaServer.Fdt;
-using Wetcon.PactwarePlugin.OpcUaServer.IODD;
 
 namespace Wetcon.PactwarePlugin.OpcUaServer.OpcUa.Models
 {
@@ -109,7 +109,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.OpcUa.Models
             return parameters;
         }
 
-        private List<ProcessDataRecord> GetProcessParameter()
+        private List<ProcessMetaDataRecord> GetProcessParameter()
         {
             return IODDProcessParameter.FromPWProjectNode(DeviceModel.PactwareProjectNode);
         }

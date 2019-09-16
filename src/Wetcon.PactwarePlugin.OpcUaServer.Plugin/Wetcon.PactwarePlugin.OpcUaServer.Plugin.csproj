@@ -60,10 +60,10 @@
     <Reference Include="Jigfdt.fdt100, Version=1.2.1.0, Culture=neutral, PublicKeyToken=f5a7c0058a4848e8">
       <SpecificVersion>False</SpecificVersion>
       <EmbedInteropTypes>False</EmbedInteropTypes>
-      <HintPath>DLLs\Jigfdt.fdt100.dll</HintPath>
+      <HintPath>lib\Jigfdt.fdt100.dll</HintPath>
     </Reference>
     <Reference Include="log4net">
-      <HintPath>DLLs\log4net.dll</HintPath>
+      <HintPath>lib\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AspNetCore.Hosting, Version=1.1.3.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.AspNetCore.Hosting.1.1.3\lib\net451\Microsoft.AspNetCore.Hosting.dll</HintPath>
@@ -169,12 +169,12 @@
     <Reference Include="Opc.Ua.Server, Version=1.4.355.0, Culture=neutral, PublicKeyToken=bfa7a73c5cf4b6e8, processorArchitecture=MSIL">
       <HintPath>..\..\packages\OPCFoundation.NetStandard.Opc.Ua.1.4.355.26\lib\net46\Opc.Ua.Server.dll</HintPath>
     </Reference>
-    <Reference Include="PWID, Version=5.0.4.3, Culture=neutral, PublicKeyToken=8c99ef692d16cb2f, processorArchitecture=MSIL">
+    <Reference Include="PWID, Version=5.0.4.26, Culture=neutral, PublicKeyToken=8c99ef692d16cb2f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>DLLs\PWID.dll</HintPath>
+      <HintPath>lib\PWID.dll</HintPath>
     </Reference>
     <Reference Include="PWUtil5">
-      <HintPath>DLLs\PWUtil5.dll</HintPath>
+      <HintPath>lib\PWUtil5.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.AppContext, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -330,6 +330,9 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Wetcon.IoLink.Helper">
+      <HintPath>lib\Wetcon.IoLink.Helper.dll</HintPath>
+    </Reference>
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
@@ -379,11 +382,6 @@
     <Compile Include="CompletedAsyncResult.cs" />
     <Compile Include="Infrastructure\IPACTwareUIKernelExtensions.cs" />
     <Compile Include="Infrastructure\TaskExtensions.cs" />
-    <Compile Include="IODD\Models\ProcessDataRecord.cs" />
-    <Compile Include="IODD\ProcessData.cs" />
-    <Compile Include="IODD\Models\IODD1_0_1.cs" />
-    <Compile Include="IODD\Models\IODD1_1.cs" />
-    <Compile Include="IODD\ProcessDataRecordParser.cs" />
     <Compile Include="OpcUa\Constants.cs" />
     <Compile Include="OpcUa\Di\Opc.Ua.Di.Classes.cs" />
     <Compile Include="OpcUa\Di\Opc.Ua.Di.Constants.cs" />
@@ -465,7 +463,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="IODD\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>REM powershell -command "Start-Process $(ProjectDir)Wetcon.PactwarePlugin.OpcUaServer_x64.bat -Verb runas"</PostBuildEvent>
