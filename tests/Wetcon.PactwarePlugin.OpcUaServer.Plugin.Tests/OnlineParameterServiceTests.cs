@@ -34,11 +34,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.Plugin.Tests
         [TestMethod]
         public void DownloadRequestDeviceNotOnline()
         {
-            var mock = PACTwareMock.Create()
-                .AddDevice("a", "b", true);
-
-            var onlineParameterService = new DtmOnlineParameterService();
-            onlineParameterService.OnLoadProjectNode(mock.Devices.First());
+            var onlineParameterService = CreateOnlineParameterService(true);
             var result = onlineParameterService.StartDownloadRequest();
 
             Assert.AreEqual(InitTransferStatus.ErrorNotOnline, result.InitTransferStatus);
@@ -47,11 +43,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.Plugin.Tests
         [TestMethod]
         public void UploadRequestDeviceNotOnline()
         {
-            var mock = PACTwareMock.Create()
-                .AddDevice("a", "b", true);
-
-            var onlineParameterService = new DtmOnlineParameterService();
-            onlineParameterService.OnLoadProjectNode(mock.Devices.First());
+            var onlineParameterService = CreateOnlineParameterService(true);
             var result = onlineParameterService.StartUploadRequest();
 
             Assert.AreEqual(InitTransferStatus.ErrorNotOnline, result.InitTransferStatus);
@@ -60,11 +52,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.Plugin.Tests
         [TestMethod]
         public void DownloadRequestDeviceOnline()
         {
-            var mock = PACTwareMock.Create()
-                .AddDevice("deviceName", "deviceId", false, false, true);
-
-            var onlineParameterService = new DtmOnlineParameterService();
-            onlineParameterService.OnLoadProjectNode(mock.Devices.First());
+            var onlineParameterService = CreateOnlineParameterService(false);
             var result = onlineParameterService.StartDownloadRequest();
 
             Assert.AreEqual(InitTransferStatus.Ok, result.InitTransferStatus);
@@ -73,11 +61,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.Plugin.Tests
         [TestMethod]
         public void UploadRequestDeviceOnline()
         {
-            var mock = PACTwareMock.Create()
-                .AddDevice("deviceName", "deviceId", false, false, true);
-
-            var onlineParameterService = new DtmOnlineParameterService();
-            onlineParameterService.OnLoadProjectNode(mock.Devices.First());
+            var onlineParameterService = CreateOnlineParameterService(false);
             var result = onlineParameterService.StartUploadRequest();
 
             Assert.AreEqual(InitTransferStatus.Ok, result.InitTransferStatus);
@@ -86,11 +70,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.Plugin.Tests
         [TestMethod]
         public void DownloadRequestFetchResult()
         {
-            var mock = PACTwareMock.Create()
-                .AddDevice("deviceName", "deviceId", false, false, true);
-
-            var onlineParameterService = new DtmOnlineParameterService();
-            onlineParameterService.OnLoadProjectNode(mock.Devices.First());
+            var onlineParameterService = CreateOnlineParameterService(false);
             var startTransferResult = onlineParameterService.StartDownloadRequest();
             var result = onlineParameterService.FetchTransferResultData(startTransferResult.TransferId);
 
@@ -101,11 +81,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.Plugin.Tests
         [TestMethod]
         public void UploadRequestFetchResult()
         {
-            var mock = PACTwareMock.Create()
-                .AddDevice("deviceName", "deviceId", false, false, true);
-
-            var onlineParameterService = new DtmOnlineParameterService();
-            onlineParameterService.OnLoadProjectNode(mock.Devices.First());
+            var onlineParameterService = CreateOnlineParameterService(false);
             var startTransferResult = onlineParameterService.StartUploadRequest();
             var result = onlineParameterService.FetchTransferResultData(startTransferResult.TransferId);
 
@@ -118,11 +94,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.Plugin.Tests
         [TestMethod]
         public void UploadRequestFetchResultDifferentTransferId()
         {
-            var mock = PACTwareMock.Create()
-                .AddDevice("deviceName", "deviceId", false, false, true);
-
-            var onlineParameterService = new DtmOnlineParameterService();
-            onlineParameterService.OnLoadProjectNode(mock.Devices.First());
+            var onlineParameterService = CreateOnlineParameterService(false);
             var startTransferResult = onlineParameterService.StartUploadRequest();
             var differentTransferId = startTransferResult.TransferId + 1;
             var result = onlineParameterService.FetchTransferResultData(differentTransferId);
@@ -133,11 +105,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.Plugin.Tests
         [TestMethod]
         public void TransferRequestOverwriteResultForSameDevice()
         {
-            var mock = PACTwareMock.Create()
-                .AddDevice("deviceName", "deviceId", false, false, true);
-
-            var onlineParameterService = new DtmOnlineParameterService();
-            onlineParameterService.OnLoadProjectNode(mock.Devices.First());
+            var onlineParameterService = CreateOnlineParameterService(false);
             var startTransferResultFirst = onlineParameterService.StartUploadRequest();
             var startTransferResultSecond = onlineParameterService.StartDownloadRequest();
 
@@ -146,6 +114,17 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.Plugin.Tests
 
             Assert.AreEqual(TransferStatus.NoResultsForTransferId, resultFirst.Status);
             Assert.AreEqual(TransferStatus.Completed, resultSecond.Status);
+        }
+
+        private DtmOnlineParameterService CreateOnlineParameterService(bool emptyDevice)
+        {
+            var mock = PACTwareMock.Create()
+                .AddDevice("deviceName", "deviceId", emptyDevice, false, !emptyDevice);
+
+            var onlineParameterService = new DtmOnlineParameterService();
+            onlineParameterService.OnLoadProjectNode(mock.Devices.First());
+
+            return onlineParameterService;
         }
     }
 }

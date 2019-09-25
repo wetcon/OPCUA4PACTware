@@ -270,6 +270,7 @@
     <Compile Include="Base\TestHelpers.cs" />
     <Compile Include="DtmParameterMergerTests.cs" />
     <Compile Include="DtmParameterWriterTests.cs" />
+    <Compile Include="OfflineDeviceModelTests.cs" />
     <Compile Include="ParameterModelTests.cs" />
     <Compile Include="ParameterSetModelTests.cs" />
     <Compile Include="OpcUaPluginIntegrationTests.cs" />

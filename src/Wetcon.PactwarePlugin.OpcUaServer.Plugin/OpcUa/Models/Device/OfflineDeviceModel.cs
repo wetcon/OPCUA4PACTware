@@ -26,7 +26,6 @@ using System.Collections.Generic;
 using Opc.Ua;
 using Opc.Ua.Di;
 using Opc.Ua.Server;
-using PWID.Interfaces;
 using Wetcon.PactwarePlugin.OpcUaServer.Fdt;
 
 namespace Wetcon.PactwarePlugin.OpcUaServer.OpcUa.Models
@@ -36,8 +35,8 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.OpcUa.Models
     /// </summary>
     public class OfflineDeviceModel : BaseDeviceModel
     {
-        public OfflineDeviceModel(ushort serverNamespaceIndex, IPACTwareProjectNode pactwareProjectNode,
-            IFdtServiceProvider fdtServiceProvider, NodeState parent) : base(serverNamespaceIndex, pactwareProjectNode, fdtServiceProvider, parent, false)
+        public OfflineDeviceModel(DeviceModelContext deviceModelContext) :
+            base(deviceModelContext, false)
         {
             TransferService = new TransferServicesState(this);
         }
@@ -150,34 +149,59 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.OpcUa.Models
 
         private TransferServicesState m_transferService;
 
-        internal static List<NodeState> Add(IPACTwareProjectNode pactwareProjectNode,
-            IFdtServiceProvider fdtServiceProvider, NodeState parentNode, ServerSystemContext systemContext, ushort serverNamespaceIndex,
+        internal static List<NodeState> Add(DeviceModelContext deviceModelContext, ServerSystemContext systemContext,
             bool readIOProcessData)
         {
             // Add the offline device node.
-            var offlineDeviceModel = new OfflineDeviceModel(serverNamespaceIndex, pactwareProjectNode,
-                fdtServiceProvider, parentNode);
+            var offlineDeviceModel = new OfflineDeviceModel(deviceModelContext);
             var browseName = new QualifiedName(offlineDeviceModel.DeviceName + "." + offlineDeviceModel.DeviceId,
-                serverNamespaceIndex);
+                deviceModelContext.ServerNamespaceIndex);
             var displayName = new LocalizedText(offlineDeviceModel.DeviceName);
+            var uniqueNodeId = MakeUniqueNodeId(offlineDeviceModel.NodeId, deviceModelContext.ExistingNodeIds);
 
-            parentNode.AddChild(offlineDeviceModel);
+            deviceModelContext.ExistingNodeIds.Add(uniqueNodeId);
+            deviceModelContext.Parent.AddChild(offlineDeviceModel);
 
             offlineDeviceModel.Create(
                 systemContext,
-                offlineDeviceModel.NodeId,
+                uniqueNodeId,
                 browseName,
                 displayName,
                 true);
 
-            var onlineDeviceModel = OnlineDeviceModel.Add(pactwareProjectNode, fdtServiceProvider,
-                offlineDeviceModel, systemContext, serverNamespaceIndex, readIOProcessData);
+            var onlineDeviceModel = OnlineDeviceModel.Add(deviceModelContext.WithNewParent(offlineDeviceModel),
+                systemContext, readIOProcessData);
 
             return new List<NodeState>()
             {
                 offlineDeviceModel,
                 onlineDeviceModel
             };
+        }
+
+        /// <summary>
+        /// Makes sure an OPC UA NodeId is unique, considering the existing node ids.
+        /// </summary>
+        /// <param name="nodeId"></param>
+        /// <param name="existingNodeIds"></param>
+        /// <returns></returns>
+        internal static NodeId MakeUniqueNodeId(NodeId nodeId, List<NodeId> existingNodeIds)
+        {
+            if (null == existingNodeIds || 0 == existingNodeIds.Count)
+            {
+                return nodeId;
+            }
+
+            var i = 0;
+            var result = new NodeId(nodeId);
+            var initialString = nodeId.Identifier.ToString();
+
+            while (existingNodeIds.Contains(result))
+            {
+                result = new NodeId($"{initialString}.{++i}", nodeId.NamespaceIndex);
+            }
+
+            return result;
         }
     }
 }

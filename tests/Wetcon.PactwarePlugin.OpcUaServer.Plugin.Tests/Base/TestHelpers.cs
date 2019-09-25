@@ -153,8 +153,10 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.Plugin.Tests
             {
                 NodeId = new NodeId("")
             };
+            var deviceModelContext = new DeviceModelContext(1, PACTwareProjectNode,
+                FdtServiceProvider, deviceSetNode);
 
-            return new OfflineDeviceModel(1, PACTwareProjectNode, FdtServiceProvider, deviceSetNode);
+            return new OfflineDeviceModel(deviceModelContext);
         }
 
         public OnlineDeviceModel CreateOnlineDevice(bool readProcessData)
@@ -163,13 +165,16 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.Plugin.Tests
             {
                 NodeId = new NodeId("")
             };
+            var deviceModelContext = new DeviceModelContext(1, PACTwareProjectNode,
+                FdtServiceProvider, deviceSetNode);
 
-            return new OnlineDeviceModel(1, PACTwareProjectNode, FdtServiceProvider, deviceSetNode, readProcessData);
+            return new OnlineDeviceModel(deviceModelContext, readProcessData);
         }
 
         private void RegisterService<T>(T service) where T : IBaseFdtService
         {
-            FdtServiceProvider.GetService<T>().Returns(service);
+            FdtServiceProvider.GetService<T>()
+                .Returns(service);
         }
     }
 }

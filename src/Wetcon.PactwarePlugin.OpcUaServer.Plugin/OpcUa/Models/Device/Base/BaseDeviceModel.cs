@@ -71,26 +71,22 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.OpcUa.Models
         /// <summary>
         /// Initializes a new instance of <see cref="BaseDeviceModel"/>.
         /// </summary>
-        /// <param name="serverNamespaceIndex"></param>
-        /// <param name="pactwareProjectNode"></param>
-        /// <param name="fdtService"></param>
-        /// <param name="parent"></param>
+        /// <param name="deviceModelContext"></param>
         /// <param name="readIOProcessData"></param>
-        protected BaseDeviceModel(ushort serverNamespaceIndex, IPACTwareProjectNode pactwareProjectNode,
-            IFdtServiceProvider fdtService, NodeState parent, bool readIOProcessData)
-            : base(parent)
+        protected BaseDeviceModel(DeviceModelContext deviceModelContext, bool readIOProcessData)
+            : base(deviceModelContext.Parent)
         {
-            PactwareProjectNode = pactwareProjectNode;
-            FdtService = fdtService;
+            PactwareProjectNode = deviceModelContext.PactwareProjectNode;
+            FdtService = deviceModelContext.FdtServiceProvider;
             DeviceId = PactwareProjectNode.CatalogueObject.Id;
 
-            NodeId = new NodeId($"{parent.NodeId.Identifier}.Device.{DeviceId}", 2);
+            NodeId = new NodeId($"{deviceModelContext.Parent.NodeId.Identifier}.Device.{DeviceId}", 2);
 
             DeviceName = !string.IsNullOrWhiteSpace(PactwareProjectNode.Tagname) ?
                 PactwareProjectNode.Tagname : PactwareProjectNode.DeviceName;
 
             ReadIOProcessData = readIOProcessData;
-            ServerNamespaceIndex = serverNamespaceIndex;
+            ServerNamespaceIndex = deviceModelContext.ServerNamespaceIndex;
             ParameterSet = new ParameterSetModel(this);
             WriteMask = AttributeWriteMask.None;
             UserWriteMask = AttributeWriteMask.None;
@@ -120,7 +116,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.OpcUa.Models
 
             if (!(PactwareProjectNode.CatalogueObject is IPACTwareCatalogueNodeInfo pactwareCatalogNodeInfo))
             {
-                return deviceClass;
+                return null;
             }
 
             var classificationDomain = pactwareCatalogNodeInfo.ClassificationDomain;

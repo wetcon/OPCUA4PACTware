@@ -25,9 +25,11 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Threading.Tasks;
 using Jigfdt.Fdt100;
 using NSubstitute;
+using PWID.EventArgs;
 using PWID.Interfaces;
 
 namespace Wetcon.PactwarePlugin.OpcUaServer.Plugin.Tests
@@ -43,7 +45,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.Plugin.Tests
         class DtmMock : IDtmSingleInstanceDataAccess, IDtmSingleDeviceDataAccess, IDtmChannel, IFdtCommunication, IFdtChannel,
             IDtmOnlineParameter
         {
-            public object CallbackObject { private get; set; }
+            public List<object> CallbackObjects { get; } = new List<object>();
 
             private object CommunicationCallbackObject { get; set; }
 
@@ -84,21 +86,21 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.Plugin.Tests
             {
                 var response = ResponseFileAccess.ReadAllText("ItemListRequestResponse.xml");
 
-                ((IDtmSingleDeviceDataAccessEvents)CallbackObject).OnItemListResponse(invokeId, response);
+                InvokeCallbacks<IDtmSingleDeviceDataAccessEvents>(e => e.OnItemListResponse(invokeId, response));
             }
 
             void IDtmSingleDeviceDataAccess.ReadRequest(string invokeId, string itemSelectionList)
             {
                 var response = ResponseFileAccess.ReadAllText("ReadRequestResponse.xml");
 
-                ((IDtmSingleDeviceDataAccessEvents)CallbackObject).OnReadResponse(invokeId, response);
+                InvokeCallbacks<IDtmSingleDeviceDataAccessEvents>(e => e.OnReadResponse(invokeId, response));
             }
 
             void IDtmSingleDeviceDataAccess.WriteRequest(string invokeId, string itemList)
             {
                 var response = ResponseFileAccess.ReadAllText("WriteRequestResponse.xml");
 
-                ((IDtmSingleDeviceDataAccessEvents)CallbackObject).OnWriteResponse(invokeId, response);
+                InvokeCallbacks<IDtmSingleDeviceDataAccessEvents>(e => e.OnWriteResponse(invokeId, response));
             }
 
             IFdtChannelCollection IDtmChannel.GetChannels()
@@ -183,14 +185,21 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.Plugin.Tests
 
             bool IDtmOnlineParameter.DownloadRequest(string invokeId, string parameterPath)
             {
-                ((IDtmEvents)CallbackObject).OnDownloadFinished(invokeId, true);
+                InvokeCallbacks<IDtmEvents>(e => e.OnDownloadFinished(invokeId, true));
                 return true;
             }
 
             bool IDtmOnlineParameter.UploadRequest(string invokeId, string parameterPath)
             {
-                ((IDtmEvents)CallbackObject).OnUploadFinished(invokeId, true);
+                InvokeCallbacks<IDtmEvents>(e => e.OnUploadFinished(invokeId, true));
                 return true;
+            }
+
+            private void InvokeCallbacks<T>(Action<T> fn)
+            {
+                CallbackObjects.OfType<T>()
+                    .ToList()
+                    .ForEach(fn);
             }
         }
 
@@ -215,6 +224,9 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.Plugin.Tests
         {
             var device = CreateDevice(deviceName, deviceId, emptyDevice, isIoLink, isOnline);
             Devices.Add(device);
+
+            PACTwareUIKernel.PACTwareKernel.Project.AddProjectNodeEvent += Raise.EventWith(new object(),
+                new PACTwareEventActionProjectNodeArgs("", true, null, device));
 
             return this;
         }
@@ -250,18 +262,20 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.Plugin.Tests
                 .Returns(Task.CompletedTask)
                 .AndDoes(c =>
                 {
-                    if (dtmMock != null)
-                    {
-                        dtmMock.CallbackObject = c[1];
-                    }
+                    dtmMock?.CallbackObjects.Add(c[1]);
                 });
 
             device.EndAddObjectCallbackObserver(Arg.Any<IAsyncResult>())
                 .Returns(true);
 
+
             device.BeginRemoveObjectCallbackObserver(Arg.Any<string>(), Arg.Any<object>(), Arg.Any<AsyncCallback>(),
                 Arg.Any<object>())
-                .Returns(Task.CompletedTask);
+                .Returns(Task.CompletedTask)
+                .AndDoes(c =>
+                {
+                    dtmMock?.CallbackObjects.Remove(c[1]);
+                });
 
             device.EndRemoveObjectCallbackObserver(Arg.Any<IAsyncResult>())
                 .Returns(true);

@@ -23,6 +23,7 @@
 */
 
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following
@@ -38,3 +39,4 @@ using System.Runtime.InteropServices;
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
 [assembly: Guid("884780dc-0864-40ce-ad60-d7c2ee426da0")]
+[assembly: InternalsVisibleTo("Wetcon.PactwarePlugin.OpcUaServer.Plugin.Tests")]

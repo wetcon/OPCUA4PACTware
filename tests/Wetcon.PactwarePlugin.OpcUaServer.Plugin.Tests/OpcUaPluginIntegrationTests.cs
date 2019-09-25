@@ -84,6 +84,39 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.Plugin.Tests
         }
 
         [TestMethod, TestCategory(TestCategories.Integrated)]
+        public async Task SameDtmsAddedInitially()
+        {
+            var pwMock = PACTwareMock.Create()
+                .AddDevice(IO_LINK_DEVICENAME, IO_LINK_GUID, true)
+                .AddDevice(IO_LINK_DEVICENAME, IO_LINK_GUID, true);
+
+            await TestHelper.ExecuteAsync(pwMock, context =>
+            {
+                context.Client.Browse(context.DeviceSetNodeId, out var refs);
+
+                Assert.AreEqual(2, refs.Count);
+                Assert.AreNotEqual(refs[0].NodeId, refs[1].NodeId);
+            });
+        }
+
+        [TestMethod, TestCategory(TestCategories.Integrated)]
+        public async Task SameDtmsAddedAfterStartup()
+        {
+            var pwMock = PACTwareMock.Create();
+
+            await TestHelper.ExecuteAsync(pwMock, context =>
+            {
+                pwMock.AddDevice(IO_LINK_DEVICENAME, IO_LINK_GUID, true);
+                pwMock.AddDevice(IO_LINK_DEVICENAME, IO_LINK_GUID, true);
+
+                context.Client.Browse(context.DeviceSetNodeId, out var refs);
+
+                Assert.AreEqual(2, refs.Count);
+                Assert.AreNotEqual(refs[0].NodeId, refs[1].NodeId);
+            });
+        }
+
+        [TestMethod, TestCategory(TestCategories.Integrated)]
         public async Task DefaultProjectCollectionAsync()
         {
             var pwMock = CreatePWMockWithDefaultDevices();
@@ -355,10 +388,10 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.Plugin.Tests
 
                 context.Client.Browse(onlineParameterNodeId, out var parameterRefs);
 
-                var variableNodeId = context.GetNodeIdByDisplayName(parameterRefs, "TN_PDV1");
+                var variableNodeId = context.GetNodeIdByDisplayName(parameterRefs, "V_PdInT.Distance");
                 var result = context.Client.ReadVariable(variableNodeId);
 
-                Assert.AreEqual(21, result);
+                Assert.AreEqual((ulong)21, result);
             });
         }
 

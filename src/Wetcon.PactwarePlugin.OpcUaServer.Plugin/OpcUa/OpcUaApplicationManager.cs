@@ -88,8 +88,8 @@ namespace Wetcon.PactwarePlugin.OpcUaServer
                 }
 
                 // check the application certificate.
-                bool haveAppCertificate = await application.CheckApplicationInstanceCertificate(false, 0);
-                if (!haveAppCertificate)
+                var hasAppCertificate = await application.CheckApplicationInstanceCertificate(false, 0);
+                if (!hasAppCertificate)
                 {
                     throw new Exception("Application instance certificate invalid!");
                 }
