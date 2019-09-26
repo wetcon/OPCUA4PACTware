@@ -24,8 +24,6 @@
 
 using Opc.Ua;
 using Opc.Ua.Server;
-using PWID.Interfaces;
-using Wetcon.PactwarePlugin.OpcUaServer.Fdt;
 
 namespace Wetcon.PactwarePlugin.OpcUaServer.OpcUa.Models
 {
@@ -36,25 +34,22 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.OpcUa.Models
     {
         protected override DeviceModelType DeviceModelType => DeviceModelType.Online;
 
-        public OnlineDeviceModel(ushort serverNamespaceIndex, IPACTwareProjectNode pactwareProjectNode,
-            IFdtServiceProvider fdtServiceProvider, NodeState parent, bool readIOProcessData)
-            : base(serverNamespaceIndex, pactwareProjectNode, fdtServiceProvider, parent, readIOProcessData)
+        public OnlineDeviceModel(DeviceModelContext deviceModelContext, bool readIOProcessData)
+            : base(deviceModelContext, readIOProcessData)
         {
             DisplayName = new LocalizedText("Online");
             BrowseName = new QualifiedName(Opc.Ua.Di.BrowseNames.IsOnline, 1);
         }
 
-        internal static BaseObjectState Add(IPACTwareProjectNode pactwareProjectNode,
-            IFdtServiceProvider fdtServiceProvider, OfflineDeviceModel parentNode, ServerSystemContext systemContext, ushort serverNamespaceIndex,
+        internal static BaseObjectState Add(DeviceModelContext deviceModelContext, ServerSystemContext systemContext,
             bool readIOProcessData)
         {
             // Add the online device node.
-            var onlineDeviceModel = new OnlineDeviceModel(serverNamespaceIndex, pactwareProjectNode, fdtServiceProvider,
-                parentNode, readIOProcessData);
+            var onlineDeviceModel = new OnlineDeviceModel(deviceModelContext, readIOProcessData);
             var displayName = new LocalizedText("Online");
             var browseName = new QualifiedName(Opc.Ua.Di.BrowseNames.IsOnline, 1);
 
-            parentNode.AddChild(onlineDeviceModel);
+            deviceModelContext.Parent.AddChild(onlineDeviceModel);
 
             onlineDeviceModel.Create(
                 systemContext,

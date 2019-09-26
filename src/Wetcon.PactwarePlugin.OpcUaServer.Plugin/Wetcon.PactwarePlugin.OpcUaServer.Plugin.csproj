@@ -349,7 +349,7 @@
     <Compile Include="Fdt\Services\Base\BaseFdtService.cs" />
     <Compile Include="Fdt\Services\Base\DtmInterface.cs" />
     <Compile Include="Fdt\Services\Base\IBaseFdtService.cs" />
-    <Compile Include="Fdt\Services\Base\IProjectNodeDependent.cs" />
+    <Compile Include="Fdt\Services\Base\IProjectNodeEvents.cs" />
     <Compile Include="Fdt\Services\Base\IFdtServiceProvider.cs" />
     <Compile Include="Fdt\Services\FdtContainerService.cs" />
     <Compile Include="Fdt\Services\DtmParameterService.cs" />
@@ -386,6 +386,7 @@
     <Compile Include="OpcUa\Di\Opc.Ua.Di.Classes.cs" />
     <Compile Include="OpcUa\Di\Opc.Ua.Di.Constants.cs" />
     <Compile Include="OpcUa\Di\Opc.Ua.Di.DataTypes.cs" />
+    <Compile Include="OpcUa\Models\Device\DeviceModelContext.cs" />
     <Compile Include="OpcUa\Models\Parameter\Base\BaseParameterModel.cs" />
     <Compile Include="OpcUa\Models\Device\OnlineDeviceModel.cs" />
     <Compile Include="OpcUa\Models\Device\OfflineDeviceModel.cs" />
@@ -463,9 +464,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="IODD\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>REM powershell -command "Start-Process $(ProjectDir)Wetcon.PactwarePlugin.OpcUaServer_x64.bat -Verb runas"</PostBuildEvent>

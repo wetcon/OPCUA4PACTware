@@ -30,7 +30,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.Plugin.Tests
     [TestClass]
     public class XmlTests
     {
-        private const string protocolSchema = @"<?xml version=""1.0""?>
+        private const string ProtocolSchema = @"<?xml version=""1.0""?>
         <FDT xmlns=""x-schema:DTMProtocolsSchema.xml"" xmlns:fdt=""x-schema:FDTDataTypesSchema.xml"">
             <fdt:BusCategories>
                 <fdt:BusCategory busCategory=""2C4CD8B8-D509-4ECB-94A7-019F12569C8B"" busCategoryName=""IO-Link"">
@@ -39,7 +39,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.Plugin.Tests
             </fdt:BusCategories>
         </FDT>";
 
-        private const string communicationResponse = @"<?xml version=""1.0""?>
+        private const string CommunicationResponse = @"<?xml version=""1.0""?>
         <FDT xmlns=""x-schema:FDTIOLinkCommunicationSchema.xml"" xmlns:fdt=""x-schema:FDTDataTypesSchema.xml"">
         	<ReadProcessDataResponse communicationReference=""5eb65b2e-968f-4788-b972-0a0058c9c94d"" direction=""input"" pdValid=""1"" errorCode=""0"" additionalCode=""0"">
         		<fdt:CommunicationData byteArray=""03B1""/>
@@ -49,7 +49,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.Plugin.Tests
         [TestMethod]
         public void ParseProtocol()
         {
-            var busCategoryId = IOCommunicationXml.ParseBusCategoryId(protocolSchema);
+            var busCategoryId = IOCommunicationXml.ParseBusCategoryId(ProtocolSchema);
 
             Assert.AreEqual("2C4CD8B8-D509-4ECB-94A7-019F12569C8B", busCategoryId);
         }
@@ -57,7 +57,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.Plugin.Tests
         [TestMethod]
         public void ParseCommunicationData()
         {
-            var byteArray = IOCommunicationXml.ParseCommunicationByteArray(communicationResponse);
+            var byteArray = IOCommunicationXml.ParseCommunicationByteArray(CommunicationResponse);
 
             Assert.AreEqual("03B1", byteArray);
         }

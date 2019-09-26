@@ -271,6 +271,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer
 
                     var devices = _pactwareUIKernel.GetDeviceProjectNodes();
                     var offlineDeviceNodes = FindChildNodes<BaseDeviceModel>(DeviceSetNode).ToArray();
+                    var existingNodeIds = offlineDeviceNodes.Select(d => d.NodeId).ToList();
 
                     foreach (var device in devices)
                     {
@@ -284,7 +285,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer
                         }
 
                         // Add the offline and online device nodes to the DeviceSet.
-                        AddDeviceToDeviceSet(device, DeviceSetNode);
+                        AddDeviceToDeviceSet(device, DeviceSetNode, existingNodeIds);
                     }
                 }
 
@@ -308,12 +309,15 @@ namespace Wetcon.PactwarePlugin.OpcUaServer
             }
         }
 
-        private void AddDeviceToDeviceSet(IPACTwareProjectNode pactwareProjectNode, NodeState deviceSetNode)
+        private void AddDeviceToDeviceSet(IPACTwareProjectNode pactwareProjectNode, NodeState deviceSetNode,
+            List<NodeId> existingNodeIds)
         {
             var fdtServiceProvider = new FdtServiceProvider();
             fdtServiceProvider.OnLoadProjectNode(pactwareProjectNode);
-            var nodeStates = OfflineDeviceModel.Add(pactwareProjectNode, fdtServiceProvider, deviceSetNode,
-                SystemContext, ServerNamespaceIndex, _pluginSettings.PluginReadIOProcessData);
+            var deviceModelContext = new DeviceModelContext(ServerNamespaceIndex, pactwareProjectNode,
+                fdtServiceProvider, deviceSetNode, existingNodeIds);
+            var nodeStates = OfflineDeviceModel.Add(deviceModelContext, SystemContext,
+                _pluginSettings.PluginReadIOProcessData);
 
             foreach (var nodeState in nodeStates)
             {

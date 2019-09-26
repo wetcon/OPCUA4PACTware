@@ -223,9 +223,12 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.Plugin.Tests
                 NodeId = new NodeId("")
             };
 
+            var deviceModelContext = new DeviceModelContext(1, testFdtServices.PACTwareProjectNode,
+                testFdtServices.FdtServiceProvider, device);
+
             var parent = offlineDevice ?
-                (BaseDeviceModel)new OfflineDeviceModel(1, testFdtServices.PACTwareProjectNode, testFdtServices.FdtServiceProvider, device) :
-                new OnlineDeviceModel(1, testFdtServices.PACTwareProjectNode, testFdtServices.FdtServiceProvider, device, false);
+                (BaseDeviceModel)new OfflineDeviceModel(deviceModelContext) :
+                new OnlineDeviceModel(deviceModelContext, false);
 
             var parameterModel = new ParameterModel(parent,
                 CreateDtmParameter(parameterDataSourceKind, accessLevel, id).First());
