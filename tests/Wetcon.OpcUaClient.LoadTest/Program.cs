@@ -31,6 +31,7 @@ namespace Wetcon.OpcUaClient
     class Program : ApplicationBase<LoadTestArguments>
     {
         private int ValueToWrite { get; set; } = 5;
+
         protected override string Name { get; set; } = "LoadTestApp";
 
         protected override int Delay => 0;
