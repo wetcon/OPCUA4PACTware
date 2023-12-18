@@ -490,9 +490,6 @@
     <EmbeddedResource Include="UserControls\OptionsUserControl.resx">
       <DependentUpon>OptionsUserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="..\..\Wetcon.PactwarePlugin.OpcUaServer.sln.licenseheader">
-      <Link>Wetcon.PactwarePlugin.OpcUaServer.sln.licenseheader</Link>
-    </None>
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
