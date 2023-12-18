@@ -292,9 +292,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\Wetcon.PactwarePlugin.OpcUaServer.sln.licenseheader">
-      <Link>Wetcon.PactwarePlugin.OpcUaServer.sln.licenseheader</Link>
-    </None>
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>

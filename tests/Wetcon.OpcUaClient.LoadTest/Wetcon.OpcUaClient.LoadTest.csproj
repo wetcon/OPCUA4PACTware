@@ -55,9 +55,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\Wetcon.PactwarePlugin.OpcUaServer.sln.licenseheader">
-      <Link>Wetcon.PactwarePlugin.OpcUaServer.sln.licenseheader</Link>
-    </None>
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>

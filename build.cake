@@ -80,7 +80,7 @@ Task("UpdateVersion")
         InformationalVersion = gitVersion.InformationalVersion,
         Product = "PACTware OpcUaServerPlugin",
         Company  = "wetcon gmbh",
-        Copyright = $"Copyright (c) wetcon gmbh 2018 - {DateTime.UtcNow.Year}"
+        Copyright = $"Copyright (c) wetcon gmbh 2019 - {DateTime.UtcNow.Year}"
     });
 });
 
