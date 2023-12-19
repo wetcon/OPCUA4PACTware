@@ -40,9 +40,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="OPCFoundation.NetStandard.Opc.Ua">
       <Version>1.4.365.48</Version>
     </PackageReference>

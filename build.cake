@@ -42,7 +42,8 @@ Setup(context =>
         {
             TimeStampUri = new Uri(timeStampUri),
             CertPath = certPath,
-            Password = password
+            Password = password,
+            DigestAlgorithm = SignToolDigestAlgorithm.Sha256
         };
     }
     else 
