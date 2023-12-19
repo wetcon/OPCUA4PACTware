@@ -104,6 +104,7 @@ Task("Compile")
         settings
             .SetMaxCpuCount(0) // Auto detect number of CPUs for parallel build.
             .SetConfiguration(configuration)
+            .UseToolVersion(MSBuildToolVersion.VS2019)
             .SetVerbosity(Verbosity.Minimal);
     });
 });
@@ -118,8 +119,8 @@ Task("RunUnitTests")
     {
         Parallel = true,
         Logger = "trx",
-	ToolPath = Context.Tools.Resolve("vstest.console.exe"),
-	TestCaseFilter = "TestCategory!=Integrated",
+	    ToolPath = Context.Tools.Resolve("vstest.console.exe"),
+	    TestCaseFilter = "TestCategory!=Integrated",
         ArgumentCustomization = args => args.Append("/logger:console;verbosity=minimal"),
     });
 });

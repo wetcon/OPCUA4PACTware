@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.421
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wetcon.PactwarePlugin.OpcUaServer.Plugin", "src\Wetcon.PactwarePlugin.OpcUaServer.Plugin\Wetcon.PactwarePlugin.OpcUaServer.Plugin.csproj", "{884780DC-0864-40CE-AD60-D7C2EE426DA0}"
 EndProject
