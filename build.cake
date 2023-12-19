@@ -1,4 +1,4 @@
-#tool nuget:?package=Microsoft.TestPlatform&version=15.9.0
+#tool "nuget:?package=Microsoft.TestPlatform&version=15.9.0"
 #tool "nuget:?package=Wix&version=3.11.1"
 #tool "nuget:?package=GitVersion.CommandLine&version=4.0.0"
 
