@@ -31,7 +31,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.Plugin.Tests
     [TestClass]
     public class OfflineDeviceModelTests
     {
-        private const string NodeIdText = "a";
+        private const string NodeIdText = "s=a";
 
         [TestMethod]
         public void KeepsUniqueId()

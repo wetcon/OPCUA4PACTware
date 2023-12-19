@@ -41,7 +41,7 @@ namespace Wetcon.OpcUaClient.Base
 
         }
 
-        public virtual async Task Initialize(Opc.Ua.Server.StandardServer server)
+        public virtual Task InitializeAsync(Opc.Ua.Server.StandardServer server)
         {
             var endpoints = server.GetEndpoints();
             if (endpoints.Count == 0)
@@ -50,10 +50,10 @@ namespace Wetcon.OpcUaClient.Base
             }
             var firstEndpointUrl = endpoints[0].EndpointUrl;
 
-            await Initialize(firstEndpointUrl);
+            return InitializeAsync(firstEndpointUrl);
         }
 
-        public virtual async Task Initialize(string endpointUrl)
+        public virtual async Task InitializeAsync(string endpointUrl)
         {
             var config = new ApplicationConfiguration()
             {
@@ -65,15 +65,15 @@ namespace Wetcon.OpcUaClient.Base
                     {
                         StoreType = @"Directory",
                         StorePath = @"%AppData%\wetcon\PACTwarePlugins\OpcUaServer\Certificates\own",
-                        SubjectName = @"CN=Wetcon.OpcUaClient,DC=localhost",
+                        SubjectName = @"CN=Wetcon.OpcUaClient, DC=localhost",
                     },
                     TrustedPeerCertificates = new CertificateTrustList
                     {
                         StoreType = @"Directory",
                         StorePath = @"%AppData%\wetcon\PACTwarePlugins\OpcUaServer\Certificates\trusted",
                     },
-                    NonceLength = 32,
-                    AutoAcceptUntrustedCertificates = true
+                    AutoAcceptUntrustedCertificates = true,
+                    RejectSHA1SignedCertificates = true,
                 },
                 TransportConfigurations = new TransportConfigurationCollection(),
                 TransportQuotas = new TransportQuotas { OperationTimeout = 15000 },
@@ -90,7 +90,7 @@ namespace Wetcon.OpcUaClient.Base
             }
 
             var configuredEndpoint = new ConfiguredEndpoint(null, new EndpointDescription(endpointUrl));
-            _session = await Session.Create(config, configuredEndpoint, true, "", 60000, null, null);
+            _session = await Session.Create(config, configuredEndpoint, true, string.Empty, 60000, null, null).ConfigureAwait(false);
         }
 
         public object ReadVariable(NodeId nodeId)

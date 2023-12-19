@@ -231,7 +231,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.Plugin.Tests
                 var variableNodeId = context.GetNodeIdByDisplayName(parameterRefs, "V_Align");
                 var result = context.Client.ReadVariable(variableNodeId);
 
-                Assert.AreEqual((UInt32)17, result);
+                Assert.AreEqual((uint)17, result);
             });
         }
 
@@ -255,7 +255,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.Plugin.Tests
                 var variableNodeId = context.GetNodeIdByDisplayName(parameterRefs, "V_Align");
                 var result = context.Client.ReadVariable(variableNodeId);
 
-                Assert.AreEqual((UInt32)17, result);
+                Assert.AreEqual((uint)17, result);
             });
         }
 

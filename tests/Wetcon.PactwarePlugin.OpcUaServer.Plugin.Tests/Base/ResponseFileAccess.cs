@@ -21,39 +21,19 @@
 // but WITHOUT ANY WARRANTY, without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-using System;
-using System.Threading.Tasks;
-using PWID.Interfaces;
+using System.IO;
 
 namespace Wetcon.PactwarePlugin.OpcUaServer.Plugin.Tests
 {
-    public class TestHelper
+    public static class ResponseFileAccess
     {
-        static readonly IPluginSettings s_pluginSettings = PluginSettings.LoadSettings();
+        const string FDT_RESPONSE_XML_FOLDER = "Responses";
 
-        public static OpcUaApplicationManager CreateApplicationManager(IPACTwareUIKernel pactwareUIKernel)
+        public static string ReadAllText(string fileName)
         {
-            return new OpcUaApplicationManager(pactwareUIKernel, s_pluginSettings);
-        }
+            var filePath = Path.Combine(FileAccess.FILES_FOLDER, FDT_RESPONSE_XML_FOLDER, fileName);
 
-        public static Task ExecuteAsync(PACTwareMock pwMock, Action<TestContext> fn)
-        {
-            return ExecuteAsync(pwMock.PACTwareUIKernel, fn);
-        }
-
-        private async static Task ExecuteAsync(IPACTwareUIKernel pactwareUIKernel, Action<TestContext> fn)
-        {
-            var appManager = CreateApplicationManager(pactwareUIKernel);
-
-            await Task.Run(appManager.StartApplicationAsync);            
-
-            using (var client = new OpcUaClient.Base.OpcUaClient())
-            {
-                await client.InitializeAsync(appManager.Server);
-                fn(new TestContext(appManager.Server, client));
-            }
-
-            await appManager.StopApplicationAsync();
+            return File.ReadAllText(filePath);
         }
     }
 }

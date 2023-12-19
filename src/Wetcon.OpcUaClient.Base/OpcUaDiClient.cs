@@ -40,9 +40,9 @@ namespace Wetcon.OpcUaClient.Base
             _deviceNodeId = deviceNodeId;
         }
 
-        public override async Task Initialize(string endpointUrl)
+        public override async Task InitializeAsync(string endpointUrl)
         {
-            await base.Initialize(endpointUrl);
+            await base.InitializeAsync(endpointUrl);
             _parameterSetNodeId = GetParameterSetNode();
         }
 

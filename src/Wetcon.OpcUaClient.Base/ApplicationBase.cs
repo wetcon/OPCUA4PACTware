@@ -66,7 +66,7 @@ namespace Wetcon.OpcUaClient.Base
             {
                 using (OpcClient = new OpcUaDiClient(Arguments.DeviceNodeId))
                 {
-                    await OpcClient.Initialize(Arguments.OpcUaEndpointUrl);
+                    await OpcClient.InitializeAsync(Arguments.OpcUaEndpointUrl);
 
                     using (DeviceClient = CreateDeviceClient())
                     {

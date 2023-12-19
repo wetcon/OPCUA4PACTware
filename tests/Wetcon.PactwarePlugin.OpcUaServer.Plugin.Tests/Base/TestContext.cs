@@ -21,39 +21,35 @@
 // but WITHOUT ANY WARRANTY, without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-using System;
-using System.Threading.Tasks;
-using PWID.Interfaces;
+using System.Linq;
+using Opc.Ua;
+using Wetcon.PactwarePlugin.OpcUaServer.Infrastructure;
 
 namespace Wetcon.PactwarePlugin.OpcUaServer.Plugin.Tests
 {
-    public class TestHelper
+    public class TestContext
     {
-        static readonly IPluginSettings s_pluginSettings = PluginSettings.LoadSettings();
+        public OpcUaClient.Base.OpcUaClient Client { get; }
+        public OpcUaServer Server { get; }
 
-        public static OpcUaApplicationManager CreateApplicationManager(IPACTwareUIKernel pactwareUIKernel)
+        public NodeId DeviceSetNodeId => Opc.Ua.Di.ObjectIds
+            .DeviceSet
+            .ToNodeId(Server.CurrentInstance.NamespaceUris);
+
+        public NodeId GetNodeIdByDisplayName(ReferenceDescriptionCollection referenceDescriptionCollection,
+            string displayName)
         {
-            return new OpcUaApplicationManager(pactwareUIKernel, s_pluginSettings);
+            var expandedNodeId = referenceDescriptionCollection
+                .First(rd => rd.DisplayName.Text.Equals(displayName))
+                .NodeId;
+
+            return expandedNodeId.ToNodeId(Server.CurrentInstance.NamespaceUris);
         }
 
-        public static Task ExecuteAsync(PACTwareMock pwMock, Action<TestContext> fn)
+        public TestContext(OpcUaServer server, OpcUaClient.Base.OpcUaClient client)
         {
-            return ExecuteAsync(pwMock.PACTwareUIKernel, fn);
-        }
-
-        private async static Task ExecuteAsync(IPACTwareUIKernel pactwareUIKernel, Action<TestContext> fn)
-        {
-            var appManager = CreateApplicationManager(pactwareUIKernel);
-
-            await Task.Run(appManager.StartApplicationAsync);            
-
-            using (var client = new OpcUaClient.Base.OpcUaClient())
-            {
-                await client.InitializeAsync(appManager.Server);
-                fn(new TestContext(appManager.Server, client));
-            }
-
-            await appManager.StopApplicationAsync();
+            Server = server;
+            Client = client;
         }
     }
 }

@@ -34,7 +34,9 @@
     <RejectedCertificateStore>
       <StoreType>Directory</StoreType>
       <StorePath>%AppData%\wetcon\PACTwarePlugins\OpcUaServer\Certificates\rejected</StorePath>
-    </RejectedCertificateStore>
+    </RejectedCertificateStore>    
+    <RejectSHA1SignedCertificates>false</RejectSHA1SignedCertificates>
+    <MinimumCertificateKeySize>2048</MinimumCertificateKeySize>
   </SecurityConfiguration>
 
   <TransportConfigurations></TransportConfigurations>

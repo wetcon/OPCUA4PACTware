@@ -41,7 +41,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer
         private readonly IPluginSettings _pluginSettings;
         private ApplicationInstance _applicationInstance;
         private readonly TaskCompletionSource<Task> _appRunningCompletionSource = new TaskCompletionSource<Task>();
-        private static bool s_autoAcceptCertificate = true;
+        private static readonly bool s_autoAcceptCertificate = true;
 
         /// <summary>
         /// Initializes a new instance of <see cref="OpcUaApplicationManager"/>
@@ -87,7 +87,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer
                 }
 
                 // check the application certificate.
-                var hasAppCertificate = await application.CheckApplicationInstanceCertificate(false, 0);
+                var hasAppCertificate = await application.CheckApplicationInstanceCertificate(true, 0);
                 if (!hasAppCertificate)
                 {
                     throw new Exception("Application instance certificate invalid!");
