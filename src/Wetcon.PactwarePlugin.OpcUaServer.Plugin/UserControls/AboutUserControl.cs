@@ -68,7 +68,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.UserControls
 
         private void websiteLinkLabel_LinkClicked(object sender, System.Windows.Forms.LinkLabelLinkClickedEventArgs e)
         {
-            OpenUrlLinkLabel(websiteLinkLabel, "https://www.wetcon.net/fdi-fdt-pactware-opc-ua/");
+            OpenUrlLinkLabel(websiteLinkLabel, "https://www.wetcon.net/");
         }
 
         private void emailLinkLabel_LinkClicked(object sender, System.Windows.Forms.LinkLabelLinkClickedEventArgs e)
