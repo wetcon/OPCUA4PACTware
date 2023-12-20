@@ -23,6 +23,20 @@
 
 using System;
 using System.Collections.Generic;
+using Cake.Common;
+using Cake.Common.Diagnostics;
+using Cake.Common.IO;
+using Cake.Common.Solution.Project.Properties;
+using Cake.Common.Tools.GitVersion;
+using Cake.Common.Tools.MSBuild;
+using Cake.Common.Tools.NuGet;
+using Cake.Common.Tools.NuGet.Restore;
+using Cake.Common.Tools.SignTool;
+using Cake.Common.Tools.VSTest;
+using Cake.Common.Tools.WiX;
+using Cake.Common.Tools.WiX.Heat;
+using Cake.Core;
+using Cake.Frosting;
 
 namespace Build
 {
@@ -125,7 +139,7 @@ namespace Build
     {
         public override void Run(BuildContext context)
         {
-            context.NuGetRestore(Constants.SolutionPath, new NuGetRestoreSettings()
+            context.NuGetRestore(Constants.SolutionPath, new NuGetRestoreSettings
             {
                 Verbosity = NuGetVerbosity.Quiet
             });
@@ -139,7 +153,7 @@ namespace Build
     {
         public override void Run(BuildContext context)
         {
-            context.MSBuild(Constants.SolutionPath, new MSBuildSettings()
+            context.MSBuild(Constants.SolutionPath, new MSBuildSettings
             {
                 MaxCpuCount = 0,
                 Configuration = context.MsBuildConfiguration,
