@@ -6,6 +6,11 @@
     <Platforms>AnyCPU</Platforms>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="tools\**" />
+    <EmbeddedResource Remove="tools\**" />
+    <None Remove="tools\**" />
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Include="Cake.Frosting" Version="4.0.0" />
   </ItemGroup>
 </Project>
