@@ -43,7 +43,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.UserControls
                 return false;
             }
 
-            mAddinBase = (Source as PluginPW5);
+            mAddinBase = (Source as OpcUaPlugin);
             lblTitle.Text = mAddinBase.Name;
             Wnd.BeginSetCaption(clsGuid.GetGuid(), mAddinBase.Name + " Info", null, null);
             var assembly = Assembly.GetAssembly(GetType());

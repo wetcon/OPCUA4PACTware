@@ -42,9 +42,19 @@ namespace Build
 {
     public static class Constants
     {
-        public const string SolutionPath = "../Wetcon.PactwarePlugin.OpcUaServer.sln";
-        public const string SetupObjDir = $"../src/Wetcon.PactwarePlugin.OpcUaServer.Setup/obj";
-        public const string SetupMsi = "../artifacts/Wetcon.PactwarePlugin.OpcUaServer.Setup/OpcUaServer_PW5_Plugin.msi";
+# if PW5
+        public const string SolutionPath = "../Build.PW5.sln";
+        public const string SetupObjDir = $"../src/Wetcon.PactwarePlugin.OpcUaServer.Setup/PW5/obj";
+        public const string SetupMsi = "../artifacts/Wetcon.PactwarePlugin.OpcUaServer.Setup/PW5/OpcUaServer_PW5_Plugin.msi";
+        public const string PactwareVersion = "PACTware 5";
+        public const string PactwareSubdirectory = "PW5";
+#else
+        public const string SolutionPath = "../Build.PW6.sln";
+        public const string SetupObjDir = $"../src/Wetcon.PactwarePlugin.OpcUaServer.Setup/PW6/obj";
+        public const string SetupMsi = "../artifacts/Wetcon.PactwarePlugin.OpcUaServer.Setup/PW6/OpcUaServer_PW6_Plugin.msi";
+        public const string PactwareVersion = "PACTware 6";
+        public const string PactwareSubdirectory = "PW6";
+#endif
     }
 
     public static class Program
@@ -74,7 +84,7 @@ namespace Build
             MsBuildConfiguration = context.Argument("configuration", "Release");
             SignBinaries = false && context.HasArgument("sign"); // todo: enable signing with new certificate
             AssemblyVersion = context.GitVersion();
-
+            context.Information($"Running for {Constants.PactwareVersion}");
             context.Information($"Calculated assembly version: {AssemblyVersion.FullSemVer}");
 
             if (SignBinaries)
@@ -107,10 +117,10 @@ namespace Build
             var directoriesToClean =
                 context.GetDirectories($"../src/**/obj/") +
                 context.GetDirectories($"../src/**/bin/") +
-                context.GetDirectories($"../src/Wetcon.PactwarePlugin.OpcUaServer.Setup/**/obj") +
-                context.GetDirectories($"../src/Wetcon.PactwarePlugin.OpcUaServer.Setup/**/bin") +
+                context.GetDirectories($"../tests/**/obj/") +
+                context.GetDirectories($"../tests/**/bin/") +
                 context.GetDirectories("../artifacts");
-
+            context.Information(string.Join(Environment.NewLine, directoriesToClean));
             context.CleanDirectories(directoriesToClean);
         }
     }
@@ -126,7 +136,7 @@ namespace Build
                 Version = context.AssemblyVersion.AssemblySemVer,
                 FileVersion = context.AssemblyVersion.AssemblySemFileVer,
                 InformationalVersion = context.AssemblyVersion.InformationalVersion,
-                Product = "PACTware OpcUaServerPlugin",
+                Product = $"OpcUaServerPlugin",
                 Company = "wetcon gmbh",
                 Copyright = $"Copyright (c) wetcon gmbh 2019 - {DateTime.UtcNow.Year}"
             });
@@ -169,7 +179,8 @@ namespace Build
     {
         public override void Run(BuildContext context)
         {
-            var tests = context.GetFiles($"../tests/**/bin/{context.MsBuildConfiguration}/**/*.Tests.dll");
+            var tests = context.GetFiles($"../tests/**/bin/{Constants.PactwareSubdirectory}/{context.MsBuildConfiguration}/*.Tests.dll");
+            context.Information(string.Join(Environment.NewLine, tests));
             context.VSTest(tests, new VSTestSettings
             {
                 Parallel = true,
@@ -190,8 +201,8 @@ namespace Build
 
         public override void Run(BuildContext context)
         {
-            var dlss = context.GetFiles($"../src/Wetcon.PactwarePlugin.OpcUaServer.Plugin/bin/{context.MsBuildConfiguration}/**/Wetcon.*.dll");
-            context.Sign(dlss, context.SignSettings);
+            var dlls = context.GetFiles($"../src/Wetcon.PactwarePlugin.OpcUaServer.Plugin/bin/{Constants.PactwareSubdirectory}/{context.MsBuildConfiguration}/**/Wetcon.*.dll");
+            context.Sign(dlls, context.SignSettings);
         }
     }
 
@@ -202,13 +213,13 @@ namespace Build
         public override void Run(BuildContext context)
         {
             context.CleanDirectory(Constants.SetupObjDir);
-            var dlls = context.GetFiles($"../src/Wetcon.PactwarePlugin.OpcUaServer.Plugin/bin/{context.MsBuildConfiguration}/**/*.dll");
+            var dlls = context.GetFiles($"../src/Wetcon.PactwarePlugin.OpcUaServer.Plugin/bin/{Constants.PactwareSubdirectory}/{context.MsBuildConfiguration}/**/*.dll");
             context.CopyFiles(dlls, Constants.SetupObjDir);
 
-            var configs = context.GetFiles($"../src/Wetcon.PactwarePlugin.OpcUaServer.Plugin/bin/{context.MsBuildConfiguration}/*.config");
+            var configs = context.GetFiles($"../src/Wetcon.PactwarePlugin.OpcUaServer.Plugin/bin/{Constants.PactwareSubdirectory}/{context.MsBuildConfiguration}/*.config");
             context.CopyFiles(configs, Constants.SetupObjDir);
 
-            var xmls = context.GetFiles($"../src/Wetcon.PactwarePlugin.OpcUaServer.Plugin/bin/{context.MsBuildConfiguration}/*.xml");
+            var xmls = context.GetFiles($"../src/Wetcon.PactwarePlugin.OpcUaServer.Plugin/bin/{Constants.PactwareSubdirectory}/{context.MsBuildConfiguration}/*.xml");
             context.CopyFiles(xmls, Constants.SetupObjDir);
 
             var dataDir = context.Directory($"../src/Wetcon.PactwarePlugin.OpcUaServer.Plugin/Resources");
@@ -222,7 +233,7 @@ namespace Build
     {
         public override void Run(BuildContext context)
         {
-            var wxsFile = context.File($"../src/Wetcon.PactwarePlugin.OpcUaServer.Setup/obj/OpcUaServerPlugin.wxs");
+            var wxsFile = context.File($"../src/Wetcon.PactwarePlugin.OpcUaServer.Setup/{Constants.PactwareSubdirectory}/obj/OpcUaServerPlugin.wxs");
             context.WiXHeat(Constants.SetupObjDir, wxsFile, WiXHarvestType.Dir, new HeatSettings
             {
                 DirectoryReferenceId = "INSTALLDIR",
@@ -231,7 +242,8 @@ namespace Build
                 ComponentGroupName = "PACTwarePlugin",
                 SuppressRootDirectory = true,
                 SuppressCom = true,
-                SuppressRegistry = true
+                SuppressRegistry = true,
+                Verbose = true,
             });
         }
     }
@@ -294,7 +306,7 @@ namespace Build
         public override void Run(BuildContext context)
         {
             var json = string.Format("{{ \"version\": \"{0}\" }}", context.AssemblyVersion.MajorMinorPatch);
-            System.IO.File.WriteAllText("../artifacts/Wetcon.PactwarePlugin.OpcUaServer.Setup/SetupVersion.json", json);
+            System.IO.File.WriteAllText($"../artifacts/Wetcon.PactwarePlugin.OpcUaServer.Setup/{Constants.PactwareSubdirectory}/SetupVersion.json", json);
         }
     }
 

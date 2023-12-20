@@ -19,7 +19,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -61,12 +61,8 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
-        ///{\colortbl ;\red0\green0\blue255;}
-        ///{\*\generator Riched20 10.0.17134}\viewkind4\uc1 
-        ///\pard\sa200\sl276\slmult1\f0\fs36\lang9 Wetcon Opc Ua Server PACTware Plugin\fs22\par
-        ///Copyright (c) 2019 wetcon gmbh. All rights reserved.\par
-        ///Wetcon provides its Opc Ua Server PACTware Plugin under a dual license model designed to meet the development and distribution needs of both commercial distributors (such as OEMs, ISVs an [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to {\rtf1\adeflang1025\ansi\ansicpg0\uc1\adeff31507\deff0\stshfdbch31505\stshfloch31506\stshfhich31506\stshfbi31507\deflang8192\deflangfe8192\themelang8192\themelangfe0\themelangcs0{\fonttbl{\f0\fbidi \froman\fcharset0\fprq2{\*\panose 02020603050405020304}Times New Roman;}{\f34\fbidi \froman\fcharset0\fprq2{\*\panose 02040503050406030204}Cambria Math;}
+        ///{\f37\fbidi \fswiss\fcharset0\fprq2{\*\panose 020f0502020204030204}Calibri;}{\flomajor\f31500\fbidi \froman\fcharset0\fprq2{\*\panose 02020603050405020304}Time [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string agb {
             get {

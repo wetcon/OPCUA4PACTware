@@ -41,9 +41,9 @@ using Wetcon.PactwarePlugin.OpcUaServer.UserControls;
 namespace Wetcon.PactwarePlugin.OpcUaServer
 {
     /// <summary>
-    /// Represents the OPC UA Server plugin for PACTware 5.
+    /// Represents the OPC UA Server plugin for PACTware.
     /// </summary>
-    public class PluginPW5 : clsPWBase, IPACTwareControlInformation, IPACTwareAddinKernel
+    public class OpcUaPlugin : clsPWBase, IPACTwareControlInformation, IPACTwareAddinKernel
     {
 
 #pragma warning disable 67 // Unused member
@@ -54,7 +54,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer
 
         private CultureInfo _pactwareUiCulture;
         private IPACTwareUIKernel _pactwareUiKernel;
-        private static readonly ILog s_log = LogManager.GetLogger(typeof(PluginPW5));
+        private static readonly ILog s_log = LogManager.GetLogger(typeof(OpcUaPlugin));
         private static readonly ILog s_opcLog = LogManager.GetLogger(typeof(OpcUaServer));
         private IPluginSettings _pluginSettings;
         private OpcUaApplicationManager _opcUaApplicationManager;
@@ -94,7 +94,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer
         /// <summary>
         /// The version of the plugin.
         /// </summary>
-        protected override string IPACTwareDescriptor_version => typeof(PluginPW5).Assembly.GetName().Version.ToString(3);
+        protected override string IPACTwareDescriptor_version => typeof(OpcUaPlugin).Assembly.GetName().Version.ToString(3);
 
 
         #region IPACTwareAddinKernel

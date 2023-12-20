@@ -4,6 +4,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <RunWorkingDirectory>$(MSBuildProjectDirectory)</RunWorkingDirectory>
     <Platforms>AnyCPU</Platforms>
+    <DefineConstants>PW6</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
     <Compile Remove="tools\**" />

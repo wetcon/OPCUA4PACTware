@@ -177,7 +177,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.UserControls
 
         #endregion
 
-        private PluginPW5 mAddinBase;
+        private OpcUaPlugin mAddinBase;
 
         private Label lblTitle;
 

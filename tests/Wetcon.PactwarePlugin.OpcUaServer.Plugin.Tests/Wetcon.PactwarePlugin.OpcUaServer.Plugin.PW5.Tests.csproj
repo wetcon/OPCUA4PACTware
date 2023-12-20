@@ -19,10 +19,10 @@
     <TestProjectType>UnitTest</TestProjectType>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-  </PropertyGroup>  
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>bin\PW5\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <DebugType>full</DebugType>
     <PlatformTarget>x86</PlatformTarget>
@@ -30,7 +30,7 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>bin\PW5\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <Optimize>true</Optimize>
     <DebugType>pdbonly</DebugType>
@@ -80,12 +80,12 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Wetcon.OpcUaClient.Base\Wetcon.OpcUaClient.Base.csproj">
-      <Project>{430EA390-C214-4870-8F38-A298EE389898}</Project>
+      <Project>{430ea390-c214-4870-8f38-a298ee389898}</Project>
       <Name>Wetcon.OpcUaClient.Base</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\src\Wetcon.PactwarePlugin.OpcUaServer.Plugin\Wetcon.PactwarePlugin.OpcUaServer.Plugin.csproj">
+    <ProjectReference Include="..\..\src\Wetcon.PactwarePlugin.OpcUaServer.Plugin\Wetcon.PactwarePlugin.OpcUaServer.Plugin.PW5.csproj">
       <Project>{884780dc-0864-40ce-ad60-d7c2ee426da0}</Project>
-      <Name>Wetcon.PactwarePlugin.OpcUaServer.Plugin</Name>
+      <Name>Wetcon.PactwarePlugin.OpcUaServer.Plugin.PW5</Name>
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </ProjectReference>
   </ItemGroup>

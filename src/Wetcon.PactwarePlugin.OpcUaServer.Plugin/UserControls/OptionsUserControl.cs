@@ -41,7 +41,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.UserControls
                 return false;
             }
 
-            var addinBase = (Source as PluginPW5);
+            var addinBase = (Source as OpcUaPlugin);
             Wnd.BeginSetCaption(clsGuid.GetGuid(), addinBase.Name + " Options", null, null);
 
             return true;
