@@ -176,13 +176,14 @@ namespace Build
                 Logger = "trx",
                 ToolPath = context.Tools.Resolve("vstest.console.exe"),
                 TestCaseFilter = "TestCategory!=Integrated",
+                ResultsDirectory = $"../TestResults",
                 ArgumentCustomization = args => args.Append("/logger:console;verbosity=minimal"),
             });
         }
     }
 
     [TaskName("SignDlls")]
-    [IsDependentOn(typeof(BuildTask))]
+    [IsDependentOn(typeof(TestTask))]
     public sealed class SignDllsTask : FrostingTask<BuildContext>
     {
         public override bool ShouldRun(BuildContext context) => context.SignBinaries;

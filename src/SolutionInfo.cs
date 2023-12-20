@@ -7,8 +7,8 @@ using System.Reflection;
 
 [assembly: AssemblyCompany("wetcon gmbh")]
 [assembly: AssemblyProduct("PACTware OpcUaServerPlugin")]
-[assembly: AssemblyVersion("1.0.9.6")]
+[assembly: AssemblyVersion("1.0.9.12")]
 [assembly: AssemblyFileVersion("1.0.9.0")]
-[assembly: AssemblyInformationalVersion("1.0.9-pw-6.6+Branch.feature/pw-6.Sha.f337c78a87d656e840b26e95955061a807375df6")]
+[assembly: AssemblyInformationalVersion("1.0.9-pw-6.12+Branch.feature/pw-6.Sha.69d13ed0e807b2c010867037a224f1103c580d25")]
 [assembly: AssemblyCopyright("Copyright (c) wetcon gmbh 2019 - 2023")]
 
