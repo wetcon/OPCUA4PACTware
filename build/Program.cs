@@ -36,6 +36,7 @@ using Cake.Common.Tools.VSTest;
 using Cake.Common.Tools.WiX;
 using Cake.Common.Tools.WiX.Heat;
 using Cake.Core;
+using Cake.Core.IO;
 using Cake.Frosting;
 
 namespace Build
@@ -149,7 +150,9 @@ namespace Build
     {
         public override void Run(BuildContext context)
         {
-            context.NuGetRestore(Constants.SolutionPath, new NuGetRestoreSettings
+            var filePath = new FilePath(Constants.SolutionPath);
+            context.Information($"Restoring {filePath.MakeAbsolute(context.Environment)}...");
+            context.NuGetRestore(filePath, new NuGetRestoreSettings
             {
                 Verbosity = NuGetVerbosity.Quiet
             });
@@ -163,7 +166,9 @@ namespace Build
     {
         public override void Run(BuildContext context)
         {
-            context.MSBuild(Constants.SolutionPath, new MSBuildSettings
+            var filePath = new FilePath(Constants.SolutionPath);
+            context.Information($"Building {filePath.MakeAbsolute(context.Environment)}...");
+            context.MSBuild(filePath, new MSBuildSettings
             {
                 MaxCpuCount = 0,
                 Configuration = context.MsBuildConfiguration,
@@ -254,7 +259,8 @@ namespace Build
     {
         public override void Run(BuildContext context)
         {
-            var wxsFiles = context.GetFiles($"../src/Wetcon.PactwarePlugin.OpcUaServer.Setup/**/*.wxs");
+            var wxsFiles = context.GetFiles($"../src/Wetcon.PactwarePlugin.OpcUaServer.Setup/*{Constants.PactwareSubdirectory}.wxs") +
+                context.GetFiles($"../src/Wetcon.PactwarePlugin.OpcUaServer.Setup/**/OpcUaServerPlugin.wxs");
             context.WiXCandle(wxsFiles, new CandleSettings
             {
                 OutputDirectory = Constants.SetupObjDir,

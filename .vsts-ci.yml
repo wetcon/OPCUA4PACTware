@@ -4,9 +4,9 @@ pool:
   vmImage: 'windows-2019'
 
 steps:
-- task: NuGetCommand@2
-  inputs:
-    vstsFeed: '73b462b3-f7d1-4d50-afc6-4c357fefba75'
+# - task: NuGetCommand@2
+#   inputs:
+#     vstsFeed: '73b462b3-f7d1-4d50-afc6-4c357fefba75'
 
 - task: DownloadSecureFile@1
   inputs:
@@ -14,7 +14,7 @@ steps:
 
 - powershell: |
     $env:SignCertPath=$env:DOWNLOADSECUREFILE_SECUREFILEPATH
-    ./build.ps1 --Target Build --Sign
+    ./build.PW5.ps1 --Target Build --Sign
   displayName: Build with cake
   env: 
     SignCertPassword: $(SignCertPassword)
@@ -22,7 +22,21 @@ steps:
 
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: 'artifacts/Wetcon.PactwarePlugin.OpcUaServer.Setup'
-    ArtifactName: Setup
+    PathtoPublish: 'artifacts/Wetcon.PactwarePlugin.OpcUaServer.Setup/PW5'
+    ArtifactName: SetupPW5
+    publishLocation: Container
+
+- powershell: |
+    $env:SignCertPath=$env:DOWNLOADSECUREFILE_SECUREFILEPATH
+    ./build.PW6.ps1 --Target Build --Sign
+  displayName: Build with cake
+  env: 
+    SignCertPassword: $(SignCertPassword)
+    SignCertTimeStampUri: $(SignCertTimeStampUri)
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: 'artifacts/Wetcon.PactwarePlugin.OpcUaServer.Setup/PW6'
+    ArtifactName: SetupPW6
     publishLocation: Container
 
