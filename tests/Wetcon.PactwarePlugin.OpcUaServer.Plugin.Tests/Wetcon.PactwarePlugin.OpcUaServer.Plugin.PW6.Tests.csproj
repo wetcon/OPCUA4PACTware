@@ -49,9 +49,9 @@
       <HintPath>..\..\src\Wetcon.PactwarePlugin.OpcUaServer.Plugin\lib\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="PWID, Version=5.0.4.26, Culture=neutral, PublicKeyToken=8c99ef692d16cb2f, processorArchitecture=MSIL">
+    <Reference Include="PWID, Version=6.1.0.15, Culture=neutral, PublicKeyToken=8c99ef692d16cb2f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\src\Wetcon.PactwarePlugin.OpcUaServer.Plugin\lib\PWID.dll</HintPath>
+      <HintPath>..\..\src\Wetcon.PactwarePlugin.OpcUaServer.Plugin\lib\pw6\PWID.dll</HintPath>
     </Reference>
     <Reference Include="Wetcon.IoLink.Helper">
       <HintPath>..\..\src\Wetcon.PactwarePlugin.OpcUaServer.Plugin\lib\Wetcon.IoLink.Helper.dll</HintPath>
