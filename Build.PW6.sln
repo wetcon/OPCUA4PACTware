@@ -1,0 +1,65 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{6494E4CF-9644-457A-8241-2F3B510B899D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wetcon.OpcUaClient.Base", "src\Wetcon.OpcUaClient.Base\Wetcon.OpcUaClient.Base.csproj", "{430EA390-C214-4870-8F38-A298EE389898}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wetcon.PactwarePlugin.OpcUaServer.Plugin.PW6.Tests", "tests\Wetcon.PactwarePlugin.OpcUaServer.Plugin.Tests\Wetcon.PactwarePlugin.OpcUaServer.Plugin.PW6.Tests.csproj", "{C985CAE0-1878-47B9-A9A1-C29D04362678}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Build.PW6", "build\Build.PW6.csproj", "{EF71B005-7033-4973-80F9-348F3CCBEACA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wetcon.PactwarePlugin.OpcUaServer.Plugin.PW6", "src\Wetcon.PactwarePlugin.OpcUaServer.Plugin\Wetcon.PactwarePlugin.OpcUaServer.Plugin.PW6.csproj", "{884780DC-0864-40CE-AD60-D7C2EE426DA0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{430EA390-C214-4870-8F38-A298EE389898}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{430EA390-C214-4870-8F38-A298EE389898}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{430EA390-C214-4870-8F38-A298EE389898}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{430EA390-C214-4870-8F38-A298EE389898}.Debug|x86.Build.0 = Debug|Any CPU
+		{430EA390-C214-4870-8F38-A298EE389898}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{430EA390-C214-4870-8F38-A298EE389898}.Release|Any CPU.Build.0 = Release|Any CPU
+		{430EA390-C214-4870-8F38-A298EE389898}.Release|x86.ActiveCfg = Release|Any CPU
+		{430EA390-C214-4870-8F38-A298EE389898}.Release|x86.Build.0 = Release|Any CPU
+		{C985CAE0-1878-47B9-A9A1-C29D04362678}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{C985CAE0-1878-47B9-A9A1-C29D04362678}.Debug|Any CPU.Build.0 = Debug|x86
+		{C985CAE0-1878-47B9-A9A1-C29D04362678}.Debug|x86.ActiveCfg = Debug|x86
+		{C985CAE0-1878-47B9-A9A1-C29D04362678}.Debug|x86.Build.0 = Debug|x86
+		{C985CAE0-1878-47B9-A9A1-C29D04362678}.Release|Any CPU.ActiveCfg = Release|x86
+		{C985CAE0-1878-47B9-A9A1-C29D04362678}.Release|Any CPU.Build.0 = Release|x86
+		{C985CAE0-1878-47B9-A9A1-C29D04362678}.Release|x86.ActiveCfg = Release|x86
+		{C985CAE0-1878-47B9-A9A1-C29D04362678}.Release|x86.Build.0 = Release|x86
+		{EF71B005-7033-4973-80F9-348F3CCBEACA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF71B005-7033-4973-80F9-348F3CCBEACA}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{EF71B005-7033-4973-80F9-348F3CCBEACA}.Debug|x86.Build.0 = Debug|Any CPU
+		{EF71B005-7033-4973-80F9-348F3CCBEACA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF71B005-7033-4973-80F9-348F3CCBEACA}.Release|x86.ActiveCfg = Release|Any CPU
+		{EF71B005-7033-4973-80F9-348F3CCBEACA}.Release|x86.Build.0 = Release|Any CPU
+		{884780DC-0864-40CE-AD60-D7C2EE426DA0}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{884780DC-0864-40CE-AD60-D7C2EE426DA0}.Debug|Any CPU.Build.0 = Debug|x86
+		{884780DC-0864-40CE-AD60-D7C2EE426DA0}.Debug|x86.ActiveCfg = Debug|x86
+		{884780DC-0864-40CE-AD60-D7C2EE426DA0}.Debug|x86.Build.0 = Debug|x86
+		{884780DC-0864-40CE-AD60-D7C2EE426DA0}.Release|Any CPU.ActiveCfg = Release|x86
+		{884780DC-0864-40CE-AD60-D7C2EE426DA0}.Release|Any CPU.Build.0 = Release|x86
+		{884780DC-0864-40CE-AD60-D7C2EE426DA0}.Release|x86.ActiveCfg = Release|x86
+		{884780DC-0864-40CE-AD60-D7C2EE426DA0}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{430EA390-C214-4870-8F38-A298EE389898} = {6494E4CF-9644-457A-8241-2F3B510B899D}
+		{C985CAE0-1878-47B9-A9A1-C29D04362678} = {6494E4CF-9644-457A-8241-2F3B510B899D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {40D688D0-D99C-4FD6-8289-0C1A91E02B0A}
+	EndGlobalSection
+EndGlobal

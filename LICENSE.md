@@ -1,5 +1,5 @@
 # Wetcon OPC UA Server PACTware Plugin
-Copyright (c) 2019 wetcon gmbh. All rights reserved.
+Copyright (c) 2019-2023 wetcon gmbh. All rights reserved.
 
 Wetcon provides its OPC UA Server PACTware Plugin under a dual license model designed to meet the development and distribution needs of both commercial distributors (such as OEMs, ISVs and VARs) and open source projects.
 

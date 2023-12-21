@@ -68,7 +68,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.UserControls
             this.infoLinkLabel.Size = new System.Drawing.Size(345, 20);
             this.infoLinkLabel.TabIndex = 2;
             this.infoLinkLabel.TabStop = true;
-            this.infoLinkLabel.Text = "https://www.wetcon.net/fdi-fdt-pactware-opc-ua/";
+            this.infoLinkLabel.Text = "https://www.wetcon.net/";
             this.infoLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.InfoLinkLabel_LinkClicked);
             // 
             // settingChangedLabel
