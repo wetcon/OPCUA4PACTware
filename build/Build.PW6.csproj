@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <RunWorkingDirectory>$(MSBuildProjectDirectory)</RunWorkingDirectory>
     <Platforms>AnyCPU</Platforms>
     <DefineConstants>PW6</DefineConstants>
@@ -12,6 +12,6 @@
     <None Remove="tools\**" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Cake.Frosting" Version="4.0.0" />
+    <PackageReference Include="Cake.Frosting" Version="5.0.0" />
   </ItemGroup>
 </Project>

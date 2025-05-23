@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2019-2023 wetcon gmbh. All rights reserved.
+﻿// Copyright (c) 2019-2025 wetcon gmbh. All rights reserved.
 //
 // Wetcon provides this source code under a dual license model 
 // designed to meet the development and distribution needs of both 
