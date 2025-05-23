@@ -14,7 +14,7 @@ steps:
 
 - powershell: |
     $env:SignCertPath=$env:DOWNLOADSECUREFILE_SECUREFILEPATH
-    ./build.PW5.ps1 --Target Build --Sign
+    ./build.PW5.ps1 --Target Default --Sign
   displayName: Build with cake
   env: 
     SignCertPassword: $(SignCertPassword)
@@ -28,7 +28,7 @@ steps:
 
 - powershell: |
     $env:SignCertPath=$env:DOWNLOADSECUREFILE_SECUREFILEPATH
-    ./build.PW6.ps1 --Target Build --Sign
+    ./build.PW6.ps1 --Target Default --Sign
   displayName: Build with cake
   env: 
     SignCertPassword: $(SignCertPassword)
