@@ -7,8 +7,8 @@ using System.Reflection;
 
 [assembly: AssemblyCompany("wetcon gmbh")]
 [assembly: AssemblyProduct("OpcUaServerPlugin")]
-[assembly: AssemblyVersion("1.0.9.0")]
-[assembly: AssemblyFileVersion("1.0.9.0")]
-[assembly: AssemblyInformationalVersion("1.0.9+Branch.master.Sha.6bb1f6dd55652c423f00aa283202e0f0a11bfb36")]
+[assembly: AssemblyVersion("1.0.10.1")]
+[assembly: AssemblyFileVersion("1.0.10.0")]
+[assembly: AssemblyInformationalVersion("1.0.10-pw-62.1+Branch.feature/pw-62.Sha.6897cb04b6e078c391cb091090e19ab01329c6d5")]
 [assembly: AssemblyCopyright("Copyright (c) wetcon gmbh 2019 - 2025")]
 

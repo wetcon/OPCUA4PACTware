@@ -76,17 +76,14 @@ namespace Build
     {
         public string MsBuildConfiguration { get; }
         public bool SignBinaries { get; }
-        public GitVersion AssemblyVersion { get; }
         public SignToolSignSettings SignSettings { get; }
 
         public BuildContext(ICakeContext context)
             : base(context)
         {
             MsBuildConfiguration = context.Argument("configuration", "Release");
-            SignBinaries = false && context.HasArgument("sign"); // todo: enable signing with new certificate
-            AssemblyVersion = context.GitVersion();
+            SignBinaries = false && context.HasArgument("sign"); // todo: enable signing with new certificate            
             context.Information($"Running for {Constants.PactwareVersion}");
-            context.Information($"Calculated assembly version: {AssemblyVersion.FullSemVer}");
 
             if (SignBinaries)
             {
@@ -132,11 +129,14 @@ namespace Build
         private const string SolutionInfoPath = "../src/SolutionInfo.cs";
         public override void Run(BuildContext context)
         {
+            var assemblyVersion = context.GitVersion();
+            context.Information($"Calculated assembly version: {assemblyVersion.FullSemVer}");
+
             context.CreateAssemblyInfo(SolutionInfoPath, new AssemblyInfoSettings
             {
-                Version = context.AssemblyVersion.AssemblySemVer,
-                FileVersion = context.AssemblyVersion.AssemblySemFileVer,
-                InformationalVersion = context.AssemblyVersion.InformationalVersion,
+                Version = assemblyVersion.AssemblySemVer,
+                FileVersion = assemblyVersion.AssemblySemFileVer,
+                InformationalVersion = assemblyVersion.InformationalVersion,
                 Product = $"OpcUaServerPlugin",
                 Company = "wetcon gmbh",
                 Copyright = $"Copyright (c) wetcon gmbh 2019 - {DateTime.UtcNow.Year}"
@@ -261,6 +261,7 @@ namespace Build
         {
             var wxsFiles = context.GetFiles($"../src/Wetcon.PactwarePlugin.OpcUaServer.Setup/*{Constants.PactwareSubdirectory}.wxs") +
                 context.GetFiles($"../src/Wetcon.PactwarePlugin.OpcUaServer.Setup/**/OpcUaServerPlugin.wxs");
+            var assemblyVersion = context.GitVersion();
             context.WiXCandle(wxsFiles, new CandleSettings
             {
                 OutputDirectory = Constants.SetupObjDir,
@@ -268,7 +269,7 @@ namespace Build
                 NoLogo = true,
                 Defines = new Dictionary<string, string>
                 {
-                    { "Version", context.AssemblyVersion.MajorMinorPatch },
+                    { "Version", assemblyVersion.MajorMinorPatch },
                     { "SourceDir", "../src/Wetcon.PactwarePlugin.OpcUaServer.Setup/" }
                 }
             });
@@ -311,7 +312,8 @@ namespace Build
     {
         public override void Run(BuildContext context)
         {
-            var json = string.Format("{{ \"version\": \"{0}\" }}", context.AssemblyVersion.MajorMinorPatch);
+            var assemblyVersion = context.GitVersion();
+            var json = string.Format("{{ \"version\": \"{0}\" }}", assemblyVersion.MajorMinorPatch);
             System.IO.File.WriteAllText($"../artifacts/Wetcon.PactwarePlugin.OpcUaServer.Setup/{Constants.PactwareSubdirectory}/SetupVersion.json", json);
         }
     }
