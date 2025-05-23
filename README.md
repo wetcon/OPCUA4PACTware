@@ -79,7 +79,7 @@ A log file can be found at `${APPDATA}\wetcon\PACTwarePlugins\OpcUaServer\Logs\O
 
 ## License & Dependencies
 
-Copyright (c) 2019 wetcon gmbh. All rights reserved.
+Copyright (c) 2019-2025 wetcon gmbh. All rights reserved.
 
 Wetcon provides this source code under a dual license model designed to meet the development and distribution needs of both commercial distributors (such as OEMs, ISVs and VARs) and open source projects.
 

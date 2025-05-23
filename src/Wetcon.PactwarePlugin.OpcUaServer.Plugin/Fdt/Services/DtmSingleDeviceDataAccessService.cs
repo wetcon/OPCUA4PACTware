@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2019-2023 wetcon gmbh. All rights reserved.
+﻿// Copyright (c) 2019-2025 wetcon gmbh. All rights reserved.
 //
 // Wetcon provides this source code under a dual license model 
 // designed to meet the development and distribution needs of both 
@@ -48,11 +48,9 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.Fdt
 
                 DtmInterface.ObjectPointer.ItemListRequest(context.InvokeId);
 
-                var response = WaitFor(context.InvocationTask);
-                if (response == null)
-                {
-                    throw new TimeoutException("GetOnlineDeviceParameters timeout.");
-                }
+                var response = WaitFor(context.InvocationTask) ??
+                    throw new TimeoutException($"{nameof(GetOnlineDeviceParameters)} timeout.");
+
                 LogDtmCall("ItemListRequest", response.Response);
                 var dtmItemList = FdtXmlSerializer.Deserialize<DtmItemListFdtDoc>(response.Response);
 
@@ -74,11 +72,8 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.Fdt
 
                 DtmInterface.ObjectPointer.ReadRequest(context.InvokeId, fdtDocXml);
 
-                var readResponse = WaitFor(context.InvocationTask);
-                if (readResponse == null)
-                {
-                    throw new TimeoutException("GetOnlineDeviceParameters timeout.");
-                }
+                var readResponse = WaitFor(context.InvocationTask) ??
+                    throw new TimeoutException($"{nameof(GetOnlineDeviceParameters)} timeout.");
 
                 LogDtmCall("ReadRequest", readResponse.Response);
                 var responseFdtDocXml = FdtXmlSerializer.Deserialize<DtmItemListFdtDoc>(readResponse.Response);
@@ -101,11 +96,8 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.Fdt
 
                 DtmInterface.ObjectPointer.WriteRequest(context.InvokeId, fdtDocXml);
 
-                var writeResponse = WaitFor(context.InvocationTask);
-                if (writeResponse == null)
-                {
-                    throw new TimeoutException("GetOnlineDeviceParameters timeout.");
-                }
+                var writeResponse = WaitFor(context.InvocationTask) ??
+                    throw new TimeoutException($"{nameof(GetOnlineDeviceParameters)} timeout.");
 
                 LogDtmCall("WriteRequest", writeResponse.Response);
                 var responseFdtDocXml = FdtXmlSerializer.Deserialize<DtmItemListFdtDoc>(writeResponse.Response);
