@@ -46,7 +46,7 @@ namespace Wetcon.OpcUaClient.Base
             var endpoints = server.GetEndpoints();
             if (endpoints.Count == 0)
             {
-                throw new InvalidOperationException();
+                throw new InvalidOperationException("No OPC UA endpoints available on server.");
             }
             var firstEndpointUrl = endpoints[0].EndpointUrl;
 
