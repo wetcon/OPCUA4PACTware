@@ -73,7 +73,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.Fdt
                 DtmInterface.ObjectPointer.ReadRequest(context.InvokeId, fdtDocXml);
 
                 var readResponse = WaitFor(context.InvocationTask) ??
-                    throw new TimeoutException($"{nameof(GetOnlineDeviceParameters)} timeout.");
+                    throw new TimeoutException($"{nameof(ReadOnlineDeviceParameters)} timeout.");
 
                 LogDtmCall("ReadRequest", readResponse.Response);
                 var responseFdtDocXml = FdtXmlSerializer.Deserialize<DtmItemListFdtDoc>(readResponse.Response);
@@ -97,7 +97,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.Fdt
                 DtmInterface.ObjectPointer.WriteRequest(context.InvokeId, fdtDocXml);
 
                 var writeResponse = WaitFor(context.InvocationTask) ??
-                    throw new TimeoutException($"{nameof(GetOnlineDeviceParameters)} timeout.");
+                    throw new TimeoutException($"{nameof(WriteOnlineDeviceParameters)} timeout.");
 
                 LogDtmCall("WriteRequest", writeResponse.Response);
                 var responseFdtDocXml = FdtXmlSerializer.Deserialize<DtmItemListFdtDoc>(writeResponse.Response);
