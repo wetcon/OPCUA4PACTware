@@ -74,6 +74,8 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.Infrastructure
                 ReleaseObjectPointer();
                 _disposed = true;
             }
+
+            GC.SuppressFinalize(this);
         }
 
         /// <summary>

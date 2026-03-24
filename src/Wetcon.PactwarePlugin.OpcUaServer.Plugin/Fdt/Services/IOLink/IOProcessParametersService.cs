@@ -64,10 +64,14 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.Fdt
         {
             get
             {
-                if (PactwareProjectNode.Parents?.Count > 0 &&
-                    PactwareProjectNode.Parents[0].Parents?.Count > 0)
+                var parents = PactwareProjectNode.Parents;
+                if (parents?.Count > 0)
                 {
-                    return PactwareProjectNode.Parents?[0].Parents?[0];
+                    var grandParents = parents[0]?.Parents;
+                    if (grandParents?.Count > 0)
+                    {
+                        return grandParents[0];
+                    }
                 }
 
                 return null;
@@ -101,6 +105,12 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.Fdt
 
             var communicationReference = IOCommunicationXml.ParseCommunicationReference(connectResponse.Response);
             var transactionResponse = TransactionRequest(_context, communicationReference);
+
+            if (null == transactionResponse || IOCommunicationXml.HasError(transactionResponse.Response))
+            {
+                return null;
+            }
+
             var processData = IOCommunicationXml.ParseCommunicationByteArray(transactionResponse.Response);
 
             DisconnectRequest(_context, communicationReference);
@@ -122,8 +132,8 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.Fdt
 
         private CommunicationContext Initialize(IPACTwareProjectNode pactwareProjectNode)
         {
-            if (pactwareProjectNode.Parents.Count == 0 ||
-                pactwareProjectNode.Parents[0].Parents.Count == 0 ||
+            if (!(pactwareProjectNode.Parents?.Count > 0) ||
+                !(pactwareProjectNode.Parents[0]?.Parents?.Count > 0) ||
                 DtmInterface.ObjectPointer == null)
             {
                 return CommunicationContext.Unavailable;
