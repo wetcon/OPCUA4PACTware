@@ -142,11 +142,15 @@ namespace Wetcon.PactwarePlugin.OpcUaServer
             var pluginDescriptorId = "{2487DD09-1566-4CF9-A604-6AD3148B3858}"; //UUID only valid for PACTware 5.X
 
             var pluginConfig = ConfigurationManager.OpenExeConfiguration(pluginFileInfo.FullName);
-            var pluginName = pluginConfig.AppSettings.Settings["PluginName"].Value;
-            var pluginDescription = pluginConfig.AppSettings.Settings["PluginDescription"].Value;
-            var pluginManufacturerName = pluginConfig.AppSettings.Settings["PluginManufacturerName"].Value;
-            var pluginManufacturerUrl = pluginConfig.AppSettings.Settings["PluginManufacturerUrl"].Value;
-            var pluginReadIOProcessDataString = pluginConfig.AppSettings.Settings["PluginReadIOProcessData"].Value;
+            var pluginName = pluginConfig.AppSettings.Settings["PluginName"]?.Value
+                ?? throw new ConfigurationErrorsException("Required setting 'PluginName' not found.");
+            var pluginDescription = pluginConfig.AppSettings.Settings["PluginDescription"]?.Value
+                ?? throw new ConfigurationErrorsException("Required setting 'PluginDescription' not found.");
+            var pluginManufacturerName = pluginConfig.AppSettings.Settings["PluginManufacturerName"]?.Value
+                ?? throw new ConfigurationErrorsException("Required setting 'PluginManufacturerName' not found.");
+            var pluginManufacturerUrl = pluginConfig.AppSettings.Settings["PluginManufacturerUrl"]?.Value
+                ?? throw new ConfigurationErrorsException("Required setting 'PluginManufacturerUrl' not found.");
+            var pluginReadIOProcessDataString = pluginConfig.AppSettings.Settings["PluginReadIOProcessData"]?.Value;
             var pluginManufacturerIcon = new Icon(Path.Combine(pluginResourcesPath, "wetconIcon.ico"));
             var opcUaConfigFilePath = Path.Combine(pluginFolderPath, "WetconOpcUaServer.Config.xml");
 

@@ -41,7 +41,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer
         private readonly IPluginSettings _pluginSettings;
         private ApplicationInstance _applicationInstance;
         private readonly TaskCompletionSource<Task> _appRunningCompletionSource = new TaskCompletionSource<Task>();
-        private static readonly bool s_autoAcceptCertificate = true;
+        private static readonly bool s_autoAcceptCertificate = false;
 
         /// <summary>
         /// Initializes a new instance of <see cref="OpcUaApplicationManager"/>
@@ -78,12 +78,18 @@ namespace Wetcon.PactwarePlugin.OpcUaServer
 
                 if (string.IsNullOrEmpty(applicationSettings.UserOpcServerUri))
                 {
-                    applicationSettings.UserOpcServerUri = config.ServerConfiguration.BaseAddresses[0];
-                    applicationSettings.Save();
+                    if (config.ServerConfiguration.BaseAddresses?.Count > 0)
+                    {
+                        applicationSettings.UserOpcServerUri = config.ServerConfiguration.BaseAddresses[0];
+                        applicationSettings.Save();
+                    }
                 }
                 else
                 {
-                    config.ServerConfiguration.BaseAddresses[0] = applicationSettings.UserOpcServerUri;
+                    if (config.ServerConfiguration.BaseAddresses?.Count > 0)
+                    {
+                        config.ServerConfiguration.BaseAddresses[0] = applicationSettings.UserOpcServerUri;
+                    }
                 }
 
                 // check the application certificate.
