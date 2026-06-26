@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/Tests/">
+    <Project Path="src/Wetcon.OpcUaClient.Base/Wetcon.OpcUaClient.Base.csproj" />
+    <Project Path="tests/Wetcon.PactwarePlugin.OpcUaServer.Plugin.Tests/Wetcon.PactwarePlugin.OpcUaServer.Plugin.PW6.Tests.csproj">
+    </Project>
+  </Folder>
+  <Project Path="build/Build.PW6.csproj">
+  </Project>
+  <Project Path="src/Wetcon.PactwarePlugin.OpcUaServer.Plugin/Wetcon.PactwarePlugin.OpcUaServer.Plugin.PW6.csproj">
+  </Project>
+</Solution>

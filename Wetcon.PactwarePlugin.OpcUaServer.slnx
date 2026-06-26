@@ -1,0 +1,25 @@
+<Solution>
+  <Folder Name="/Apps/">
+    <Project Path="src/Wetcon.OpcUaClient.2AWSIOT/Wetcon.OpcUaClient.2AWSIOT.csproj" />
+    <Project Path="src/Wetcon.OpcUaClient.2AzureIOT/Wetcon.OpcUaClient.2AzureIOT.csproj" />
+    <Project Path="src/Wetcon.OpcUaClient.Base/Wetcon.OpcUaClient.Base.csproj" />
+  </Folder>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+    <File Path=".gitignore" />
+    <File Path=".vsts-ci.yml" />
+    <File Path="GitVersion.yml" />
+    <File Path="LICENSE.md" />
+    <File Path="README.md" />
+  </Folder>
+  <Folder Name="/Tests/">
+    <Project Path="tests/Wetcon.OpcUaClient.LoadTest/Wetcon.OpcUaClient.LoadTest.csproj" />
+    <Project Path="tests/Wetcon.PactwarePlugin.OpcUaServer.Plugin.Tests/Wetcon.PactwarePlugin.OpcUaServer.Plugin.PW5.Tests.csproj">
+    </Project>
+    <Project Path="tests/Wetcon.PactwarePlugin.OpcUaServer.Plugin.Tests/Wetcon.PactwarePlugin.OpcUaServer.Plugin.PW6.Tests.csproj" />
+  </Folder>
+  <Project Path="src/Wetcon.PactwarePlugin.OpcUaServer.Plugin/Wetcon.PactwarePlugin.OpcUaServer.Plugin.PW5.csproj">
+  </Project>
+<Project Path="src/Wetcon.PactwarePlugin.OpcUaServer.Plugin/Wetcon.PactwarePlugin.OpcUaServer.Plugin.PW6.csproj">
+    </Project>
+</Solution>

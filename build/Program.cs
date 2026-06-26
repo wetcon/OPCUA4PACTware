@@ -27,10 +27,9 @@ using Cake.Common;
 using Cake.Common.Diagnostics;
 using Cake.Common.IO;
 using Cake.Common.Solution.Project.Properties;
+using Cake.Common.Tools.DotNet;
 using Cake.Common.Tools.GitVersion;
 using Cake.Common.Tools.MSBuild;
-using Cake.Common.Tools.NuGet;
-using Cake.Common.Tools.NuGet.Restore;
 using Cake.Common.Tools.SignTool;
 using Cake.Common.Tools.VSTest;
 using Cake.Common.Tools.WiX;
@@ -43,14 +42,14 @@ namespace Build
 {
     public static class Constants
     {
-# if PW5
-        public const string SolutionPath = "../Build.PW5.sln";
+#if PW5
+        public const string SolutionPath = "../Build.PW5.slnx";
         public const string SetupObjDir = $"../src/Wetcon.PactwarePlugin.OpcUaServer.Setup/PW5/obj";
         public const string SetupMsi = "../artifacts/Wetcon.PactwarePlugin.OpcUaServer.Setup/PW5/OpcUaServer_PW5_Plugin.msi";
         public const string PactwareVersion = "PACTware 5";
         public const string PactwareSubdirectory = "PW5";
 #else
-        public const string SolutionPath = "../Build.PW6.sln";
+        public const string SolutionPath = "../Build.PW6.slnx";
         public const string SetupObjDir = $"../src/Wetcon.PactwarePlugin.OpcUaServer.Setup/PW6/obj";
         public const string SetupMsi = "../artifacts/Wetcon.PactwarePlugin.OpcUaServer.Setup/PW6/OpcUaServer_PW6_Plugin.msi";
         public const string PactwareVersion = "PACTware 6";
@@ -152,10 +151,7 @@ namespace Build
         {
             var filePath = new FilePath(Constants.SolutionPath);
             context.Information($"Restoring {filePath.MakeAbsolute(context.Environment)}...");
-            context.NuGetRestore(filePath, new NuGetRestoreSettings
-            {
-                Verbosity = NuGetVerbosity.Quiet
-            });
+            context.DotNetRestore(filePath.FullPath);            
         }
     }
 
@@ -172,7 +168,7 @@ namespace Build
             {
                 MaxCpuCount = 0,
                 Configuration = context.MsBuildConfiguration,
-                ToolVersion = MSBuildToolVersion.VS2022,
+                ToolVersion = MSBuildToolVersion.VS2026,
                 Verbosity = Cake.Core.Diagnostics.Verbosity.Minimal
             });
         }
