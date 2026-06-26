@@ -79,11 +79,18 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.OpcUa.Models
             base.InitializeOptionalChildren(context);
         }
 
-        private ServiceResult FetchTransferResultData(ISystemContext context, MethodState method, NodeId objectId, int transferId,
-            int sequenceNumber, int maxParameterResultsToReturn, bool omitGoodResults, ref FetchResultDataType fetchResult)
+        private ServiceResult FetchTransferResultData(
+            ISystemContext _context,
+            MethodState _method,
+            NodeId _objectId,
+            int transferID,
+            int sequenceNumber,
+            int maxParameterResultsToReturn,
+            bool omitGoodResults,
+            ref ExtensionObject fetchResultData)
         {
             var result = FdtService.GetService<DtmOnlineParameterService>()
-                .FetchTransferResultData(transferId);
+                .FetchTransferResultData(transferID);
 
             switch (result.Status)
             {

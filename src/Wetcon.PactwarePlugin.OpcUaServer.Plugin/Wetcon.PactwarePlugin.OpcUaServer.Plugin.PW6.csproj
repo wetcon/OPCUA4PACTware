@@ -66,8 +66,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="log4net" Version="3.3.2" />
     <PackageReference Include="OPCFoundation.NetStandard.Opc.Ua">
-      <Version>1.4.365.48</Version>
+      <Version>1.5.378.152</Version>
     </PackageReference>
     <PackageReference Include="System.Reactive">
       <Version>6.1.0</Version>

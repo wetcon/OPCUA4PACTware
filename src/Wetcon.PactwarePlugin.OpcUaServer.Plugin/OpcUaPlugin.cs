@@ -54,8 +54,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer
 
         private CultureInfo _pactwareUiCulture;
         private IPACTwareUIKernel _pactwareUiKernel;
-        private static readonly ILog s_log = LogManager.GetLogger(typeof(OpcUaPlugin));
-        private static readonly ILog s_opcLog = LogManager.GetLogger(typeof(OpcUaServer));
+        private static readonly ILog s_log = LogManager.GetLogger(typeof(OpcUaPlugin));        
         private IPluginSettings _pluginSettings;
         private OpcUaApplicationManager _opcUaApplicationManager;
 
@@ -343,8 +342,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer
         {
             try
             {
-                var serverStopped = await _opcUaApplicationManager.StopApplicationAsync();
-                Opc.Ua.Utils.Tracing.TraceEventHandler -= OpcUATraceEventHandler;
+                var serverStopped = await _opcUaApplicationManager.StopApplicationAsync();                
 
                 _pactwareUiKernel = null;
 
@@ -385,28 +383,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer
         private void ConfigureLogging()
         {
             var log4NetConfigFilePath = _pluginSettings.PluginFilePath + ".config";
-            XmlConfigurator.ConfigureAndWatch(new FileInfo(log4NetConfigFilePath));
-
-            // redirect all internal OPC UA logging to log4net
-            Opc.Ua.Utils.Tracing.TraceEventHandler += OpcUATraceEventHandler;
-        }
-
-        private void OpcUATraceEventHandler(object sender, Opc.Ua.TraceEventArgs e)
-        {
-            var message = string.Format(e.Format, e.Arguments ?? new object[0]);
-
-            if ((e.TraceMask & Opc.Ua.Utils.TraceMasks.Error) != 0)
-            {
-                s_opcLog.Error(message, e.Exception);
-            }
-            else if ((e.TraceMask & Opc.Ua.Utils.TraceMasks.Information) != 0)
-            {
-                s_opcLog.Info(message);
-            }
-            else
-            {
-                s_opcLog.Debug(message);
-            }
-        }
+            XmlConfigurator.ConfigureAndWatch(new FileInfo(log4NetConfigFilePath));            
+        }        
     }
 }

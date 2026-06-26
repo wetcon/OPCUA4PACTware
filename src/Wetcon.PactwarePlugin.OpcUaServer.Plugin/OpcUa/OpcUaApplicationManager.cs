@@ -23,6 +23,7 @@
 
 using System;
 using System.Threading.Tasks;
+using log4net;
 using Opc.Ua;
 using Opc.Ua.Configuration;
 using Opc.Ua.Server;
@@ -30,7 +31,6 @@ using PWID.Interfaces;
 
 namespace Wetcon.PactwarePlugin.OpcUaServer
 {
-
     /// <summary>
     /// OpcUa Application Manager.
     /// </summary>
@@ -42,6 +42,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer
         private ApplicationInstance _applicationInstance;
         private readonly TaskCompletionSource<Task> _appRunningCompletionSource = new TaskCompletionSource<Task>();
         private static readonly bool s_autoAcceptCertificate = true;
+        private static readonly ILog s_opcLog = LogManager.GetLogger(typeof(OpcUaApplicationManager));
 
         /// <summary>
         /// Initializes a new instance of <see cref="OpcUaApplicationManager"/>
@@ -66,14 +67,16 @@ namespace Wetcon.PactwarePlugin.OpcUaServer
 
             try
             {
-                var application = new ApplicationInstance
+                var telemetry = DefaultTelemetry.Create(x => { });
+
+                var application = new ApplicationInstance(telemetry)
                 {
                     ApplicationName = _pluginSettings.PluginName,
                     ApplicationType = ApplicationType.Server
                 };
 
                 // load the application configuration.
-                var config = await application.LoadApplicationConfiguration(_pluginSettings.OpcUaConfigFilePath, false);
+                var config = await application.LoadApplicationConfigurationAsync(_pluginSettings.OpcUaConfigFilePath, false);
                 var applicationSettings = Properties.Settings.Default;
 
                 if (string.IsNullOrEmpty(applicationSettings.UserOpcServerUri))
@@ -87,7 +90,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer
                 }
 
                 // check the application certificate.
-                var hasAppCertificate = await application.CheckApplicationInstanceCertificate(true, 0);
+                var hasAppCertificate = await application.CheckApplicationInstanceCertificatesAsync(true, 0);
                 if (!hasAppCertificate)
                 {
                     throw new Exception("Application instance certificate invalid!");
@@ -102,11 +105,11 @@ namespace Wetcon.PactwarePlugin.OpcUaServer
                 Server = new OpcUaServer(_pactwareUIKernel, _pluginSettings);
                 Server.ServerStartedEventHandler += OnServerStarted;
 
-                await application.Start(Server);
+                await application.StartAsync(Server);
             }
             catch (Exception ex)
             {
-                Utils.Trace(ex, "Error starting server.");
+                s_opcLog.Error("Error starting server.", ex);
                 _appRunningCompletionSource.SetException(ex);
 
                 return false;
@@ -127,7 +130,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer
             {
                 if (Server != null && Server.CurrentInstance.CurrentState == ServerState.Running)
                 {
-                    Server.Stop();
+                    await Server.StopAsync();
                 }
 
                 Server?.Dispose();
@@ -136,8 +139,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer
             }
             catch (Exception ex)
             {
-                Utils.Trace(ex, "Error stopping server.");
-
+                s_opcLog.Error("Error stopping server.", ex);
                 return false;
             }
 
@@ -164,7 +166,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer
 
             e.Accept = s_autoAcceptCertificate;
 
-            Utils.Trace(s_autoAcceptCertificate ? "Accepted Certificate: {0}" : "Rejected Certificate: {0}",
+            s_opcLog.DebugFormat(s_autoAcceptCertificate ? "Accepted Certificate: {0}" : "Rejected Certificate: {0}",
                 e.Certificate.Subject);
         }
     }

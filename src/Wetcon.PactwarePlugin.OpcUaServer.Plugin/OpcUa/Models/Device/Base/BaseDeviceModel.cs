@@ -171,11 +171,14 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.OpcUa.Models
 
         public bool IsOnline => DeviceModelType == DeviceModelType.Online;
 
-        public override void Dispose()
+        protected override void Dispose(bool disposing)
         {
-            FdtService?.OnUnloadProjectNode();
-            base.Dispose();
-        }
+            if (disposing)
+            {
+                FdtService?.OnUnloadProjectNode();
+            }
+            base.Dispose(disposing);
+        }        
     }
 
     /// <summary>
