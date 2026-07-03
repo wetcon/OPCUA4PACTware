@@ -1,0 +1,1 @@
+Opc.Ua.ModelCompiler compile -d2 ./DI/Opc.Ua.Di.NodeSet2.xml -version v105 -o2 ./Output_DI

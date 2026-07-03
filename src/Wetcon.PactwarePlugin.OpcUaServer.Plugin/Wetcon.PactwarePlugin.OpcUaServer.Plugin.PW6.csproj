@@ -74,6 +74,10 @@
       <Version>6.1.0</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="OpcUa\Machinery\" />
+    <Folder Include="OpcUa\Pumps\" />
+  </ItemGroup>
   <PropertyGroup>
     <PostBuildEvent>REM powershell -command "Start-Process $(ProjectDir)Wetcon.PactwarePlugin.OpcUaServer_x64.bat -Verb runas"</PostBuildEvent>
   </PropertyGroup>

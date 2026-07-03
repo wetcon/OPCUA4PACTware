@@ -1,0 +1,1 @@
+Opc.Ua.ModelCompiler compile -d2 ./Pumps/Opc.Ua.Pumps.NodeSet2.xml -d2 ./Machinery/Opc.Ua.Machinery.NodeSet2.xml -d2 ./IA/Opc.Ua.IA.NodeSet2.xml -d2 ./DI/Opc.Ua.Di.NodeSet2.xml -version v105 -o2 ./Output_Pumps
