@@ -63,7 +63,7 @@ namespace Build
         {
             return new CakeHost()
                 .InstallTool(new Uri("nuget:?package=NuGet.CommandLine&version=5.9.1"))
-                .InstallTool(new Uri("nuget:?package=Microsoft.TestPlatform&version=15.9.0"))
+                .InstallTool(new Uri("nuget:?package=Microsoft.TestPlatform&version=18.0.0"))
                 .InstallTool(new Uri("nuget:?package=Wix&version=3.11.1"))
                 .InstallTool(new Uri("nuget:?package=GitVersion.CommandLine&version=4.0.0"))
                 .UseContext<BuildContext>()
