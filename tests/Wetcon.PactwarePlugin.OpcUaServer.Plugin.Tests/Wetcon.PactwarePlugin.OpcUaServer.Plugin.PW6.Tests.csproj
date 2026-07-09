@@ -3,12 +3,14 @@
     <TargetFramework>net48</TargetFramework>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <PlatformTarget>x86</PlatformTarget>
     <OutputType>Library</OutputType>
     <RootNamespace>Wetcon.PactwarePlugin.OpcUaServer.Plugin.Tests</RootNamespace>
     <AssemblyName>Wetcon.PactwarePlugin.OpcUaServer.Plugin.Tests</AssemblyName>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <OutputPath>bin\PW6\$(Configuration)\</OutputPath>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <EnableMSTestRunner>false</EnableMSTestRunner>    
   </PropertyGroup>  
   <ItemGroup>
     <Reference Include="Jigfdt.fdt100, Version=1.2.1.0, Culture=neutral, PublicKeyToken=f5a7c0058a4848e8">
