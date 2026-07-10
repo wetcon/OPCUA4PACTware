@@ -16,7 +16,18 @@
   </PropertyGroup>  
   <PropertyGroup Condition="!Exists('..\SolutionInfo.cs')">
     <DefineConstants>FALLBACK_VERSION</DefineConstants>
-  </PropertyGroup>
+  </PropertyGroup>  
+  <ItemGroup>
+    <Compile Remove="OpcUa\Di\latest-v105\**" />
+    <Compile Remove="OpcUa\Machinery\**" />
+    <Compile Remove="OpcUa\Pumps\**" />
+    <EmbeddedResource Remove="OpcUa\Di\latest-v105\**" />
+    <EmbeddedResource Remove="OpcUa\Machinery\**" />
+    <EmbeddedResource Remove="OpcUa\Pumps\**" />
+    <None Remove="OpcUa\Di\latest-v105\**" />
+    <None Remove="OpcUa\Machinery\**" />
+    <None Remove="OpcUa\Pumps\**" />
+  </ItemGroup>
   <ItemGroup>
     <Reference Include="Jigfdt.fdt100, Version=1.2.1.0, Culture=neutral, PublicKeyToken=f5a7c0058a4848e8">
       <SpecificVersion>False</SpecificVersion>
@@ -55,7 +66,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="OpcUa\Di\Opc.Ua.Di.NodeSet2.xml" />
     <Content Include="WetconOpcUaServer.Config.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -73,10 +83,6 @@
     <PackageReference Include="System.Reactive">
       <Version>6.1.0</Version>
     </PackageReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="OpcUa\Machinery\" />
-    <Folder Include="OpcUa\Pumps\" />
   </ItemGroup>
   <PropertyGroup>
     <PostBuildEvent>REM powershell -command "Start-Process $(ProjectDir)Wetcon.PactwarePlugin.OpcUaServer_x64.bat -Verb runas"</PostBuildEvent>

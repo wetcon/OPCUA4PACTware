@@ -52,10 +52,10 @@ namespace Wetcon.PactwarePlugin.OpcUaServer
         /// </summary>
         public OpcUaNodeManager(IServerInternal server, ApplicationConfiguration configuration,
             IPACTwareUIKernel pactwareUIKernel, IPluginSettings pluginSettings)
-            : base(server, configuration, Opc.Ua.Di.Namespaces.OpcUaDi, Constants.ServerNamespaceUri)
+            : base(server, configuration, Opc.Ua.DI.Namespaces.DI, Constants.ServerNamespaceUri)
         {
             s_log.Info("Creating OpcUaNodeManager...");
-            DiNamespaceIndex = (ushort)Server.NamespaceUris.GetIndex(Opc.Ua.Di.Namespaces.OpcUaDi);
+            DiNamespaceIndex = (ushort)Server.NamespaceUris.GetIndex(Opc.Ua.DI.Namespaces.DI);
             ServerNamespaceIndex = (ushort)Server.NamespaceUris.GetIndex(Constants.ServerNamespaceUri);
             _pactwareUIKernel = pactwareUIKernel;
             _pluginSettings = pluginSettings;
@@ -162,7 +162,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer
         {
             base.CreateAddressSpace(externalReferences);
 
-            var deviceSetNodeId = Opc.Ua.Di.ObjectIds.DeviceSet.ToNodeId(Server.NamespaceUris);
+            var deviceSetNodeId = Opc.Ua.DI.ObjectIds.DeviceSet.ToNodeId(Server.NamespaceUris);
             DeviceSetNode = Find(deviceSetNodeId);
 
             if (_pactwareUIKernel?.PACTwareKernel?.Action != null)

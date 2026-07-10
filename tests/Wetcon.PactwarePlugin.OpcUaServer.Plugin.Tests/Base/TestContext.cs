@@ -32,7 +32,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.Plugin.Tests
         public OpcUaClient.Base.OpcUaClient Client { get; }
         public OpcUaServer Server { get; }
 
-        public NodeId DeviceSetNodeId => Opc.Ua.Di.ObjectIds
+        public NodeId DeviceSetNodeId => Opc.Ua.DI.ObjectIds
             .DeviceSet
             .ToNodeId(Server.CurrentInstance.NamespaceUris);
 

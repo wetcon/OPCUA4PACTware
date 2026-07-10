@@ -23,7 +23,7 @@
 
 using System.Linq;
 using Opc.Ua;
-using Opc.Ua.Di;
+using Opc.Ua.DI;
 using PWID.Enumerations;
 using PWID.Interfaces;
 using Wetcon.PactwarePlugin.OpcUaServer.Fdt;
@@ -33,7 +33,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.OpcUa.Models
     /// <summary>
     /// Device model.
     /// </summary>
-    public abstract class BaseDeviceModel : DeviceState
+    public abstract class BaseDeviceModel : DeviceTypeState
     {
         /// <summary>
         /// Pactware ProjectNode

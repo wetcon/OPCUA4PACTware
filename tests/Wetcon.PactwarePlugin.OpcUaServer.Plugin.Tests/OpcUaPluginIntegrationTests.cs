@@ -62,9 +62,9 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.Plugin.Tests
         {
             await TestHelper.ExecuteAsync(PACTwareMock.Create(), context =>
             {
-                AssertIsObjectAvailable(Opc.Ua.Di.ObjectIds.DeviceSet, context);
-                AssertIsObjectAvailable(Opc.Ua.Di.ObjectIds.DeviceTopology, context);
-                AssertIsObjectAvailable(Opc.Ua.Di.ObjectIds.NetworkSet, context);
+                AssertIsObjectAvailable(Opc.Ua.DI.ObjectIds.DeviceSet, context);
+                AssertIsObjectAvailable(Opc.Ua.DI.ObjectIds.DeviceTopology, context);
+                AssertIsObjectAvailable(Opc.Ua.DI.ObjectIds.NetworkSet, context);
             });
         }
 
@@ -145,7 +145,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.Plugin.Tests
                 var nodeId = context.GetNodeIdByDisplayName(refs, IO_LINK_DEVICENAME);
                 context.Client.Browse(nodeId, out var deviceRefs);
 
-                var offlineParameterNodeId = context.GetNodeIdByDisplayName(deviceRefs, Opc.Ua.Di.BrowseNames.ParameterSet);
+                var offlineParameterNodeId = context.GetNodeIdByDisplayName(deviceRefs, Opc.Ua.DI.BrowseNames.ParameterSet);
 
                 context.Client.Browse(offlineParameterNodeId, out var parameterRefs);
 
@@ -169,7 +169,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.Plugin.Tests
 
                 context.Client.Browse(onlineNodeId, out var onlineDeviceRefs);
 
-                var offlineParameterNodeId = context.GetNodeIdByDisplayName(onlineDeviceRefs, Opc.Ua.Di.BrowseNames.ParameterSet);
+                var offlineParameterNodeId = context.GetNodeIdByDisplayName(onlineDeviceRefs, Opc.Ua.DI.BrowseNames.ParameterSet);
 
                 context.Client.Browse(offlineParameterNodeId, out var parameterRefs);
 
@@ -186,7 +186,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.Plugin.Tests
                 var nodeId = context.GetNodeIdByDisplayName(refs, OPTICAL_SENSOR_DEVICENAME);
                 context.Client.Browse(nodeId, out var deviceRefs);
 
-                var offlineParameterNodeId = context.GetNodeIdByDisplayName(deviceRefs, Opc.Ua.Di.BrowseNames.ParameterSet);
+                var offlineParameterNodeId = context.GetNodeIdByDisplayName(deviceRefs, Opc.Ua.DI.BrowseNames.ParameterSet);
 
                 context.Client.Browse(offlineParameterNodeId, out var parameterRefs);
 
@@ -207,7 +207,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.Plugin.Tests
 
                 context.Client.Browse(onlineNodeId, out var onlineDeviceRefs);
 
-                var offlineParameterNodeId = context.GetNodeIdByDisplayName(onlineDeviceRefs, Opc.Ua.Di.BrowseNames.ParameterSet);
+                var offlineParameterNodeId = context.GetNodeIdByDisplayName(onlineDeviceRefs, Opc.Ua.DI.BrowseNames.ParameterSet);
 
                 context.Client.Browse(offlineParameterNodeId, out var parameterRefs);
 
@@ -224,7 +224,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.Plugin.Tests
                 var nodeId = context.GetNodeIdByDisplayName(refs, OPTICAL_SENSOR_DEVICENAME);
                 context.Client.Browse(nodeId, out var deviceRefs);
 
-                var offlineParameterNodeId = context.GetNodeIdByDisplayName(deviceRefs, Opc.Ua.Di.BrowseNames.ParameterSet);
+                var offlineParameterNodeId = context.GetNodeIdByDisplayName(deviceRefs, Opc.Ua.DI.BrowseNames.ParameterSet);
 
                 context.Client.Browse(offlineParameterNodeId, out var parameterRefs);
 
@@ -248,7 +248,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.Plugin.Tests
 
                 context.Client.Browse(onlineNodeId, out var onlineDeviceRefs);
 
-                var onlineParameterNodeId = context.GetNodeIdByDisplayName(onlineDeviceRefs, Opc.Ua.Di.BrowseNames.ParameterSet);
+                var onlineParameterNodeId = context.GetNodeIdByDisplayName(onlineDeviceRefs, Opc.Ua.DI.BrowseNames.ParameterSet);
 
                 context.Client.Browse(onlineParameterNodeId, out var parameterRefs);
 
@@ -268,7 +268,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.Plugin.Tests
                 var nodeId = context.GetNodeIdByDisplayName(refs, OPTICAL_SENSOR_DEVICENAME);
                 context.Client.Browse(nodeId, out var deviceRefs);
 
-                var offlineParameterNodeId = context.GetNodeIdByDisplayName(deviceRefs, Opc.Ua.Di.BrowseNames.ParameterSet);
+                var offlineParameterNodeId = context.GetNodeIdByDisplayName(deviceRefs, Opc.Ua.DI.BrowseNames.ParameterSet);
 
                 context.Client.Browse(offlineParameterNodeId, out var parameterRefs);
 
@@ -289,7 +289,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.Plugin.Tests
                 var nodeId = context.GetNodeIdByDisplayName(refs, OPTICAL_SENSOR_DEVICENAME);
                 context.Client.Browse(nodeId, out var deviceRefs);
 
-                var offlineParameterNodeId = context.GetNodeIdByDisplayName(deviceRefs, Opc.Ua.Di.BrowseNames.ParameterSet);
+                var offlineParameterNodeId = context.GetNodeIdByDisplayName(deviceRefs, Opc.Ua.DI.BrowseNames.ParameterSet);
 
                 context.Client.Browse(offlineParameterNodeId, out var parameterRefs);
 
@@ -314,7 +314,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.Plugin.Tests
 
                 context.Client.Browse(onlineNodeId, out var onlineDeviceRefs);
 
-                var offlineParameterNodeId = context.GetNodeIdByDisplayName(onlineDeviceRefs, Opc.Ua.Di.BrowseNames.ParameterSet);
+                var offlineParameterNodeId = context.GetNodeIdByDisplayName(onlineDeviceRefs, Opc.Ua.DI.BrowseNames.ParameterSet);
 
                 context.Client.Browse(offlineParameterNodeId, out var parameterRefs);
 
@@ -338,7 +338,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.Plugin.Tests
 
                 context.Client.Browse(onlineNodeId, out var onlineDeviceRefs);
 
-                var offlineParameterNodeId = context.GetNodeIdByDisplayName(onlineDeviceRefs, Opc.Ua.Di.BrowseNames.ParameterSet);
+                var offlineParameterNodeId = context.GetNodeIdByDisplayName(onlineDeviceRefs, Opc.Ua.DI.BrowseNames.ParameterSet);
 
                 context.Client.Browse(offlineParameterNodeId, out var parameterRefs);
 
@@ -362,7 +362,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.Plugin.Tests
 
                 context.Client.Browse(onlineNodeId, out var onlineDeviceRefs);
 
-                var onlineParameterNodeId = context.GetNodeIdByDisplayName(onlineDeviceRefs, Opc.Ua.Di.BrowseNames.ParameterSet);
+                var onlineParameterNodeId = context.GetNodeIdByDisplayName(onlineDeviceRefs, Opc.Ua.DI.BrowseNames.ParameterSet);
 
                 context.Client.Browse(onlineParameterNodeId, out var parameterRefs);
 
@@ -383,7 +383,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.Plugin.Tests
 
                 context.Client.Browse(onlineNodeId, out var onlineDeviceRefs);
 
-                var onlineParameterNodeId = context.GetNodeIdByDisplayName(onlineDeviceRefs, Opc.Ua.Di.BrowseNames.ParameterSet);
+                var onlineParameterNodeId = context.GetNodeIdByDisplayName(onlineDeviceRefs, Opc.Ua.DI.BrowseNames.ParameterSet);
 
                 context.Client.Browse(onlineParameterNodeId, out var parameterRefs);
 

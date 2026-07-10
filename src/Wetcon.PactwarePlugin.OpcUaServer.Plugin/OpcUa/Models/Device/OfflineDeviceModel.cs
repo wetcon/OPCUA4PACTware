@@ -23,7 +23,7 @@
 
 using System.Collections.Generic;
 using Opc.Ua;
-using Opc.Ua.Di;
+using Opc.Ua.DI;
 using Opc.Ua.Server;
 using Wetcon.PactwarePlugin.OpcUaServer.Fdt;
 
@@ -37,10 +37,10 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.OpcUa.Models
         public OfflineDeviceModel(DeviceModelContext deviceModelContext) :
             base(deviceModelContext, false)
         {
-            TransferService = new TransferServicesState(this);
+            TransferService = new TransferServicesTypeState(this);
         }
 
-        public TransferServicesState TransferService
+        public TransferServicesTypeState TransferService
         {
             get => m_transferService;
 
@@ -153,7 +153,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.OpcUa.Models
            "CgIAAAAAAA8AAABPdXRwdXRBcmd1bWVudHMBAYUZAC4ARIUZAACWAQAAAAEAKgEBHAAAAAsAAABGZXRj" +
            "aFJlc3VsdAEBehn/////AAAAAAABACgBAQAAAAEB/////wAAAAA=";
 
-        private TransferServicesState m_transferService;
+        private TransferServicesTypeState m_transferService;
 
         internal static List<NodeState> Add(DeviceModelContext deviceModelContext, ServerSystemContext systemContext,
             bool readIOProcessData)

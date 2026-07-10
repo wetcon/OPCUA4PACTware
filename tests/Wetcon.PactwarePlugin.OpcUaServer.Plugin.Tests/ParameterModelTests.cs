@@ -27,7 +27,7 @@ using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NSubstitute;
 using Opc.Ua;
-using Opc.Ua.Di;
+using Opc.Ua.DI;
 using Wetcon.PactwarePlugin.OpcUaServer.Fdt;
 using Wetcon.PactwarePlugin.OpcUaServer.Fdt.Models;
 using Wetcon.PactwarePlugin.OpcUaServer.OpcUa.Models;
@@ -217,7 +217,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.Plugin.Tests
         private ParameterModel CreateParameterModel(bool offlineDevice, TestFdtServices testFdtServices, byte accessLevel,
             string id, ParameterDataSourceKind parameterDataSourceKind = ParameterDataSourceKind.DtmParameter)
         {
-            var device = new DeviceState(null)
+            var device = new DeviceTypeState(null)
             {
                 NodeId = new NodeId("")
             };

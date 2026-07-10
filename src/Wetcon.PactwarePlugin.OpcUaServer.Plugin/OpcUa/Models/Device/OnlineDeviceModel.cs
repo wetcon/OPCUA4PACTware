@@ -37,7 +37,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.OpcUa.Models
             : base(deviceModelContext, readIOProcessData)
         {
             DisplayName = new LocalizedText("Online");
-            BrowseName = new QualifiedName(Opc.Ua.Di.BrowseNames.IsOnline, 1);
+            BrowseName = new QualifiedName(Opc.Ua.DI.BrowseNames.IsOnline, 1);
         }
 
         internal static BaseObjectState Add(DeviceModelContext deviceModelContext, ServerSystemContext systemContext,
@@ -46,7 +46,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.OpcUa.Models
             // Add the online device node.
             var onlineDeviceModel = new OnlineDeviceModel(deviceModelContext, readIOProcessData);
             var displayName = new LocalizedText("Online");
-            var browseName = new QualifiedName(Opc.Ua.Di.BrowseNames.IsOnline, 1);
+            var browseName = new QualifiedName(Opc.Ua.DI.BrowseNames.IsOnline, 1);
 
             deviceModelContext.Parent.AddChild(onlineDeviceModel);
 
