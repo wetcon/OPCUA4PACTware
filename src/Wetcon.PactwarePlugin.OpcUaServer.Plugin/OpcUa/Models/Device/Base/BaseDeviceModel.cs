@@ -21,6 +21,7 @@
 // but WITHOUT ANY WARRANTY, without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
+using System.Diagnostics;
 using System.Linq;
 using Opc.Ua;
 using Opc.Ua.DI;
@@ -75,6 +76,7 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.OpcUa.Models
         protected BaseDeviceModel(DeviceModelContext deviceModelContext, bool readIOProcessData)
             : base(deviceModelContext.Parent)
         {
+            Debugger.Launch();
             PactwareProjectNode = deviceModelContext.PactwareProjectNode;
             FdtService = deviceModelContext.FdtServiceProvider;
             DeviceId = PactwareProjectNode.CatalogueObject.Id;
@@ -96,15 +98,23 @@ namespace Wetcon.PactwarePlugin.OpcUaServer.OpcUa.Models
         {
             base.InitializeOptionalChildren(context);
 
+            Manufacturer = Manufacturer ?? new PropertyState<LocalizedText>(this);
             Manufacturer.Value = new LocalizedText(PactwareProjectNode.CatalogueObject.Vendor);
+
+            Model = Model ?? new PropertyState<LocalizedText>(this);
             Model.Value = new LocalizedText(PactwareProjectNode.CatalogueObject.Name);
+
+            DeviceClass = DeviceClass ?? new PropertyState<string>(this);
             DeviceClass.Value = GetDeviceClass();
+
+            SerialNumber = SerialNumber ?? new PropertyState<string>(this);
             SerialNumber.Value = DeviceId;
 
             var deviceHealth = GetDeviceHealth();
 
             if (deviceHealth.HasValue)
             {
+                DeviceHealth = DeviceHealth ?? new BaseDataVariableState<DeviceHealthEnumeration>(this);
                 DeviceHealth.Value = deviceHealth.Value;
             }
         }
