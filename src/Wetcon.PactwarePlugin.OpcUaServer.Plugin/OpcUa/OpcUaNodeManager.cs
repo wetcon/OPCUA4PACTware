@@ -25,19 +25,23 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Threading;
+using System.Threading.Tasks;
 using log4net;
 using Opc.Ua;
+using Opc.Ua.Types;
 using Opc.Ua.Server;
 using PWID.EventArgs;
 using PWID.Interfaces;
 using Wetcon.PactwarePlugin.OpcUaServer.Fdt;
 using Wetcon.PactwarePlugin.OpcUaServer.Infrastructure;
 using Wetcon.PactwarePlugin.OpcUaServer.OpcUa.Models;
+using StatusCodes = Opc.Ua.Types.StatusCodes;
 
 namespace Wetcon.PactwarePlugin.OpcUaServer
 {
 
-    public class OpcUaNodeManager : CustomNodeManager2
+    public class OpcUaNodeManager : CustomNodeManager2, IBrowseAsyncNodeManager //, ICallAsyncNodeManager, IReadAsyncNodeManager, IWriteAsyncNodeManager
     {
         public ushort DiNamespaceIndex { get; }
         public ushort ServerNamespaceIndex { get; }
@@ -77,6 +81,8 @@ namespace Wetcon.PactwarePlugin.OpcUaServer
 
             return new NodeId(++_nodeIdCounter, ServerNamespaceIndex);
         }
+
+        
 
         public override void Browse(OperationContext context, ref ContinuationPoint continuationPoint, IList<ReferenceDescription> references)
         {
@@ -344,6 +350,63 @@ namespace Wetcon.PactwarePlugin.OpcUaServer
                     yield return casted;
                 }
             }
+        }
+
+        async ValueTask<ContinuationPoint> IBrowseAsyncNodeManager.BrowseAsync(OperationContext context, ContinuationPoint continuationPoint, IList<ReferenceDescription> references, CancellationToken cancellationToken)
+        {
+            if (continuationPoint.NodeToBrowse is NodeHandle nodeHandle)
+            {
+                var nodeToBrowseInst = Find(nodeHandle.NodeId);
+                if (nodeToBrowseInst != null)
+                {
+                    ParameterSetModel parameterSet = null;
+
+                    switch (nodeToBrowseInst)
+                    {
+                        case BaseDeviceModel deviceModel:
+                            parameterSet = (ParameterSetModel)deviceModel.ParameterSet;
+                            if (parameterSet.Parameters.Count > 0)
+                            {
+                                parameterSet = null;
+                            }
+                            break;
+                        case ParameterSetModel parameterSetInstance:
+                            parameterSet = parameterSetInstance;
+                            break;
+                    }
+
+                    if (parameterSet != null)
+                    {
+                        List<NodeId> existingParameterIds;
+                        lock (Lock)
+                        {
+                            existingParameterIds = parameterSet.Parameters
+                                .Select(p => p.NodeId)
+                                .ToList();
+                        }
+
+                        await Task.Run(() => parameterSet.ReloadParameters(), cancellationToken).ConfigureAwait(false);
+
+                        lock (Lock)
+                        {
+                            var obsoleteNodes = existingParameterIds
+                                .Where(p => parameterSet.Parameters.All(n => n.NodeId != p))
+                                .ToList();
+
+                            obsoleteNodes.ForEach(p => DeleteNode(SystemContext, p));
+
+                            var newNodes = parameterSet.Parameters
+                                .Where(p => !existingParameterIds.Contains(p.NodeId))
+                                .ToList();
+
+                            newNodes.ForEach(p => AddPredefinedNode(SystemContext, p));
+                        }
+                    }
+                }
+            }
+
+            base.Browse(context, ref continuationPoint, references);
+            return continuationPoint;
         }
     }
 }
