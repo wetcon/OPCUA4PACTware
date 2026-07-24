@@ -41,7 +41,7 @@ using StatusCodes = Opc.Ua.Types.StatusCodes;
 namespace Wetcon.PactwarePlugin.OpcUaServer
 {
 
-    public class OpcUaNodeManager : CustomNodeManager2, IBrowseAsyncNodeManager //, ICallAsyncNodeManager, IReadAsyncNodeManager, IWriteAsyncNodeManager
+    public class OpcUaNodeManager : CustomNodeManager2, IBrowseAsyncNodeManager
     {
         public ushort DiNamespaceIndex { get; }
         public ushort ServerNamespaceIndex { get; }
@@ -408,5 +408,47 @@ namespace Wetcon.PactwarePlugin.OpcUaServer
             base.Browse(context, ref continuationPoint, references);
             return continuationPoint;
         }
+
+
+        public override void Read(OperationContext context, double maxAge, IList<ReadValueId> nodesToRead, IList<DataValue> values, IList<ServiceResult> errors)
+        {
+            base.Read(context, maxAge, nodesToRead, values, errors);
+        }
+
+        protected override void Read(ServerSystemContext context, IList<ReadValueId> nodesToRead, IList<DataValue> values, IList<ServiceResult> errors, List<NodeHandle> nodesToValidate, IDictionary<NodeId, NodeState> cache)
+        {
+            base.Read(context, nodesToRead, values, errors, nodesToValidate, cache);
+        }
+
+        public override void Write(OperationContext context, IList<WriteValue> nodesToWrite, IList<ServiceResult> errors)
+        {
+            base.Write(context, nodesToWrite, errors);
+        }
+
+        protected override void Write(ServerSystemContext context, IList<WriteValue> nodesToWrite, IList<ServiceResult> errors, List<NodeHandle> nodesToValidate, IDictionary<NodeId, NodeState> cache)
+        {
+            base.Write(context, nodesToWrite, errors, nodesToValidate, cache);
+        }
+
+        protected override ServiceResult Call(ISystemContext context, CallMethodRequest methodToCall, MethodState method, CallMethodResult result)
+        {
+            return base.Call(context, methodToCall, method, result);
+        }
+
+        public override ValueTask CallAsync(OperationContext context, IList<CallMethodRequest> methodsToCall, IList<CallMethodResult> results, IList<ServiceResult> errors, CancellationToken cancellationToken = default)
+        {
+            return base.CallAsync(context, methodsToCall, results, errors, cancellationToken);
+        }
+
+        protected override ValueTask<ServiceResult> CallInternalAsync(ISystemContext context, CallMethodRequest methodToCall, MethodState method, CallMethodResult result, bool sync, CancellationToken cancellationToken = default)
+        {
+            return base.CallInternalAsync(context, methodToCall, method, result, sync, cancellationToken);
+        }
+
+        protected override ValueTask CallInternalAsync(OperationContext context, IList<CallMethodRequest> methodsToCall, IList<CallMethodResult> results, IList<ServiceResult> errors, bool sync, CancellationToken cancellationToken = default)
+        {
+            return base.CallInternalAsync(context, methodsToCall, results, errors, sync, cancellationToken);
+        }
+
     }
 }
